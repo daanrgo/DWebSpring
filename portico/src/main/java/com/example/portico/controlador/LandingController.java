@@ -6,11 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("landing")
-
 public class LandingController {
 
     // http://localhost::8090/landing/hola
-    @GetMapping("/hola")
+    @GetMapping("")
     public String holaMundo(){
         return "landing";
     }
