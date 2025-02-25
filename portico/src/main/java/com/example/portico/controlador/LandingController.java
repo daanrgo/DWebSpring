@@ -10,7 +10,7 @@ public class LandingController {
 
     // http://localhost::8090/landing/hola
     @GetMapping("")
-    public String holaMundo(){
+    public String landing(){
         return "landing";
     }
 }
