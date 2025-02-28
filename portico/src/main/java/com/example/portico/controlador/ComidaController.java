@@ -7,18 +7,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.portico.entidad.Comida;
+import com.example.portico.service.ComidaService;
 
-@Controller
+import org.springframework.ui.Model;
+
 @RequestMapping("/comida")
+@Controller
 public class ComidaController {
 
     @Autowired
-    private Comida comida;
+    ComidaService comidaService;
 
-    @GetMapping("/info")
-    @ResponseBody 
-    
-    public String mostrarInfoComida(){
-        return comida.toString();
+    @GetMapping("/info")    
+    public String mostrarInfoComida(Model model){
+
+        model.addAttribute("comidas",comidaService.SearchAll());
+        return "tabla_comida";
    }
+
+
 }
