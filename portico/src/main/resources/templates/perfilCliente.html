@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estiloPerfilCliente.css"> 
+
+    <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="header-left-icons">
+                <img src="/portico_spring/portico/src/main/resources/static/images/perfilCaballo.png" alt="Caballo">
+                <div class="cart-icon">
+                    <img src="/portico_spring/portico/src/main/resources/static/images/carrito.png" alt="Carrito">
+                </div>
+            </div>
+
+            <div class="nav-left">
+                <ul class="indices">
+                    <li><a href="#quienes"><button>¿Quiénes Somos?</button></a></li>
+                    <li><a href="#sede"><button>Sede</button></a></li>
+                </ul>
+            </div>
+
+            <div class="logo">
+                <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="El Pórtico Gourmet">
+            </div>
+
+            <div class="nav-right">
+                <ul class="indices">
+                    <li><a href="#carta"><button>Carta</button></a></li>
+                    <li><a href="#contacto"><button>Contáctanos</button></a></li>
+                </ul>
+                <a href="#pedido" class="btn-pedido"><button>Haz tu pedido</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección de Perfil -->
+    <section class="perfil-container">
+        <a href="index.html" class="volver">&#8592;</a> <!-- Botón de regreso -->
+
+        <!-- Sección de imagen de perfil -->
+        <div class="perfil-imagen">
+            <img src="/portico_spring/portico/src/main/resources/static/images/contornoPerfil.png" alt="Imagen de perfil" class="imagen-fondo">
+            <img src="/portico_spring/portico/src/main/resources/static/images/personaPerfil.jpeg" alt="Foto de perfil" class="imagen-superior">
+            <button class="btn-perfil">PONER FOTO DE PERFIL</button>
+        </div>
+
+        <!-- Sección de información del usuario -->
+        <div class="perfil-info">
+            <h2>Perfil de usuario</h2>
+            <div class="info">
+                <p><strong>Nombre:</strong> Daniel Felipe</p>
+                <p><strong>Apellido:</strong> León Perez</p>
+                <p><strong>Correo:</strong> dafelepe10@gmail.com</p>
+                <p><strong>Teléfono:</strong> 3182018778</p>
+                <hr>
+                <p><strong>Dirección:</strong> Carrera 14a #143-27</p>
+                <label for="info-adicional">Información adicional:</label>
+                <input type="text" id="info-adicional" placeholder="Barrio, conjunto, interior, apartamento, etc..">
+            </div>
+            <div class="perfil-botones">
+                <button class="btn-modificar">MODIFICAR DATOS</button>
+                <button class="btn-cambiar">CAMBIAR CONTRASEÑA</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="sobre_nosotros columna_footer">
+            <ul class="list">
+                <li>
+                    <div class="logo_footer">
+                        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <h3>Teléfono: 512-345-678</h3>
+                </li>
+                <li>
+                    <h3>Dirección: Paseo de la castellana</h3>
+                </li>
+                <li>
+                    <h3>Bogotá - Colombia</h3>
+                </li>
+            </ul>
+        </div>
+
+        <span class="division_vertical"></span>
+
+        <div class="columna_footer">
+            <ul class="list">
+                <li>
+                    <h2>Productos</h2>
+                </li>
+                <li><a href="#">El Portico</a></li>
+                <li><a href="#">Fungi Premium</a></li>
+                <li><a href="#">Marinera</a></li>
+                <li><a href="#">La Exquisita</a></li>
+                <li><a href="#">El Principe</a></li>
+                <li><a href="#">La King</a></li>
+                <li><a href="#">El Noble</a></li>
+            </ul>
+        </div>
+
+        <span class="division_vertical"></span>
+
+        <div class="columna_footer">
+            <ul class="list">
+                <li>
+                    <h2>Contacto</h2>
+                </li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Servicio al Cliente</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Políticas de Privacidad</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

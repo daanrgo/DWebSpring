@@ -1,12 +1,13 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
 }
 
-body {
-    font-family: 'Roboto Condensed', sans-serif;
-    background-image: url('/images/fondo_borroso.jpg')
+body{
+    background-color: #2a2420;
 }
 
 /* Header y Navegación */
@@ -24,6 +25,32 @@ header {
     z-index: 1000;
 }
 
+/* Contenedor para los íconos en el header */
+.header-left-icons {
+    display: flex;
+    gap: 10px; /* Espacio entre los íconos */
+    margin-left: -90px;
+    
+}
+
+/* Estilo de los íconos */
+.header-left-icons img {
+    height: 65px;
+    width: auto;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+/* Contenedor del carrito */
+.cart-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
 nav {
     display: flex;
     align-items: center;
@@ -39,7 +66,7 @@ nav {
     gap:2rem; /* Aumenta el espacio entre los elementos */
 }
 .nav-left{
-    margin-left: 110px;
+    margin-left: -250px;
 }
 
 
@@ -94,101 +121,154 @@ nav {
     transform: scale(1.05);
 }
 
-/* Estilo de la tabla */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #EFE9CE; /* Beige claro */
+
+/*kjk*/
+
+
+
+
+/* Contenedor principal */
+.menu-container {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background: #2a2420;
+    padding: 20px;
+    min-height: calc(100vh - 200px); /* Ajuste dinámico */
+
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 300px;
+    background: #1d1b18;
+    padding: 20px;
     border-radius: 10px;
-    overflow: hidden;
+    text-align: center;
 }
 
-/* Cabecera de la tabla */
-.table thead {
-    background: #A0522D; /* Marrón quemado */
+.btn-activos {
+    background: #A0522D;
     color: white;
-}
-
-.table thead th {
-    padding: 15px;
-    font-size: 1.2rem;
-    text-align: left;
-    border-bottom: 3px solid #EFE9CE;
-}
-
-/* Filas de la tabla */
-.table tbody tr {
-    border-bottom: 1px solid #A0522D;
-    transition: background 0.3s ease;
-}
-/* Efecto hover para cada fila de la tabla */
-.table tbody tr {
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.table tbody tr:hover {
-    background: rgba(0, 0, 0, 0.1); /* Oscurece la fila */
-    transform: scale(1.02); /* Sutil agrandamiento */
-}
-
-
-.table tbody tr:hover {
-    background: rgba(160, 82, 45, 0.2); /* Marrón quemado con transparencia */
-}
-
-/* Celdas de la tabla */
-.table tbody td {
-    padding: 15px;
+    border: none;
+    padding: 12px;
     font-size: 1rem;
-    color: #4A3222; /* Café oscuro */
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-/* Imágenes dentro de la tabla */
-.table tbody td img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid #A0522D;
+.pedido-activo img {
+    width: 100%;
+    width: 250px;
+    height: auto;
+    border-radius: 10px; 
+
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .table-container {
-        width: 95%;
-    }
-
-    .table thead {
-        display: none; /* Oculta el encabezado en pantallas pequeñas */
-    }
-
-    .table tbody tr {
-        display: block;
-        margin-bottom: 10px;
-        border: 2px solid #A0522D;
-        border-radius: 10px;
-        padding: 10px;
-        background: #EFE9CE;
-    }
-
-    .table tbody td {
-        display: block;
-        text-align: right;
-        font-size: 1rem;
-        padding: 10px;
-        position: relative;
-    }
-
-    .table tbody td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        font-weight: bold;
-        color: #A0522D;
-        text-transform: uppercase;
-    }
+/* Contenedor del menú */
+.menu-content {
+    flex: 1;
+    padding: 20px;
 }
 
+/* Buscador y filtro */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.search-bar {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    margin-left: 70px;
+}
+
+.btn-filtrar {
+    background: gold;
+    color: black;
+    border: none;
+    padding: 10px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 80px;
+    
+}
+
+/* Grid de hamburguesas */
+.grid-hamburguesas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 100px; /* Espacio extra para evitar que choque con el footer */
+
+}
+
+/* Tarjeta de hamburguesa */
+.card {
+    width: 250px;  /* Tamaño fijo */
+    height: 320px; /* Mantiene el tamaño de la tarjeta */
+    background: #efe9ce;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    border: 5px solid transparent;
+}
+
+
+/* Imagen de hamburguesa */
+.card img {
+    width: 100%;
+    height: 180px; /* Tamaño controlado para que todas sean iguales */
+    object-fit: cover; /* Ajusta la imagen dentro del espacio */
+    opacity: 0.6;
+    border-radius: 10px;
+}
+
+/* Hover en la tarjeta */
+.card:hover {
+    transform: scale(1.05);
+    border: 5px solid #A0522D;
+}
+
+/* Nombre de la hamburguesa */
+.card h3 {
+    margin-top: -45px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+}
+
+/* Slogan de la hamburguesa */
+.card p {
+    margin-top: 40px;
+    font-size: 1.1rem;
+    color: #5a4222;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+.card .decoracion{
+    margin-top: 20px;
+    width: 100%;
+    height: 40px; /* Tamaño controlado para que todas sean iguales */
+    object-fit: cover; /* Ajusta la imagen dentro del espacio */
+    margin-top: 10px;
+
+}
 
 /* Footer */
 .footer {
