@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,94 +70,12 @@
             <!-- Grid de hamburguesas -->
             <div class="grid-hamburguesas">
                 
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
+                <div class="card" th:each="comida: ${comidas}">
+                    <img th:src="@{/images/{img}(img=${comida.imagen})}" th:alt="${comida.name}">
+                    <h3 th:text="'Hamburguesa ' + ${comida.name}"></h3>
+                    <p th:text="${comida.description}"></p>
+                    <img class="decoracion" th:src="@{images/decoracionTarjeta.png}" alt="decoracion dorada"></img>
                 </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/hamburgesa.png" alt="El Noble">
-                    <h3>Hamburguesa "El Noble"</h3>
-                    <p>"Una forma elegante de comer sabroso"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger6.png" alt="El Principe">
-                    <h3>Hamburguesa "El Príncipe"</h3>
-                    <p>"No necesitas trono para comerla"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                <div class="card">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/burger4.png" alt="El Portico">
-                    <h3>Hamburguesa "El Portico"</h3>
-                    <p>"Con esta te sientes en casa"</p>
-                    <img class="decoracion" src="/portico_spring/portico/src/main/resources/static/images/decoracionTarjeta.png" alt="decoracion dorada"></img>
-                </div>
-
-                
-                
-                
-
                 <!-- Agregar más tarjetas con hamburguesas -->
                 
             </div>
