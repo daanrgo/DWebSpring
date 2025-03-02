@@ -11,6 +11,8 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap"
         rel="stylesheet">
 
+        <link rel="stylesheet" type="text/css " th:href="@{/css/estilosTarjetasComidas.css}">
+
 
 </head>
 <body>
@@ -20,9 +22,9 @@
         <nav>
             <!-- Contenedor para las imágenes a la izquierda -->
             <div class="header-left-icons">
-                <img src="/portico_spring/portico/src/main/resources/static/images/perfilCaballo.png" alt="Caballo">
+                <img src="/images/perfilCaballo.png" alt="Caballo">
                 <div class="cart-icon">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/carrito.png" alt="Carrito">
+                    <img src="/images/carrito.png" alt="Carrito">
                 </div>
             </div>
     
@@ -34,7 +36,7 @@
             </div>
     
             <div class="logo">
-                <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="El Pórtico Gourmet">
+                <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
             </div>
     
             <div class="nav-right">
@@ -54,7 +56,7 @@
         <div class="sidebar">
             <button class="btn-activos">PEDIDOS ACTIVOS</button>
             <div class="pedido-activo">
-                <img src="/portico_spring/portico/src/main/resources/static/images/burgerfire.png" alt="Hamburguesa Activa">
+                <img src="/images/burgerfire.png" alt="Hamburguesa Activa">
             </div>
         </div>
 
@@ -74,7 +76,7 @@
                     <img th:src="@{/images/{img}(img=${comida.imagen})}" th:alt="${comida.name}">
                     <h3 th:text="'Hamburguesa ' + ${comida.name}"></h3>
                     <p th:text="${comida.description}"></p>
-                    <img class="decoracion" th:src="@{images/decoracionTarjeta.png}" alt="decoracion dorada"></img>
+                    <img class="decoracion" src="/images/decoracionTarjeta.png"  alt="decoracion dorada"></img>
                 </div>
                 <!-- Agregar más tarjetas con hamburguesas -->
                 
@@ -92,7 +94,7 @@
             <ul class="list">
                 <li>
                     <div class="logo_footer">
-                        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="">
+                        <img src="/images/NuevoLogo.png" alt="">
                     </div>
                 </li>
                 <li>
