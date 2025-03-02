@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Hamburguesa</title>
+    <title>Detalle de Hamburguesa con Adicionales</title>
     <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estiloComidaIndividual.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
@@ -21,26 +21,71 @@
     </div>
 
     <section class="detalle-container">
-        <!-- Sección izquierda: información de la hamburguesa -->
-        <div class="info-hamburguesa">
-            <img src="/portico_spring/portico/src/main/resources/static/images/flechaAtras.png" href="index.html" class="volver"></img> 
+        
 
-            <h3>Hamburguesa</h3>
-            <h1>El Portico</h1>
+        <section class="adicionales-container">
+            <h2>Adicionales</h2>
+        
+            <!-- Sección de Acompañantes -->
+            <div class="categoria">
+                <h3>Acompañantes</h3>
+                <div class="item">
+                    <input type="checkbox" id="papas" >
+                    <label for="papas">Papas a la Francesa</label>
+                    <span class="precio">$ 4.000</span>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="chicharron" >
+                    <label for="chicharron">Chicharrón</label>
+                    <span class="precio">$ 6.500</span>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="anillos">
+                    <label for="anillos">Anillos de Cebolla</label>
+                    <span class="precio">$ 5.000</span>
+                </div>
+            </div>
+        
+            <!-- Sección de Salsas -->
+            <div class="categoria">
+                <h3>Salsas</h3>
+                <div class="item">
+                    <input type="checkbox" id="guacamole">
+                    <label for="guacamole">Guacamole</label>
+                    <span class="precio">$ 4.000</span>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="salsa-bbq">
+                    <label for="salsa-bbq">Salsa BBQ</label>
+                    <span class="precio">$ 4.000</span>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="salsa-portico">
+                    <label for="salsa-portico">Salsa Pórtico</label>
+                    <span class="precio">$ 4.000</span>
+                </div>
+            </div>
+        
+            <!-- Sección de Bebidas -->
+            <div class="categoria">
+                <h3>Bebidas</h3>
+                <div class="item">
+                    <input type="checkbox" id="limonada" >
+                    <label for="limonada">Limonada</label>
+                    <span class="precio">$ 6.500</span>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="gaseosa">
+                    <label for="gaseosa">Gaseosa (Coca Cola)</label>
+                    <span class="precio">$ 4.000</span>
+                </div>
+            </div>
+        
+            <!-- Botón de agregar al carrito -->
+            <button class="btn-carrito">AGREGAR AL CARRITO</button>
+        </section>
 
-            <p class="ingredientes">
-                <strong>Ingredientes:</strong> Carne molida de res, Pan brioche dorado, Queso maduro de calidad, Tocinetta ahumada, Cebolla caramelizada, Lechuga fresca, Tomate, Salsa de guacamole y Salsa de la casa.
-            </p>
 
-            <hr>
-
-            <p class="info-extra"><strong>Gramos de Carne:</strong> 200 gr</p>
-            <p class="info-extra"><strong>Precio:</strong> $29.900</p>
-
-            <hr>
-
-            <button class="btn-adicionales">VER ADICIONALES</button>
-        </div>
 
         <!-- Sección derecha: Imagen de la hamburguesa -->
         <div class="imagen-hamburguesa">
