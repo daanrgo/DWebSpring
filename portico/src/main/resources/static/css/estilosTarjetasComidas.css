@@ -141,7 +141,8 @@ nav {
 
 /* Barra lateral */
 .sidebar {
-    width: 300px;
+    width: 500px;
+    height: 1450px;
     background: #1d1b18;
     padding: 20px;
     border-radius: 10px;
@@ -163,8 +164,8 @@ nav {
 
 .pedido-activo img {
     width: 100%;
-    width: 250px;
-    height: auto;
+    width: 450px;
+    height: 1300px;
     border-radius: 10px; 
 
 }
@@ -216,8 +217,8 @@ nav {
 
 /* Tarjeta de hamburguesa */
 .card {
-    width: 250px;  /* Tamaño fijo */
-    height: 320px; /* Mantiene el tamaño de la tarjeta */
+    width: 400px;  /* Tamaño fijo */
+    height: 400px; /* Mantiene el tamaño de la tarjeta */
     background: #efe9ce;
     border-radius: 10px;
     padding: 10px;
@@ -232,7 +233,8 @@ nav {
 /* Imagen de hamburguesa */
 .card img {
     width: 100%;
-    height: 180px; /* Tamaño controlado para que todas sean iguales */
+    height: 100%;
+    height: 260px; /* Tamaño controlado para que todas sean iguales */
     object-fit: cover; /* Ajusta la imagen dentro del espacio */
     opacity: 0.6;
     border-radius: 10px;
@@ -246,8 +248,8 @@ nav {
 
 /* Nombre de la hamburguesa */
 .card h3 {
-    margin-top: -45px;
-    font-size: 1.2rem;
+    margin-top: -60px;
+    font-size: 2rem;
     font-weight: bold;
     color: black;
 }
@@ -255,7 +257,7 @@ nav {
 /* Slogan de la hamburguesa */
 .card p {
     margin-top: 40px;
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: #5a4222;
     font-family: 'Dancing Script', cursive;
     font-weight: bold;
