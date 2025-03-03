@@ -1,0 +1,358 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.imagen-separadora {
+    width: 100%;
+    text-align: center;
+    margin-bottom: -70px; /* Ajusta la imagen más cerca de la hamburguesa */
+    margin-left: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+.imagen-separadora img {
+    width: 70px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    display: inline-block;
+}
+
+.imagen-separadora img:hover{
+    transform: scale(1.1);
+}
+
+
+/* Contenedor principal */
+.detalle-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: #2A2420; /* Café oscuro */
+}
+
+/* Sección izquierda - Información de la hamburguesa */
+.info-hamburguesa {
+    width: 50%;
+    padding: 30px;
+    margin-bottom: -50px;
+    background: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.info-hamburguesa img{
+    width: 40px;
+    height: auto;
+    top: 5%;
+}
+
+/* Botón de volver */
+.volver {
+    position: absolute;
+    text-decoration: none;
+    color: #A0522D; /* Marrón */
+}
+
+
+.volver:hover{
+    color: #FFC080; /* Naranja */
+    transform: scale(1.1);
+}
+
+/* Títulos */
+.info-hamburguesa h3 {
+    font-size: 1rem;
+    color: #A0522D;
+}
+
+.info-hamburguesa h1 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Ingredientes */
+.ingredientes {
+    font-size: 1rem;
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+/* Línea divisoria */
+hr {
+    border: none;
+    border-top: 1px solid rgba(194, 185, 6, 0.2);
+    margin: 20px 0;
+}
+
+/* Información extra */
+.info-extra {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Botón de adicionales */
+.btn-adicionales {
+    background: #A0522D; /* Marrón */
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-c 0.3s ease;
+}
+
+.btn-adicionales:hover {
+    background: #8B4513; /* Marrón oscuro */
+}
+
+/* Sección derecha - Imagen */
+.imagen-hamburguesa {
+    width: 60%;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen-hamburguesa img {
+    width: 100%;
+    max-height: 100vh;
+    max-width: 100vh;
+
+}
+
+/* Estilizar las casillas del formulario */
+.input-campo {
+    width: 100%;
+    padding: 7px;
+    border-radius: 8px;
+    border: 2px solid #A0522D;
+    font-size: 0.5rem;
+    background: linear-gradient(to right, #FDFCFB, #E2D1C3); /* Degradado suave */
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    height: 30px;
+    width: 600px;
+
+}
+
+/* Cuando se selecciona el input */
+.input-campo:focus {
+    outline: none;
+    border: 2px solid #8B4513;
+    background: white;
+    box-shadow: 0px 0px 8px rgba(160, 82, 45, 0.7); /* Sombra al seleccionar */
+}
+
+
+
+/* Botón de creación con efecto elegante */
+.btn-crear {
+    background: linear-gradient(to right, #A0522D, #8B4513);
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-crear:hover {
+    background: linear-gradient(to right, #8B4513, #6A3310);
+    transform: scale(1.05);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustar la imagen de la hamburguesa */
+.imagen-hamburguesa img {
+    width: 80%;
+    max-height: 90vh;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.imagen-hamburguesa img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2a2420;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+}
+
+footer *{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer .columna_footer {
+    display: flex;
+    width: 24%;
+    height: 350px;
+    margin: 10px;
+}
+
+.columna_footer:hover{
+    background-color: rgba(0, 0, 0, 0.048);
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.columna_footer ul li:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.columna_footer ul{
+    width: 100%
+}
+
+.columna_footer ul li h3{
+    font-size: 15px;
+}
+
+.logo_footer{
+    height: 150px;
+    width: 100%;
+}
+
+.sobre_nosotros img{
+    height: 100%;
+}
+
+.social {
+    margin-bottom: 2rem;
+}
+
+.social a {
+    color: white;
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #A0522D;
+}
+
+.list {
+    margin-top: 30px;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.list li {width: 100%;
+    list-style: none;
+    margin-bottom: 20px;
+
+}
+
+.list a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.list a:hover {
+    color: #A0522D;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Menú hamburguesa */
+.barras {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .barras {
+        display: block;
+    }
+
+    .nav-left .indices, 
+    .nav-right .indices {
+        display: none;
+    }
+
+    .nav-right {
+        justify-content: flex-end;
+    }
+
+    .eslogan h2 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    .btn-eslogan {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .carousel img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eslogan, .btn-eslogan {
+    animation: fadeIn 1s ease-out;
+}
+
+.division_vertical{
+    border-left: 2px solid #A0522D;
+    height: 300px;
+}

@@ -1,0 +1,336 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Contenedor general */
+body {
+    background-color: #2a2420;
+    color: white;
+    text-align: center;
+}
+
+/* Header y Navegación */
+header {
+    background: rgba(70, 67, 62, 0.8); /* Color con opacidad */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    padding: 30px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; /* Ajusta el ancho para centrar todo */
+    max-width: 1000px;
+}
+
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap:2rem; /* Aumenta el espacio entre los elementos */
+}
+.nav-left{
+    margin-left: 40px;
+}
+
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.logo img {
+    height: 100px;
+    display: block;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.indices {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.indices button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.indices button:hover {
+    color: #A0522D;
+    transform: translateY(-2px);
+}
+
+/* Imagen superior */
+.banner img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+/* Contenedor de las tablas */
+.adicionales-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px;
+}
+
+/* Diseño de cada tabla */
+.tabla-adicionales {
+    background: #EFE9CE;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Encabezado de la tabla */
+.tabla-adicionales h3 {
+    font-size: 1.5rem;
+    color: black;
+    border-bottom: 2px solid #A0522D;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #4A3222;
+}
+
+/* Botón de eliminar */
+.btn-remove {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    color: #A0522D;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-remove:hover {
+    color: red;
+}
+
+/* Botón de agregar */
+.btn-add {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    transform: scale(1.1);
+}
+
+/* Efecto hover para las filas de la tabla */
+table tr:hover {
+    background-color: #4A3222; /* Color oscuro */
+    color: white; /* Cambia el color del texto para que sea visible */
+    transition: background 0.3s ease-in-out;
+}
+
+/* Asegura que las celdas de la fila también cambien a blanco */
+table tr:hover td {
+    color: white; /* Cambia el color del texto en todas las celdas */
+}
+
+
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2a2420;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+footer *{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer .columna_footer {
+    display: flex;
+    width: 24%;
+    height: 350px;
+    margin: 10px;
+}
+
+.columna_footer:hover{
+    background-color: rgba(0, 0, 0, 0.048);
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.columna_footer ul li:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+.columna_footer ul{
+    width: 100%
+}
+
+.columna_footer ul li h3{
+    font-size: 15px;
+}
+
+.logo_footer{
+    height: 150px;
+    width: 100%;
+}
+
+.sobre_nosotros img{
+    height: 100%;
+}
+
+.social {
+    margin-bottom: 2rem;
+}
+
+.social a {
+    color: white;
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #A0522D;
+}
+
+.list {
+    margin-top: 30px;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.list li {width: 100%;
+    list-style: none;
+    margin-bottom: 20px;
+
+}
+
+.list a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.list a:hover {
+    color: #A0522D;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Menú hamburguesa */
+.barras {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .barras {
+        display: block;
+    }
+
+    .nav-left .indices, 
+    .nav-right .indices {
+        display: none;
+    }
+
+    .nav-right {
+        justify-content: flex-end;
+    }
+
+    .eslogan h2 {
+        font-size: 2rem;
+        padding: 0 1rem;
+    }
+
+    .btn-eslogan {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .carousel img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eslogan, .btn-eslogan {
+    animation: fadeIn 1s ease-out;
+}
+
+.division_vertical{
+    border-left: 2px solid #A0522D;
+    height: 300px;
+}

@@ -1,81 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tabla comidas</title>
-   
+    <title>Detalle de Hamburguesa</title>
+    <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estiloComidaIndividual.css">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap"
         rel="stylesheet">
-
-   
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="stylesheet" type="text/css " th:href="@{/css/estilosTabla.css}">
-
-
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="nav-left">
-                <ul class="indices">
-                    <li><a href="#quienes"><button>Perfil</button></a></li>
-                    <li><a href="#sede"><button>Productos</button></a></li>
-                </ul>
-            </div>
-            <div class="logo">
-                <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
-            </div>
-            <div class="nav-right">
-                <ul class="indices">
-                    <li><a href="#carta"><button>Clientes</button></a></li>
-                    <li><a href="#contacto"><button>Historial de Pedidos</button></a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <h1>Comidas <br><br><br><br></h1>
-    <div class="table-wrapper">
-        <div class="table-container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Descripción</th>
-                        <th>Imagen</th>
-                    </tr>
-                </thead>
-            
-                <tbody>
-                    <tr th:each="comida: ${comidas}">
-                        <td th:text="${comida.name}" data-label="Nombre"></td>
-                        <td th:text="${comida.price}" data-label="Precio"></td>
-                        <td th:text="${comida.description}" data-label="Descripción"></td>
-                        <td class="editarComida">
-                            <div class="acciones"> 
-                                <img class="fotoHamburguesa" th:src="${comida.imagen}" alt="Imagen comida">
-                                <div class="botonesComida">
-                                    <img class="basuraIcono" src="/images/caneca.png" alt="basura"></img>
-                                    <img class="modificarIcono" src="/images/modificar.png" alt="basura"></img>
-                                </div>
-                                
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <!-- Nueva Imagen Separadora -->
+    <div class="imagen-separadora">
+        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="Decoración" />
     </div>
 
-    <button class="agregarProducto">AÑADIR PRODUCTO</button>
+    <section class="detalle-container">
+        <!-- Sección izquierda: información de la hamburguesa -->
+        <div class="info-hamburguesa">
+            <img src="/portico_spring/portico/src/main/resources/static/images/flechaAtras.png" href="index.html" class="volver"></img> 
+
+            <h3>Hamburguesa</h3>
+            <h1>El Portico</h1>
+
+            <p class="ingredientes">
+                <strong>Ingredientes:</strong> Carne molida de res, Pan brioche dorado, Queso maduro de calidad, Tocinetta ahumada, Cebolla caramelizada, Lechuga fresca, Tomate, Salsa de guacamole y Salsa de la casa.
+            </p>
+
+            <hr>
+
+            <p class="info-extra"><strong>Gramos de Carne:</strong> 200 gr</p>
+            <p class="info-extra"><strong>Precio:</strong> $29.900</p>
+
+            <hr>
+
+            <button class="btn-adicionales">VER ADICIONALES</button>
+        </div>
+
+        <!-- Sección derecha: Imagen de la hamburguesa -->
+        <div class="imagen-hamburguesa">
+            <img src="/portico_spring/portico/src/main/resources/static/images/hamburgesa.png" alt="Hamburguesa El Portico">
+        </div>
+    </section>
 
 
     <footer class="footer">
@@ -84,7 +55,7 @@
             <ul class="list">
                 <li>
                     <div class="logo_footer">
-                        <img src="/images/NuevoLogo.png" alt="">
+                        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="">
                     </div>
                 </li>
                 <li>
@@ -167,5 +138,6 @@
         </div>
 
     </footer>
+
 </body>
 </html>

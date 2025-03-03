@@ -21,9 +21,19 @@ public class ComidaController {
     @GetMapping("/info")    
     public String mostrarInfoComida(Model model){
 
+
         model.addAttribute("comidas",comidaService.SearchAll());
         return "tabla_comida";
    }
+
+   @GetMapping("/hamburguesas")
+   public String mostraHamburguesas(Model model) {
+
+        model.addAttribute("comidas", comidaService.SearchAll());
+        return "tarjetas_comidas";
+   }
+
+   
 
 
 }

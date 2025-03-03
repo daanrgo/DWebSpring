@@ -1,3 +1,4 @@
+/* Reset y estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,6 @@
 
 body {
     font-family: 'Roboto Condensed', sans-serif;
-    background-image: url('/images/fondo_borroso.jpg')
 }
 
 /* Header y Navegación */
@@ -24,6 +24,8 @@ header {
     z-index: 1000;
 }
 
+
+
 nav {
     display: flex;
     align-items: center;
@@ -39,7 +41,7 @@ nav {
     gap:2rem; /* Aumenta el espacio entre los elementos */
 }
 .nav-left{
-    margin-left: 40px;
+    margin-left: 110px;
 }
 
 
@@ -65,7 +67,7 @@ nav {
     gap: 2rem;
 }
 
-.indices button {
+.indices button, .btn-pedido button {
     background: none;
     border: none;
     color: white;
@@ -82,228 +84,193 @@ nav {
     transform: translateY(-2px);
 }
 
+.btn-pedido button {
+    background-color: #A0522D;
+    border-radius: 25px;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+}
 
+.btn-pedido button:hover {
+    background-color: #8B4513;
+    transform: scale(1.05);
+}
 
-/* Contenedor de la tabla para centrarla */
-.table-wrapper {
+/* Sección de inicio de sesión */
+.parte4 {
+    background: url('/landing_page/images/borrosoLogin.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    padding: 50px;
+    min-height: 600px;
+    position: relative;
 }
 
-/* Limita el ancho de la tabla y la centra */
-.table-container {
-    width: 100%;
-    max-width: 2000px;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Sombra elegante */
-    overflow-x: auto;
-}
-
-/* Acciones - Botones de Modificar y Eliminar */
-.acciones {
+/* Contenedor general del formulario */
+.parte4-container {
+    background: rgba(0, 0, 0, 0.9); /* Fondo oscuro para contraste */
+    padding: 40px;
     display: flex;
-    gap: 10px;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Sección de botones sociales */
+.social-login {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-}
-
-
-
-/* Botón de Modificar */
-.acciones .basuraIcono {
-    width: 150px;
-    height: 100px;
+    gap: 15px;
+    padding-right: 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
 
 }
 
-.acciones .modificarIcono{
-    width: 150px;
-    height: 100px;
-   
-}
-
-
-
-/* Ocultar los iconos de acciones por defecto */
-.acciones .basuraIcono {
-    display: none;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.acciones .modificarIcono{
-    display: none;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Ajustar el tamaño de la imagen dentro de la celda */
-.acciones .fotoHamburguesa {
-    width: 250px;
-    height: auto;
-    border-radius: 8px;
-    border: 2px solid #A0522D;
-}
-
-.botonesComida{
-    margin-left: 250px;
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos */
-    align-items: center; /* Centra los elementos verticalmente */
-    gap: 150px; /* Espaciado entre los botones */
-}
-
-/* Ajuste para los botones dentro de "botonesComida" */
-.botonesComida img {
-    width: 40px; /* Ajusta el tamaño del ícono si es necesario */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-/* Mostrar los iconos solo cuando el usuario pase el cursor sobre la fila */
-.table tbody tr:hover .acciones img {
-    display: inline-block;
-}
-
-/* Cambiar el fondo de la fila y el color del texto al pasar el cursor */
-.table tbody tr:hover {
-    background: black;
-    color: white;
-}
-
-
-/* Asegurar que el texto dentro de las celdas también se vuelva blanco */
-.table tbody tr:hover td {
-    color: white;
-}
-
-
-/* Estilo de la tabla */
-.table {
+/* Botones de redes sociales */
+.google-btn, .phone-btn, .facebook-btn {
     width: 100%;
-    border-collapse: collapse;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-/* Cabecera de la tabla */
-.table thead {
-    background: #A0522D; /* Marrón quemado */
-}
-
-.table thead th {
-    padding: 15px;
-    font-size: 1.2rem;
-    text-align: left;
-    
-}
-
-.table tbody{
-    padding: 15px;
-    background-color: black;
-}
-
-
-/* Efecto hover para cada fila de la tabla */
-.table tbody tr:hover td {
-    background-color: black;
-}
-
-
-
-/* Celdas de la tabla */
-.table tbody td {
-    text-align: center;
-    padding: 15px;
+    padding: 12px;
     font-size: 1rem;
-    color: #4A3222; /* Café oscuro */
-    background-color: beige;
-
-}
-
-.table tbody td:hover {
-    background-color: black;
-}
-
-.table thead tr th {
-    text-align: center;
-    background-color: #2a2420;
-    color: aliceblue;
-}
-
-
-
-/* Imágenes dentro de la tabla */
-.table tbody td img {
-    width: 200px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid #A0522D;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .table-container {
-        width: 95%;
-    }
-
-    .table thead {
-        display: none; /* Oculta el encabezado en pantallas pequeñas */
-    }
-
-    .table tbody tr {
-        display: block;
-        margin-bottom: 10px;
-        border: 2px solid #A0522D;
-        border-radius: 10px;
-        padding: 10px;
-    }
-
-    .table tbody td {
-        display: block;
-        text-align: right;
-        font-size: 1rem;
-        padding: 10px;
-        position: relative;
-    }
-
-    .table tbody td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 10px;
-        font-weight: bold;
-        color: #A0522D;
-        text-transform: uppercase;
-    }
-}
-
-
-/* Botón de adicionales */
-.agregarProducto {
-    background: #A0522D; /* Marrón */
+    font-weight: bold;
     color: white;
     border: none;
-    padding: 12px;
-    font-size: 2rem;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transform: translateX(1200px);
+    transition: background 0.3s ease;
 }
 
-.agregarProducto:hover {
-    background: #8B4513; /* Marrón oscuro */
+/* Estilos individuales de los botones */
+.google-btn {
+    background: #4285F4;
 }
+.google-btn:hover {
+    background: #357AE8;
+}
+
+.phone-btn {
+    background: #34A853;
+}
+.phone-btn:hover {
+    background: #2C8C47;
+}
+
+.facebook-btn {
+    background: #3B5998;
+}
+.facebook-btn:hover {
+    background: #2E437A;
+}
+
+
+/* Sección del formulario */
+.login-form {
+    flex: 1;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.login-form h2 {
+    font-size: 1.8rem;
+    color: #EFE9CE;
+    margin-bottom: 10px;
+}
+
+.login-form p {
+    font-size: 1rem;
+    color: #BBB;
+    margin-bottom: 20px;
+}
+
+/* Campos de entrada */
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #FFF;
+}
+
+/* Enlace "Olvidaste tu contraseña?" */
+.forgot-password {
+    display: block;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #4285F4;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Botones de acción */
+.login-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.register-btn, .login-btn {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.register-btn {
+    background: #A0522D;
+}
+.register-btn:hover {
+    background: #8B4513;
+}
+
+.login-btn {
+    background: #572D0D;
+}
+.login-btn:hover {
+    background: #3E1F07;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .parte4-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-login {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .login-form {
+        padding-left: 0;
+    }
+
+    .login-buttons {
+        flex-direction: column;
+    }
+}
+
+
+
 
 /* Footer */
 .footer {
