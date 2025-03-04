@@ -25,7 +25,7 @@
     <section class="detalle-container">
         <!-- Sección izquierda: información de la hamburguesa -->
         <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/update/{id}(id=${cliente.id})}" method="get">
-            <img src="/portico_spring/portico/src/main/resources/static/images/flechaAtras.png" href="index.html" class="volver"></img> 
+            <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
             
             <h3>Usuario</h3>
             <input th:field="*{username}" type="text" class="input-campo" placeholder="Nombre de Usuario">
@@ -70,7 +70,7 @@
             <ul class="list">
                 <li>
                     <div class="logo_footer">
-                        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="">
+                        <img src="/images/NuevoLogo.png" alt="">
                     </div>
                 </li>
                 <li><h3>Telefono: 512-345-678</h3></li>
