@@ -25,4 +25,19 @@ public class ComidaServiceImpl implements ComidaService {
 
         return repo.findAll();
     }
+
+    @Override
+    public void deleteById(int id){
+        repo.deleteById(id);
+    }
+
+    @Override
+    public void update(Comida comida){
+        repo.update(comida);
+    }
+
+    @Override    
+    public void add(Comida comida){
+        repo.add(comida);
+    }
 }
