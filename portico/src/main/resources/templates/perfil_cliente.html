@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estiloPerfilCliente.css"> 
+    <link rel="stylesheet" type="text/css " th:href="@{/css/estiloPerfilCliente.css}">
 
     <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap"
@@ -16,9 +16,9 @@
     <header>
         <nav>
             <div class="header-left-icons">
-                <img src="/portico_spring/portico/src/main/resources/static/images/perfilCaballo.png" alt="Caballo">
+                <img src="/images/perfilCaballo.png" alt="Caballo">
                 <div class="cart-icon">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/carrito.png" alt="Carrito">
+                    <img src="/images/carrito.png" alt="Carrito">
                 </div>
             </div>
 
@@ -30,7 +30,7 @@
             </div>
 
             <div class="logo">
-                <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="El Pórtico Gourmet">
+                <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
             </div>
 
             <div class="nav-right">
@@ -49,8 +49,8 @@
 
         <!-- Sección de imagen de perfil -->
         <div class="perfil-imagen">
-            <img src="/portico_spring/portico/src/main/resources/static/images/contornoPerfil.png" alt="Imagen de perfil" class="imagen-fondo">
-            <img src="/portico_spring/portico/src/main/resources/static/images/personaPerfil.jpeg" alt="Foto de perfil" class="imagen-superior">
+            <img src="/images/contornoPerfil.png" alt="Imagen de perfil" class="imagen-fondo">
+            <img src="/images/personaPerfil.jpeg" alt="Foto de perfil" class="imagen-superior">
             <button class="btn-perfil">PONER FOTO DE PERFIL</button>
         </div>
 
@@ -58,12 +58,12 @@
         <div class="perfil-info">
             <h2>Perfil de usuario</h2>
             <div class="info">
-                <p><strong>Nombre:</strong> Daniel Felipe</p>
-                <p><strong>Apellido:</strong> León Perez</p>
-                <p><strong>Correo:</strong> dafelepe10@gmail.com</p>
-                <p><strong>Teléfono:</strong> 3182018778</p>
+                <p th:text="${cliente.name}"><strong>Nombre:</strong></p>
+                <p th:text="${cliente.lastName}"><strong>Apellido:</strong></p>
+                <p th:text="${cliente.email}"><strong>Correo:</strong></p>
+                <p th:text="${cliente.phone}"><strong>Teléfono:</strong></p>
                 <hr>
-                <p><strong>Dirección:</strong> Carrera 14a #143-27</p>
+                <p th:text="${cliente.address}"><strong>Dirección:</strong></p>
                 <label for="info-adicional">Información adicional:</label>
                 <input type="text" id="info-adicional" placeholder="Barrio, conjunto, interior, apartamento, etc..">
             </div>
@@ -80,11 +80,11 @@
             <ul class="list">
                 <li>
                     <div class="logo_footer">
-                        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="">
+                        <img src="/images/NuevoLogo.png" alt="">
                     </div>
                 </li>
                 <li>
-                    <h3>Teléfono: 512-345-678</h3>
+                    <h3 >Teléfono: 512-345-678</h3>
                 </li>
                 <li>
                     <h3>Dirección: Paseo de la castellana</h3>

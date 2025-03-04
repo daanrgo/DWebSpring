@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Hamburguesa</title>
+    <title>Crear Cliente</title>
     <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estiloCrearCliente.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
@@ -22,23 +22,29 @@
 
     <section class="detalle-container">
         <!-- Sección izquierda: información de la hamburguesa -->
-        <div class="info-hamburguesa">
+        <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/create}" method="post">
             <img src="/portico_spring/portico/src/main/resources/static/images/flechaAtras.png" href="index.html" class="volver"></img> 
+            
+            <h3>Usuario</h3>
+            <input th:field="*{username}" type="text" class="input-campo" placeholder="Nombre de Usuario">
+
+            <h3>Contraseña</h3>
+            <input th:field="*{password}" type="text" class="input-campo" placeholder="Contraseña">
 
             <h3>Nombre</h3>
-            <input type="text" class="input-campo" placeholder="Nombre">
+            <input th:field="*{name}" type="text" class="input-campo" placeholder="Nombre">
 
             <h3>Apellido</h3>
-            <textarea class="input-campo" placeholder="Apellidos"></textarea>
+            <input th:field="*{lastName}" type="text" class="input-campo" placeholder="Apellido">
 
             <h3>Correo</h3>
-            <input type="number" class="input-campo" placeholder="Ej: portico@gmail.com">
+            <input th:field="*{email}" type="text" class="input-campo" placeholder="Ej: portico@gmail.com">
 
             <h3>Telefono</h3>
-            <input type="text" class="input-campo" placeholder="Número de contacto">
-
+            <input th:field="*{phone}" type="text" class="input-campo" placeholder="Número de contacto">
+            
             <h3>Dirección</h3>
-            <input type="text" class="input-campo" placeholder="Lugar donde haremos llegar los domicilios">
+            <input th:field="*{address}" type="text" class="input-campo" placeholder="Lugar donde haremos llegar los domicilios">
 
             <h3>Información Adicional</h3>
             <input type="text" class="input-campo" placeholder="Barrio, conjunto, interior, apartamento, etc..">
@@ -49,7 +55,7 @@
             <hr>
 
             <button class="btn-adicionales">CREAR USUARIO</button>
-        </div>
+        </form>
 
         <!-- Sección derecha: Imagen de la hamburguesa -->
         <div class="imagen-hamburguesa">
