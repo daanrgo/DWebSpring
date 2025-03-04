@@ -24,7 +24,7 @@
 
     <section class="detalle-container">
         <!-- Sección izquierda: información de la hamburguesa -->
-        <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/update/{id}(id=${cliente.id})}" method="get">
+        <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/update/{id}(id=${cliente.id})}" method="post">
             <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
             
             <h3>Usuario</h3>
