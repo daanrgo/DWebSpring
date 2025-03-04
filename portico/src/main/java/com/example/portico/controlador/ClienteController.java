@@ -47,9 +47,16 @@ public class ClienteController {
     }
 
 
-    @PostMapping("/delete/{id}")
-    public String eliminarComida(@PathVariable("id") int id){
-        clienteService.deleteById(id);
+    @GetMapping("/delete/{id}")
+    public String eliminarCliente(@PathVariable("id") int identification){
+        clienteService.deleteById(identification);
         return "redirect:/cliente/all";
+    }
+
+
+    @GetMapping("/update/{id}")
+    public String mostrarFormularioUpdate(@PathVariable("id") int identification, Model model){
+        model.addAttribute("cliente", clienteService.SearchById(identification));
+        return "modificar_cliente";
     }
 }

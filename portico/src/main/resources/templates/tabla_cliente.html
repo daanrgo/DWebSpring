@@ -56,6 +56,7 @@
                         <th>Correo</th>
                         <th>Telefono</th>
                         <th>Direccción</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
             
@@ -69,6 +70,15 @@
                         <td th:text="${cliente.email}" data-label="email"></td>
                         <td th:text="${cliente.phone}" data-label="phone"></td>
                         <td th:text="${cliente.address}" data-label="address"></td>
+                        <td class="editarComida">
+                            <div class="acciones"> 
+                                <div class="botonesComida">
+                                    <a th:href="@{/cliente/delete/{id}(id=${cliente.id})}">><img class="basuraIcono" src="/images/caneca.png" alt="basura"></img></a>
+                                    <a th:href="@{/cliente/update/{id}(id=${cliente.id})}"><img class="modificarIcono" src="/images/modificar.png" alt="basura"></img></a>
+                                </div>
+                                
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
