@@ -51,6 +51,7 @@ public class ComidaController {
     @GetMapping("/actualizar/{id}")
     public String mostrarFormularioModificar(Model model, @PathVariable("id") int id) {
         Comida comida = comidaService.SearchById(id);
+
         model.addAttribute("comida", comida);
         return "modificarComida";
     }
@@ -62,7 +63,7 @@ public class ComidaController {
         return "redirect:/comida/info";
     }
 
-    @PostMapping("/delete/{id}")
+    @GetMapping("/delete/{id}")
     public String eliminarComida(Model model, @PathVariable("id") int id){
         comidaService.deleteById(id);
         return "redirect:/comida/info";
@@ -70,6 +71,7 @@ public class ComidaController {
 
    @PostMapping("/update")
    public String postMethodName(Model model, Comida comida) {
+        System.out.println(comida.toString());
        comidaService.update(comida);
        return "redirect:/comida/info";
    }
