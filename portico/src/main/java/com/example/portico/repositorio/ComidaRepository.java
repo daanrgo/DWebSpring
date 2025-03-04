@@ -39,4 +39,19 @@ public class ComidaRepository {
         return data.get(id);
     }
 
+    public void deleteById(int id){
+        data.remove(id);
+    }
+
+    public void update(Comida comida){
+        data.put(comida.getId(), comida);
+    }
+
+    public void add(Comida comida) {
+        int tam = data.size();
+        int lastId = data.get(tam).getId();
+        comida.setId(lastId + 1);
+        data.put(comida.getId(), comida);
+    }
+
 }
