@@ -48,28 +48,27 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Password</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo</th>
                         <th>Telefono</th>
+                        <th>Direccción</th>
                     </tr>
                 </thead>
             
                 <tbody>
-                    <tr th:each="comida: ${comidas}">
-                        <td th:text="${comida.name}" data-label="Nombre"></td>
-                        <td th:text="${comida.price}" data-label="Precio"></td>
-                        <td th:text="${comida.description}" data-label="Descripción"></td>
-                        <td class="editarComida">
-                            <div class="acciones"> 
-                                <img class="fotoHamburguesa" th:src="${comida.imagen}" alt="Imagen comida">
-                                <div class="botonesComida">
-                                    <img class="basuraIcono" src="/images/caneca.png" alt="basura"></img>
-                                    <img class="modificarIcono" src="/images/modificar.png" alt="basura"></img>
-                                </div>
-                                
-                            </div>
-                        </td>
+                    <tr th:each="cliente: ${clientes}">
+                        <td th:text="${cliente.id}" data-label="id"></td>
+                        <td th:text="${cliente.username}" data-label="username"></td>
+                        <td th:text="${cliente.password}" data-label="password"></td>
+                        <td th:text="${cliente.name}" data-label="name"></td>
+                        <td th:text="${cliente.lastName}" data-label="lastName"></td>
+                        <td th:text="${cliente.email}" data-label="email"></td>
+                        <td th:text="${cliente.phone}" data-label="phone"></td>
+                        <td th:text="${cliente.address}" data-label="address"></td>
                     </tr>
                 </tbody>
             </table>
