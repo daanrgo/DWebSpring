@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -47,9 +48,24 @@ public class ClienteController {
     }
 
 
-    @PostMapping("/delete/{id}")
-    public String eliminarComida(@PathVariable("id") int id){
-        clienteService.deleteById(id);
+    @GetMapping("/delete/{id}")
+    public String eliminarCliente(@PathVariable("id") int identification){
+        clienteService.deleteById(identification);
         return "redirect:/cliente/all";
     }
+
+
+    @GetMapping("/update/{id}")
+    public String mostrarFormularioUpdate(@PathVariable("id") int identification, Model model){
+        model.addAttribute("cliente", clienteService.SearchById(identification));
+        return "modificar_cliente";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateCliente(@PathVariable("id") int identification, @ModelAttribute("cliente") Cliente cliente){
+        
+        clienteService.update(cliente);
+        return "redirect:/cliente/all";
+    }
+
 }

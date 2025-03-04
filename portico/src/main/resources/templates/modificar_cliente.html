@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cliente</title>
+
+
+    <link rel="stylesheet" type="text/css " th:href="@{/css/estiloCrearCliente.css}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+
+    <!-- Nueva Imagen Separadora -->
+    <div class="imagen-separadora">
+        <img src="/images/NuevoLogo.png" alt="Decoración" />
+    </div>
+
+    <section class="detalle-container">
+        <!-- Sección izquierda: información de la hamburguesa -->
+        <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/update/{id}(id=${cliente.id})}" method="post">
+            <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
+            
+            <h3>Usuario</h3>
+            <input th:field="*{username}" type="text" class="input-campo" placeholder="Nombre de Usuario">
+
+            <h3>Contraseña</h3>
+            <input th:field="*{password}" type="text" class="input-campo" placeholder="Contraseña">
+
+            <h3>Nombre</h3>
+            <input th:field="*{name}" type="text" class="input-campo" placeholder="Nombre">
+
+            <h3>Apellido</h3>
+            <input th:field="*{lastName}" type="text" class="input-campo" placeholder="Apellido">
+
+            <h3>Correo</h3>
+            <input th:field="*{email}" type="text" class="input-campo" placeholder="Ej: portico@gmail.com">
+
+            <h3>Telefono</h3>
+            <input th:field="*{phone}" type="text" class="input-campo" placeholder="Número de contacto">
+            
+            <h3>Dirección</h3>
+            <input th:field="*{address}" type="text" class="input-campo" placeholder="Lugar donde haremos llegar los domicilios">
+
+            <h3>Información Adicional</h3>
+            <input type="text" class="input-campo" placeholder="Barrio, conjunto, interior, apartamento, etc..">
+
+            <h3>Foto de Perfil</h3>
+            <input type="file" class="input-file">
+
+            <hr>
+
+            <button class="btn-adicionales">ACTUALIZAR USUARIO</button>
+        </form>
+
+        <!-- Sección derecha: Imagen de la hamburguesa -->
+        <div class="imagen-hamburguesa">
+            <img src="/images/entradaRestaurante.jpg" alt="Vista previa de hamburguesa">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="sobre_nosotros columna_footer">
+            <ul class="list">
+                <li>
+                    <div class="logo_footer">
+                        <img src="/images/NuevoLogo.png" alt="">
+                    </div>
+                </li>
+                <li><h3>Telefono: 512-345-678</h3></li>
+                <li><h3>Direccion: Paseo de la castellana</h3></li>
+                <li><h3>Bogotá - Colombia</h3></li>
+            </ul>
+        </div>
+
+        <span class="division_vertical"></span>
+
+        <div class="columna_footer">
+            <ul class="list">
+                <li><h2>Productos</h2></li>
+                <li><a href="#">El Portico</a></li>
+                <li><a href="#">Fungi Premium</a></li>
+                <li><a href="#">Marinera</a></li>
+                <li><a href="#">La Exquisita</a></li>
+                <li><a href="#">El Principe</a></li>
+                <li><a href="#">La King</a></li>
+                <li><a href="#">El Noble</a></li>
+            </ul>
+        </div>
+
+        <span class="division_vertical"></span>
+
+        <div class="columna_footer">
+            <ul class="list">
+                <li><h2>Contacto</h2></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Servicio al Cliente</a></li>
+                <li><a href="#">Sobre Nosotros</a></li>
+                <li><a href="#">Politicas de Privacidad</a></li>
+                <li class="social">
+                    <a href="about.html"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
