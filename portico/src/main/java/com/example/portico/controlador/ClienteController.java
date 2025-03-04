@@ -27,7 +27,10 @@ public class ClienteController {
 
     @GetMapping("/find/{id}")
     public String getMethodName(Model model, @PathVariable("id") int id) {
-        return new String();
+       
+        model.addAttribute("cliente", clienteService.SearchById(id));
+        
+        return "perfil_cliente";
     }
 
     @GetMapping("/add")

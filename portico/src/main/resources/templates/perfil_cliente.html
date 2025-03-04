@@ -58,12 +58,12 @@
         <div class="perfil-info">
             <h2>Perfil de usuario</h2>
             <div class="info">
-                <p><strong>Nombre:</strong> Daniel Felipe</p>
-                <p><strong>Apellido:</strong> León Perez</p>
-                <p><strong>Correo:</strong> dafelepe10@gmail.com</p>
-                <p><strong>Teléfono:</strong> 3182018778</p>
+                <p th:text="${cliente.name}"><strong>Nombre:</strong></p>
+                <p th:text="${cliente.lastName}"><strong>Apellido:</strong></p>
+                <p th:text="${cliente.email}"><strong>Correo:</strong></p>
+                <p th:text="${cliente.phone}"><strong>Teléfono:</strong></p>
                 <hr>
-                <p><strong>Dirección:</strong> Carrera 14a #143-27</p>
+                <p th:text="${cliente.address}"><strong>Dirección:</strong></p>
                 <label for="info-adicional">Información adicional:</label>
                 <input type="text" id="info-adicional" placeholder="Barrio, conjunto, interior, apartamento, etc..">
             </div>
@@ -84,7 +84,7 @@
                     </div>
                 </li>
                 <li>
-                    <h3>Teléfono: 512-345-678</h3>
+                    <h3 >Teléfono: 512-345-678</h3>
                 </li>
                 <li>
                     <h3>Dirección: Paseo de la castellana</h3>
