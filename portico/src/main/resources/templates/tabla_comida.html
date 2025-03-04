@@ -63,8 +63,8 @@
                             <div class="acciones"> 
                                 <img class="fotoHamburguesa" th:src="${comida.imagen}" alt="Imagen comida">
                                 <div class="botonesComida">
-                                    <a href="">><img class="basuraIcono" src="/images/caneca.png" alt="basura"></img></a>
-                                    <img class="modificarIcono" src="/images/modificar.png" alt="basura"></img>
+                                    <a th:href="@{/comida/delete/{id}(id=${comida.id})}">><img class="basuraIcono" src="/images/caneca.png" alt="basura"></img></a>
+                                    <a th:href="@{/comida/actualizar/{id}(id=${comida.id})}"><img class="modificarIcono" src="/images/modificar.png" alt="basura"></img></a>
                                 </div>
                                 
                             </div>
