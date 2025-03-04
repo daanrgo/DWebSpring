@@ -12,8 +12,6 @@ import com.example.portico.service.ComidaService;
 
 import org.springframework.ui.Model;
 
-
-
 @RequestMapping("/comida")
 @Controller
 public class ComidaController {
@@ -37,8 +35,7 @@ public class ComidaController {
 
     @GetMapping("/hamburguesas/{id}")
     public String getMethodName(Model model, @PathVariable("id") int id) {
-        model.addAttribute("comidas", comidaService.SearchById(id));
-        return "tarjetas_comidas";
+        return new String();
     }
 
     @GetMapping("/add")
@@ -48,14 +45,6 @@ public class ComidaController {
         return "crearComida";
     }
 
-    @GetMapping("/actualizar/{id}")
-    public String mostrarFormularioModificar(Model model, @PathVariable("id") int id) {
-        Comida comida = comidaService.SearchById(id);
-        model.addAttribute("comida", comida);
-        return "modificarComida";
-    }
-    
-
     @PostMapping("/create")
     public String crearComida(Model model, Comida comida){
         comidaService.add(comida);
@@ -63,15 +52,8 @@ public class ComidaController {
     }
 
     @PostMapping("/delete/{id}")
-    public String eliminarComida(Model model, @PathVariable("id") int id){
+    public String eliminarComida(@PathVariable("id") int id){
         comidaService.deleteById(id);
         return "redirect:/comida/info";
     }
-
-   @PostMapping("/update")
-   public String postMethodName(Model model, Comida comida) {
-       comidaService.update(comida);
-       return "redirect:/comida/info";
-   }
-
 }
