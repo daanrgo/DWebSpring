@@ -41,10 +41,11 @@ public class ClienteController {
     }
 
     @PostMapping("/create")
-    public String crearComida(Model model, Cliente cliente){
+    public String crearCliente(Model model, Cliente cliente){
         clienteService.add(cliente);
         return "redirect:/cliente/all";
     }
+
 
     @PostMapping("/delete/{id}")
     public String eliminarComida(@PathVariable("id") int id){
