@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Pórtico - Gourmet</title>
-    <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estilosLogin.css">
+    
     <script src="js/funcionalidad.js"> </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" type="text/css " th:href="@{/css/estilosLogin.css}">
+    <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estilosLogin.css">
 </head>
 <body>
         <header>
@@ -49,9 +50,9 @@
                     <h2>Iniciar sesión</h2>
                     <p>Ingresa los siguientes datos</p>
                     
-                    <form>
-                        <input type="email" placeholder="Correo electrónico/Usuario" required>
-                        <input type="password" placeholder="Contraseña" required>
+                    <form th:action="@{/login}" method="post" th:object="${loginForm}">
+                        <input type="text" th:field="*{username}" placeholder="Correo electrónico/Usuario" required>
+                        <input type="password"th:field="*{password}" placeholder="Contraseña" required>
                         <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                         <div class="login-buttons">
                             <button type="button" class="register-btn">SOY NUEVO</button>
