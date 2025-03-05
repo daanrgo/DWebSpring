@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import com.example.portico.entidad.Adicional;
 import com.example.portico.repositorio.AdicionalRepository;
 
-
+@Service
 public class AdicionalServicelmpl implements AdicionalService {
     
     @Autowired

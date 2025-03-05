@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.example.portico.entidad.Adicional;
 
 
-
+@Service
 public interface AdicionalService {
 
     
