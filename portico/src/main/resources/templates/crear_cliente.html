@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Cliente</title>
-    <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estiloCrearCliente.css">
+
+    <link rel="stylesheet" type="text/css " th:href="@{/css/estiloCrearCliente.css}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +18,13 @@
 
     <!-- Nueva Imagen Separadora -->
     <div class="imagen-separadora">
-        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="Decoración" />
+        <img src="/images/NuevoLogo.png" alt="Decoración" />
     </div>
 
     <section class="detalle-container">
         <!-- Sección izquierda: información de la hamburguesa -->
         <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/create}" method="post">
-            <img src="/portico_spring/portico/src/main/resources/static/images/flechaAtras.png" href="index.html" class="volver"></img> 
+            <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
             
             <h3>Usuario</h3>
             <input th:field="*{username}" type="text" class="input-campo" placeholder="Nombre de Usuario">
@@ -59,7 +60,7 @@
 
         <!-- Sección derecha: Imagen de la hamburguesa -->
         <div class="imagen-hamburguesa">
-            <img src="/portico_spring/portico/src/main/resources/static/images/entradaRestaurante.jpg" alt="Vista previa de hamburguesa">
+            <img src="/images/entradaRestaurante.jpg" alt="Vista previa de hamburguesa">
         </div>
     </section>
 
@@ -68,7 +69,7 @@
             <ul class="list">
                 <li>
                     <div class="logo_footer">
-                        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="">
+                        <img src="/images/NuevoLogo.png" alt="">
                     </div>
                 </li>
                 <li><h3>Telefono: 512-345-678</h3></li>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css " th:href="@{/css/estiloError2.css}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="error-container">
+        <!-- Logo en la parte superior -->
+        <div class="logo">
+            <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
+        </div>
+
+        <!-- Cuadro de error -->
+        <div class="error-box">
+            <p>El cliente identificado con id:</p>
+            <p class="error-id" th:text="${id}"></p>
+            <p>No fue encontrado en nuestra base de datos.</p>
+        </div>
+
+        <!-- Decoración inferior -->
+        <div class="error-decoracion">
+            <img src="/images/decoracionTarjeta.png" alt="Decoración">
+        </div>
+    </div>
+
+</body>
+</html>

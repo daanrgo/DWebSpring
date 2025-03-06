@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css " th:href="@{/css/estiloError.css}">
+</head>
+<body>
+
+    <div class="error-container">
+        <!-- Logo a la izquierda -->
+        <div class="logo">
+            <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
+        </div>
+
+        <!-- Contenido del error -->
+        <div class="error-content">
+            <img src="/images/errorSebusca.png" alt="Se Busca" class="error-image">
+            <div class="error-text">
+                <p>El cliente identificado con id:</p>
+                <h2 class="error-id" th:text="'Id = ' + ${id}"> </h2>
+                <p>No fue encontrado en nuestra base de datos.</p>
+            </div>
+        </div>
+    </div>
+
+    <img class="logo" src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="logoPortico"></img>
+    <h1>El estudiante  que buscas no existe</h1>
+    <h2 th:text="'Id = ' + ${id}"> </h2>
+</body>
+</html>
