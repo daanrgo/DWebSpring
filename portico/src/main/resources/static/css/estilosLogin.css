@@ -98,7 +98,7 @@ nav {
 
 /* Sección de inicio de sesión */
 .parte4 {
-    background: url('/landing_page/images/borrosoLogin.jpg') no-repeat center center/cover;
+    background: url("/portico_spring/portico/src/main/resources/static/images/fondo_borroso.jpg");
     padding: 100px 20px;
     display: flex;
     justify-content: center;
@@ -187,6 +187,10 @@ nav {
     font-size: 1rem;
     color: #BBB;
     margin-bottom: 20px;
+}
+
+.login-form .textoError{
+    color: red;
 }
 
 /* Campos de entrada */

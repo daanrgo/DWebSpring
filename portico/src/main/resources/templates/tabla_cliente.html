@@ -73,8 +73,8 @@
                         <td class="editarComida">
                             <div class="acciones"> 
                                 <div class="botonesComida">
-                                    <a th:href="@{/cliente/delete/{id}(id=${cliente.id})}">><img class="basuraIcono" src="/images/caneca.png" alt="basura"></img></a>
-                                    <a th:href="@{/cliente/update/{id}(id=${cliente.id})}"><img class="modificarIcono" src="/images/modificar.png" alt="basura"></img></a>
+                                    <a th:href="@{/cliente/delete/{id}(id=${cliente.id})}">><img class="basuraIcono" src="/images/basura_sin_fondo.png" alt="basura"></img></a>
+                                    <a th:href="@{/cliente/update/{id}(id=${cliente.id})}"><img class="modificarIcono" src="/images/modificar_sin_fondo.png" alt="basura"></img></a>
                                 </div>
                                 
                             </div>
@@ -84,8 +84,11 @@
             </table>
         </div>
     </div>
-<!--
-    <button class="agregarProducto">AÑADIR PRODUCTO</button>-->
+
+    <a href="/cliente/add" class="agregarProducto" >
+        <button class="agregarProducto">AÑADIR CLIENTE</button>
+    </a>
+    
 
 
     <footer class="footer">
