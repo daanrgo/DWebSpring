@@ -1,21 +1,25 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
+/* Fondo de la página */
 body {
-    font-family: 'Roboto Condensed', sans-serif;
-    background-image: url('/images/fondo_borroso.jpg')
+    background-image: url('/images/fondo_borroso.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 /* Header y Navegación */
 header {
-    background: rgba(70, 67, 62, 0.8); /* Color con opacidad */
-    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    background: rgba(70, 67, 62, 0.8);
+    backdrop-filter: blur(10px);
     padding: 30px;
     display: flex;
-    justify-content: center; /* Centra el contenido horizontalmente */
+    justify-content: center;
     align-items: center;
     width: 100%;
     position: fixed;
@@ -28,26 +32,24 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 90%; /* Ajusta el ancho para centrar todo */
+    width: 90%;
     max-width: 1000px;
 }
-
 
 .nav-left, .nav-right {
     display: flex;
     align-items: center;
-    gap:2rem; /* Aumenta el espacio entre los elementos */
-}
-.nav-left{
-    margin-left: 40px;
+    gap: 2rem;
 }
 
+.nav-left {
+    margin-left: 40px;
+}
 
 .logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    
 }
 
 .logo img {
@@ -73,7 +75,6 @@ nav {
     cursor: pointer;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
-    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
 }
 
@@ -82,110 +83,24 @@ nav {
     transform: translateY(-2px);
 }
 
-
-
-/* Contenedor de la tabla para centrarla */
+/* Estilos de la tabla */
 .table-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    padding: 50px;
+    margin-top: 80px; /* Ajuste para evitar que el header la tape */
+    padding: 30px;
 }
 
-/* Limita el ancho de la tabla y la centra */
 .table-container {
-    width: 100%;
-    max-width: 2000px;
+    width: 90%;
+    max-width: 1200px;
     border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Sombra elegante */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     overflow-x: auto;
 }
 
-/* Acciones - Botones de Modificar y Eliminar */
-.acciones {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-
-
-/* Botón de Modificar */
-.acciones .basuraIcono {
-    width: 150px;
-    height: 100px;
-
-}
-
-.acciones .modificarIcono{
-    width: 150px;
-    height: 100px;
-   
-}
-
-
-
-/* Ocultar los iconos de acciones por defecto */
-.acciones .basuraIcono {
-    display: none;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.acciones .modificarIcono{
-    display: none;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Ajustar el tamaño de la imagen dentro de la celda */
-.acciones .fotoHamburguesa {
-    width: 250px;
-    height: auto;
-    border-radius: 8px;
-    border: 2px solid #A0522D;
-}
-
-.botonesComida{
-    margin-left: 250px;
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos */
-    align-items: center; /* Centra los elementos verticalmente */
-    gap: 150px; /* Espaciado entre los botones */
-}
-
-/* Ajuste para los botones dentro de "botonesComida" */
-.botonesComida img {
-    width: 40px; /* Ajusta el tamaño del ícono si es necesario */
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-/* Mostrar los iconos solo cuando el usuario pase el cursor sobre la fila */
-.table tbody tr:hover .acciones img {
-    display: inline-block;
-}
-
-/* Cambiar el fondo de la fila y el color del texto al pasar el cursor */
-.table tbody tr:hover {
-    background: black;
-    color: white;
-}
-
-
-/* Asegurar que el texto dentro de las celdas también se vuelva blanco */
-.table tbody tr:hover td {
-    color: white;
-}
-
-
-/* Estilo de la tabla */
+/* Tabla */
 .table {
     width: 100%;
     border-collapse: collapse;
@@ -195,68 +110,192 @@ nav {
 
 /* Cabecera de la tabla */
 .table thead {
-    background: #A0522D; /* Marrón quemado */
+    background: #A0522D;
+    color: white;
 }
 
 .table thead th {
     padding: 15px;
     font-size: 1.2rem;
-    text-align: left;
-    
+    text-align: center;
 }
 
-.table tbody{
-    padding: 15px;
-    background-color: black;
+/* Filas de la tabla */
+.table tbody tr {
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-
-/* Efecto hover para cada fila de la tabla */
+/* Hover en fila: cambia a negro y el texto a blanco */
 .table tbody tr:hover td {
-    background-color: black;
+    background: #b2a094;
+    color: white;
+    transform: scale(1.02);
 }
 
 
+/* Asegurar que el texto de las filas sea blanco cuando se haga hover */
+.table tbody tr:hover td {
+    color: white;
+}
 
 /* Celdas de la tabla */
 .table tbody td {
-    text-align: center;
     padding: 15px;
     font-size: 1rem;
-    color: #4A3222; /* Café oscuro */
-    background-color: beige;
-
-}
-
-.table tbody td:hover {
-    background-color: black;
-}
-
-.table thead tr th {
+    color: #4A3222;
     text-align: center;
-    background-color: #2a2420;
-    color: aliceblue;
 }
 
+.table tbody tr {
+ background-color: #2a2420;
+ color: antiquewhite;
+}
 
-
-/* Imágenes dentro de la tabla */
+/* Ajuste para imágenes dentro de la tabla */
 .table tbody td img {
-    width: 200px;
+    width: 70px;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
-    border: 2px solid #A0522D;
 }
 
-/* Responsive */
+/* Botones de acciones */
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Ocultar los iconos de acciones por defecto */
+.acciones img {
+    display: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mostrar los iconos solo cuando el usuario pase el cursor sobre la fila */
+.table tbody tr:hover .acciones img {
+    display: inline-block;
+}
+
+/* Botón de añadir producto */
+.agregarProducto {
+    background: #A0522D;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    margin: 30px auto;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.agregarProducto:hover {
+    background: #8B4513;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2a2420;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 40px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .columna_footer {
+    display: flex;
+    flex-direction: column;
+    width: 24%;
+    height: auto;
+}
+
+.columna_footer:hover {
+    background-color: rgba(0, 0, 0, 0.048);
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.columna_footer ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+}
+
+.columna_footer ul li {
+    margin-bottom: 10px;
+}
+
+.columna_footer ul li h3 {
+    font-size: 15px;
+}
+
+.logo_footer {
+    height: 80px;
+    width: 100%;
+}
+
+.sobre_nosotros img {
+    height: 100%;
+}
+
+.social {
+    margin-bottom: 1rem;
+}
+
+.social a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #A0522D;
+}
+
+.list {
+    margin-top: 20px;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.list li {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.list a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.list a:hover {
+    color: #A0522D;
+}
+
+/* Responsividad */
 @media (max-width: 768px) {
     .table-container {
         width: 95%;
     }
 
     .table thead {
-        display: none; /* Oculta el encabezado en pantallas pequeñas */
+        display: none;
     }
 
     .table tbody tr {
@@ -283,183 +322,15 @@ nav {
         color: #A0522D;
         text-transform: uppercase;
     }
-}
 
-
-/* Botón de adicionales */
-.agregarProducto {
-    background: #A0522D; /* Marrón */
-    color: white;
-    border: none;
-    padding: 12px;
-    font-size: 2rem;
-    cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    transform: translateX(1200px);
-}
-
-.agregarProducto:hover {
-    background: #8B4513; /* Marrón oscuro */
-}
-
-/* Footer */
-.footer {
-    display: flex;
-    justify-content: space-around;
-    background-color: #2a2420;
-    color: white;
-    text-align: center;
-    align-items: center;
-}
-
-footer *{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-footer .columna_footer {
-    display: flex;
-    width: 24%;
-    height: 350px;
-    margin: 10px;
-}
-
-.columna_footer:hover{
-    background-color: rgba(0, 0, 0, 0.048);
-    transform: scale(1.05);
-    transition: 0.3s ease-in-out;
-}
-
-.columna_footer ul li:hover {
-    transform: scale(1.1);
-    transition: 0.3s ease-in-out;
-}
-
-.columna_footer ul{
-    width: 100%
-}
-
-.columna_footer ul li h3{
-    font-size: 15px;
-}
-
-.logo_footer{
-    height: 150px;
-    width: 100%;
-}
-
-.sobre_nosotros img{
-    height: 100%;
-}
-
-.social {
-    margin-bottom: 2rem;
-}
-
-.social a {
-    color: white;
-    font-size: 2rem;
-    margin: 0 1rem;
-    transition: color 0.3s ease;
-}
-
-.social a:hover {
-    color: #A0522D;
-}
-
-.list {
-    margin-top: 30px;
-    list-style: none;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.list li {width: 100%;
-    list-style: none;
-    margin-bottom: 20px;
-
-}
-
-.list a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.list a:hover {
-    color: #A0522D;
-}
-
-.copyright {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.8);
-}
-
-/* Menú hamburguesa */
-.barras {
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .barras {
-        display: block;
-    }
-
-    .nav-left .indices, 
-    .nav-right .indices {
-        display: none;
-    }
-
-    .nav-right {
-        justify-content: flex-end;
-    }
-
-    .eslogan h2 {
-        font-size: 2rem;
-        padding: 0 1rem;
-    }
-
-    .btn-eslogan {
+    .footer {
         flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        text-align: center;
     }
 
-    .carousel img {
-        width: 250px;
-        height: 250px;
-    }
-
-    .list {
-        flex-direction: column;
-        gap: 1rem;
+    .columna_footer {
+        width: 100%;
+        margin-bottom: 20px;
     }
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.eslogan, .btn-eslogan {
-    animation: fadeIn 1s ease-out;
-}
-
-.division_vertical{
-    border-left: 2px solid #A0522D;
-    height: 300px;
-}
