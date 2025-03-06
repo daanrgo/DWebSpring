@@ -1,0 +1,67 @@
+body{
+    background-color: #2a2420;
+}
+
+h1 ,h2{
+    color: white;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Contenedor principal */
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #2a2420; /* Fondo oscuro */
+    padding: 20px;
+}
+
+/* Estilo del logo */
+.logo {
+    width: 30%;
+    text-align: center;
+}
+
+.logo img {
+    width: 180px;
+}
+
+/* Contenido del error */
+.error-content {
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+
+.error-image {
+    width: 100%;
+    max-width: 700px;
+    width: 700px;
+    height: auto;
+}
+
+/* Texto encima de la imagen */
+.error-text {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    text-align: center;
+    color:#2a2420 ;
+    font-size: 30px;
+    font-weight: bold;
+    width: 80%;
+}
+
+.error-id {
+    font-size: 25px;
+    color: #2a2420;
+}

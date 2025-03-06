@@ -1,5 +1,7 @@
 package com.example.portico.controlador;
 
+import javax.naming.NameNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +32,14 @@ public class ClienteController {
     @GetMapping("/find/{id}")
     public String getMethodName(Model model, @PathVariable("id") int id) {
        
+        
+        Cliente cliente = clienteService.SearchById(id);
+        if(cliente != null){
+            model.addAttribute("cliente", clienteService.SearchById(id));
+        }else{
+            throw new NotFoundException(id);
+        }
+
         model.addAttribute("cliente", clienteService.SearchById(id));
         
         return "perfil_cliente";
