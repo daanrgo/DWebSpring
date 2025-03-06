@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="logo">
-                    <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="El Pórtico Gourmet">
+                    <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
                 </div>
                 <div class="nav-right">
                     <ul class="indices">
@@ -36,35 +36,37 @@
         </header>
         
     
-        <section class="parte4">
-            <div class="parte4-container">
-                <!-- Sección de inicio con redes sociales -->
-                <div class="social-login">
-                    <button class="google-btn"><i class="bx bxl-google"></i> Continuar con Google</button>
-                    <button class="phone-btn"><i class="bx bxs-phone"></i> Continuar con tu celular</button>
-                    <button class="facebook-btn"><i class="bx bxl-facebook"></i> Continuar con Facebook</button>
-                </div>
-        
-                <!-- Sección de inicio de sesión -->
-                <div class="login-form">
-                    <h2>Iniciar sesión</h2>
-                    <p>Ingresa los siguientes datos</p>
-                    
-                    <form th:action="@{/login}" method="post" th:object="${loginForm}">
-                        <input type="text" th:field="*{username}" placeholder="Correo electrónico/Usuario" required>
-                        <input type="password"th:field="*{password}" placeholder="Contraseña" required>
-                        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-                        <div class="login-buttons">
-                            <button type="button" class="register-btn">SOY NUEVO</button>
-                            <button type="submit" class="login-btn">INICIAR SESIÓN</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-        
+        <body>
 
+            <section class="parte4">
+                <div class="parte4-container">
+                    <!-- Sección de inicio con redes sociales -->
+                    <div class="social-login">
+                        <button class="google-btn"><i class="bx bxl-google"></i> Continuar con Google</button>
+                        <button class="phone-btn"><i class="bx bxs-phone"></i> Continuar con tu celular</button>
+                        <button class="facebook-btn"><i class="bx bxl-facebook"></i> Continuar con Facebook</button>
+                    </div>
+            
+                    <!-- Sección de inicio de sesión -->
+                    <div class="login-form">
+                        <h2>Iniciar sesión</h2>
+                        <p>Ingresa los siguientes datos</p>
+                        
+                        <form th:action="@{/login}" method="post" th:object="${loginForm}">
+                            <input type="text" th:field="*{username}" placeholder="Correo electrónico/Usuario" required>
+                            <input type="password"th:field="*{password}" placeholder="Contraseña" required>
+                            <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                            <div class="login-buttons">
+                                <button type="button" class="register-btn">SOY NUEVO</button>
+                                <button type="submit" class="login-btn">INICIAR SESIÓN</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
 
+        </body>
+        
     
     <footer class="footer">
 
@@ -72,7 +74,7 @@
             <ul class="list">
                 <li>
                     <div class="logo_footer">
-                        <img src="/portico_spring/portico/src/main/resources/static/images/NuevoLogo.png" alt="">
+                        <img src="/images/NuevoLogo.png" alt="">
                     </div>
                 </li>
                 <li><h3>Telefono: 512-345-678</h3></li>
