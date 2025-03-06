@@ -1,6 +1,15 @@
 package com.example.portico.entidad;
 
+import java.util.List;
+
 public class Comida {
+    private Integer id;
+    private String name;
+    private Integer price;
+    private String description;
+    private String imagen; // Se guarda el url de la imagen
+    private List<Adicional> adicionales;
+
     public Integer getId() {
         return id;
     }
@@ -43,9 +52,11 @@ public class Comida {
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
-    private Integer id;
-    private String name;
-    private Integer price;
-    private String description;
-    private String imagen; // Se guarda el url de la imagen
+
+    public List<Adicional> getAdicionales() {
+        return adicionales;
+    }
+    public void setAdicionales(List<Adicional> adicionales) {
+        this.adicionales = adicionales;
+    }
 }
