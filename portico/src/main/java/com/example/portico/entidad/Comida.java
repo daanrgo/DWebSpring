@@ -1,5 +1,7 @@
 package com.example.portico.entidad;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Comida {
@@ -8,7 +10,7 @@ public class Comida {
     private Integer price;
     private String description;
     private String imagen; // Se guarda el url de la imagen
-    private List<Adicional> adicionales;
+    private HashMap<String, Boolean> adicionales;
 
     public Integer getId() {
         return id;
@@ -48,15 +50,16 @@ public class Comida {
         this.price = price;
         this.description = description;
         this.imagen = imagen;
+        this.adicionales = new HashMap<String, Boolean>();
     }
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 
-    public List<Adicional> getAdicionales() {
+    public HashMap<String, Boolean> getAdicionales() {
         return adicionales;
     }
-    public void setAdicionales(List<Adicional> adicionales) {
+    public void setAdicionales(HashMap<String, Boolean> adicionales) {
         this.adicionales = adicionales;
     }
 }
