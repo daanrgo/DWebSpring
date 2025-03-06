@@ -47,21 +47,31 @@ public class ComidaController {
         return "crearComida";
     }
 
+    @GetMapping("/actualizar/{id}")
+    public String mostrarFormularioModificar(Model model, @PathVariable("id") int id) {
+        Comida comida = comidaService.SearchById(id);
+
+        model.addAttribute("comida", comida);
+        return "modificarComida";
+    }
+    
     @PostMapping("/create")
     public String crearComida(Model model, Comida comida){
         comidaService.add(comida);
         return "redirect:/comida/info";
     }
 
-    @PostMapping("/delete/{id}")
-    public String eliminarComida(@PathVariable("id") int id){
+    @GetMapping("/delete/{id}")
+    public String eliminarComida(Model model, @PathVariable("id") int id){
         comidaService.deleteById(id);
         return "redirect:/comida/info";
     }
 
-   @GetMapping("/adicionales")
-   public String agregarAdicionales() {
-       return ""
+   @PostMapping("/update")
+   public String postMethodName(Model model, Comida comida) {
+        System.out.println(comida.toString());
+       comidaService.update(comida);
+       return "redirect:/comida/info";
    }
     
 }

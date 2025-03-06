@@ -1,12 +1,16 @@
 package com.example.portico.controlador;
 
+import javax.naming.NameNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.portico.entidad.Cliente;
 import com.example.portico.service.ClienteService;
@@ -28,6 +32,14 @@ public class ClienteController {
     @GetMapping("/find/{id}")
     public String getMethodName(Model model, @PathVariable("id") int id) {
        
+        
+        Cliente cliente = clienteService.SearchById(id);
+        if(cliente != null){
+            model.addAttribute("cliente", clienteService.SearchById(id));
+        }else{
+            throw new NotFoundException(id);
+        }
+
         model.addAttribute("cliente", clienteService.SearchById(id));
         
         return "perfil_cliente";
@@ -47,9 +59,52 @@ public class ClienteController {
     }
 
 
-    @PostMapping("/delete/{id}")
-    public String eliminarComida(@PathVariable("id") int id){
-        clienteService.deleteById(id);
+    @GetMapping("/delete/{id}")
+    public String eliminarCliente(@PathVariable("id") int identification){
+        clienteService.deleteById(identification);
         return "redirect:/cliente/all";
     }
+
+
+    @GetMapping("/update/{id}")
+    public String mostrarFormularioUpdate(@PathVariable("id") int identification, Model model){
+        model.addAttribute("cliente", clienteService.SearchById(identification));
+        return "modificar_cliente";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updateCliente(@PathVariable("id") int identification, @ModelAttribute("cliente") Cliente cliente){
+        
+        clienteService.update(cliente);
+        return "redirect:/cliente/all";
+    }
+
+
+    @GetMapping("/login")
+    public String loginPage() {
+
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(@RequestParam String username, @RequestParam String password, Model model ) {
+
+        System.out.println("usuario"+ username);
+        System.out.println("passwd"+ password);
+        
+        Boolean autenticado = clienteService.login(username, password);
+
+        if (autenticado) {
+
+            return "tarjetas_comidas";
+        }
+
+        model.addAttribute("error", "usuario o contraseña incorrectos");
+        return "login" ;
+
+
+
+    }
+
+
 }

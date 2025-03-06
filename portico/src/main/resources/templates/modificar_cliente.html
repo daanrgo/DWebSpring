@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Cliente</title>
+
 
     <link rel="stylesheet" type="text/css " th:href="@{/css/estiloCrearCliente.css}">
 
@@ -23,7 +24,7 @@
 
     <section class="detalle-container">
         <!-- Sección izquierda: información de la hamburguesa -->
-        <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/create}" method="post">
+        <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/update/{id}(id=${cliente.id})}" method="post">
             <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
             
             <h3>Usuario</h3>
@@ -55,7 +56,7 @@
 
             <hr>
 
-            <button class="btn-adicionales">CREAR USUARIO</button>
+            <button class="btn-adicionales">ACTUALIZAR USUARIO</button>
         </form>
 
         <!-- Sección derecha: Imagen de la hamburguesa -->

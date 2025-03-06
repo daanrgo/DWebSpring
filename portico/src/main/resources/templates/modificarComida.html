@@ -26,6 +26,8 @@
             <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
 
             <form th:object="${comida}" th:action="@{/comida/update}" method="post">
+                <h3>Id Hamburguesa</h3>
+                <input readonly th:field="*{id}" type="number" class="input-campo" placeholder="Ej: 123">
                 <h3>Nombre de la Hamburguesa</h3>
                 <input th:field="*{name}" type="text" class="input-campo" placeholder="Ej: El Portico">
 
@@ -36,7 +38,7 @@
                 <input th:field="*{price}" type="number" class="input-campo" placeholder="Ej: $29.900">
 
                 <h3>Enlace Imagen</h3>
-                <input type="text" class="input-campo" placeholder="Ej: https://www.google.com">
+                <input th:field="*{imagen}" type="text" class="input-campo" placeholder="Ej: https://www.google.com">
 
                 <hr>
 

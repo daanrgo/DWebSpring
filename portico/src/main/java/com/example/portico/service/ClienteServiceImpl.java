@@ -41,4 +41,20 @@ public class ClienteServiceImpl implements ClienteService {
     public void add(Cliente cliente){
         repo.add(cliente);
     }
+
+    @Override
+    public Boolean login(String username, String password) {
+
+        Boolean autenticado = false;
+        Cliente cliente = repo.findByUsername(username);
+
+        if(cliente!=null) {
+
+            if(cliente.getPassword().equals(password)) {
+                
+                autenticado = true;
+            }
+        }
+        return autenticado;
+    }
 }
