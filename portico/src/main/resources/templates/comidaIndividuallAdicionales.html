@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle de Hamburguesa con Adicionales</title>
     <link rel="stylesheet" href="/css/estiloComidaIndividual.css">
-
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,63 +20,17 @@
         <section class="adicionales-container">
             <h2>Adicionales</h2>
             <form th:object="${adicionalesDTO}" th:action="@{/comida/add_adicionales}" method="post">
+                <!--input type="hidden" th:field="*{comidaId}"-->
                 <div class="categoria">
-                    <h3>Acompañantes</h3>
-                    <div class="item">
-                        <input type="hidden" th:field="*{comidaId}">
-                        <input type="checkbox" id="papas" th:field="*{adicionalesMap['papas']}" th:value="true">
-                        <label for="papas">Papas a la Francesa</label>
-                        <span class="precio">$ 4.000</span>
-                    </div>
-                    <div class="item">
-                        <input type="checkbox" id="chicharron" th:field="*{adicionalesMap['chicharron']}" th:value="true">
-                        <label for="chicharron">Chicharrón</label>
-                        <span class="precio">$ 6.500</span>
-                    </div>
-                    <div class="item">
-                        <input type="checkbox" id="anillos" th:field="*{adicionalesMap['anillos']}" th:value="true">
-                        <label for="anillos">Anillos de Cebolla</label>
-                        <span class="precio">$ 5.000</span>
-                    </div>
-                </div>
-            
-                <div class="categoria">
-                    <h3>Salsas</h3>
-                    <div class="item">
-                        <input type="checkbox" id="guacamole" th:field="*{adicionalesMap['guacamole']}" th:value="true">
-                        <label for="guacamole">Guacamole</label>
-                        <span class="precio">$ 4.000</span>
-                    </div>
-                    <div class="item">
-                        <input type="checkbox" id="salsa-bbq" th:field="*{adicionalesMap['salsaBbq']}" th:value="true">
-                        <label for="salsa-bbq">Salsa BBQ</label>
-                        <span class="precio">$ 4.000</span>
-                    </div>
-                    <div class="item">
-                        <input type="checkbox" id="salsa-portico" th:field="*{adicionalesMap['salsaPortico']}" th:value="true">
-                        <label for="salsa-portico">Salsa Pórtico</label>
-                        <span class="precio">$ 4.000</span>
-                    </div>
-                </div>
-            
-                <div class="categoria">
-                    <h3>Bebidas</h3>
-                    <div class="item">
-                        <input type="checkbox" id="limonada" th:field="*{adicionalesMap['limonada']}" th:value="true">
-                        <label for="limonada">Limonada</label>
-                        <span class="precio">$ 6.500</span>
-                    </div>
-                    <div class="item">
-                        <input type="checkbox" id="gaseosa" th:field="*{adicionalesMap['gaseosa']}" th:value="true">
-                        <label for="gaseosa">Gaseosa (Coca Cola)</label>
-                        <span class="precio">$ 4.000</span>
+                    <div th:each="adicional : ${adicionalesDTO}" class="item">
+                        
+                        <label th:text="${adicional.name}"></label>
+                        <span th:text="${adicional.price}" class="precio"></span>
                     </div>
                 </div>
                 <button type="submit" class="btn-carrito">AGREGAR AL CARRITO</button>
             </form>
-            
         </section>
-
         <div class="imagen-hamburguesa">
             <img src="/images/hamburgesa.png" alt="Hamburguesa El Portico">
         </div>

@@ -16,8 +16,6 @@ import com.example.portico.entidad.Comida;
 import com.example.portico.service.ComidaService;
 
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @RequestMapping("/comida")
 @Controller
@@ -42,11 +40,15 @@ public class ComidaController {
 
     @GetMapping("/{id}/adicionales")
     public String mostrarFormularioAdicionales(Model model, @PathVariable("id") int id) {
-        AdicionalesDTO adicionalesDTO = new AdicionalesDTO();
-        adicionalesDTO.setAdicionalesMap(comidaService.SearchById(id).getAdicionales());
-        adicionalesDTO.setComidaId(id);
+        Comida comida = comidaService.SearchById(id);
 
-    model.addAttribute("adicionalesDTO", adicionalesDTO);
+        //AdicionalesDTO adicionalesDTO = new AdicionalesDTO(comida.getAdicionalesSeleccionados(), comida.getAdicionales(), id);
+
+        //System.out.println("Dto");
+        //System.out.println(adicionalesDTO.toString());
+
+
+        model.addAttribute("adicionalesDTO", comida.getAdicionales());
 
         return "comidaIndividuallAdicionales";
     }
@@ -57,7 +59,7 @@ public class ComidaController {
             ) {
         System.out.println(adicionalesDTO.getComidaId());
         Comida comida = comidaService.SearchById(adicionalesDTO.getComidaId());
-        comida.setAdicionales(adicionalesDTO.getAdicionalesMap());
+        comida.setAdicionalesSeleccionados(adicionalesDTO.getAdicionalesSeleccionados());
         comidaService.update(comida);
         return "redirect:/comida/hamburguesas/" + comida.getId();
     }
