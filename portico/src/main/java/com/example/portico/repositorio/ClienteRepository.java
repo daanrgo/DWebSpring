@@ -52,4 +52,17 @@ public class ClienteRepository {
 
         
     }
+
+    public Cliente findByUsername(String username) {
+
+        for(Cliente cliente: data.values()) {
+
+            if(cliente.getEmail().equals(username)) {
+
+                return cliente;
+            }
+        }
+
+        return null;
+    }
 }
