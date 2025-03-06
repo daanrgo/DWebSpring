@@ -90,11 +90,12 @@ nav {
     align-items: center;
     margin-top: 80px; /* Ajuste para evitar que el header la tape */
     padding: 30px;
+    
 }
 
 .table-container {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 2500px;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     overflow-x: auto;
@@ -181,7 +182,7 @@ nav {
 }
 
 /* Botón de añadir producto */
-.agregarProducto {
+.agregarProducto button {
     background: #A0522D;
     color: white;
     border: none;

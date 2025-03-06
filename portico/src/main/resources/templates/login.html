@@ -56,7 +56,6 @@
                         <form th:action="@{/login}" method="post" th:object="${loginForm}">
                             <input type="text" th:field="*{username}" placeholder="Correo electrónico/Usuario" required>
                             <input type="password"th:field="*{password}" placeholder="Contraseña" required>
-                            <p class="textoError">El correo o la contraseña esta incorrectos, rectificar e intentar de nuevo</p>
                             <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                             <div class="login-buttons">
                                 <button type="button" class="register-btn">SOY NUEVO</button>

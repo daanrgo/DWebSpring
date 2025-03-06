@@ -14,6 +14,6 @@ public class ErrorControlador {
         model.addAttribute("id",ex.getId());
         
 
-        return "pagina_error2";
+        return "pagina_error1";
     }
 }
