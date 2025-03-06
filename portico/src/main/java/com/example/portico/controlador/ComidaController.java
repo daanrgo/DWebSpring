@@ -11,7 +11,7 @@ import com.example.portico.entidad.Comida;
 import com.example.portico.service.ComidaService;
 
 import org.springframework.ui.Model;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RequestMapping("/comida")
@@ -37,8 +37,7 @@ public class ComidaController {
 
     @GetMapping("/hamburguesas/{id}")
     public String getMethodName(Model model, @PathVariable("id") int id) {
-        model.addAttribute("comidas", comidaService.SearchById(id));
-        return "tarjetas_comidas";
+        return new String();
     }
 
     @GetMapping("/add")
@@ -56,7 +55,6 @@ public class ComidaController {
         return "modificarComida";
     }
     
-
     @PostMapping("/create")
     public String crearComida(Model model, Comida comida){
         comidaService.add(comida);
@@ -75,5 +73,5 @@ public class ComidaController {
        comidaService.update(comida);
        return "redirect:/comida/info";
    }
-
+    
 }
