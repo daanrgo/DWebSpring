@@ -9,11 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.portico.entidad.Adicional;
-import com.example.portico.entidad.Comida;
 import com.example.portico.service.AdicionalService;
-import com.example.portico.service.ComidaService;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RequestMapping("/adicionales")
@@ -25,7 +21,6 @@ public class AdicionalesController {
 
     @GetMapping("/info")
     public String mostrarInfoAdicionales(Model model) {
-
         model.addAttribute("adicionales", adicionalService.SearchAll());
         return "tabla_adicionales";
     }
