@@ -219,9 +219,10 @@ nav {
 }
 
 /* Botones de acción */
-.login-buttons {
+.login-buttons a {
     display: flex;
-    gap: 15px;
+    gap: 20px;
+    padding: 5px;
 }
 
 .register-btn, .login-btn {
