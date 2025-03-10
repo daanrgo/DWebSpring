@@ -19,7 +19,7 @@
     <section class="detalle-container">
         <section class="adicionales-container">
             <h2>Adicionales</h2>
-            <form th:object="${adicionalesDTO}" th:action="@{/comida/add_adicionales}" method="post">
+            <form th:object="${adicionalesDTO}" th:action="@{/comidas/add_adicionales}" method="post">
                 <!--input type="hidden" th:field="*{comidaId}"-->
                 <div class="categoria">
                     <div th:each="adicional : ${adicionalesDTO}" class="item">
