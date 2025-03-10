@@ -75,7 +75,7 @@
 
                 <div class="grid-hamburguesas"> 
                     
-                    <a class="producto" th:href="@{/comida/hamburguesas/{id}(id=${comida.id})}">
+                    <a class="producto" th:href="@{/comidas/{id}(id=${comida.id})}">
                         <div class="card">
                             <img th:src="@{{img}(img=${comida.imagen})}" th:alt="${comida.name}">
                             <h3 th:text="${comida.name}"></h3>

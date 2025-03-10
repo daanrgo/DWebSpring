@@ -31,7 +31,22 @@
             <hr>
             <p class="info-extra"><strong>Precio:</strong> $<span th:text="${comida.price}"></span></p>
             <hr>
-            <a th:href="@{/comidas/{id}/adicionales(id=${comida.id})}"><button class="btn-adicionales">VER ADICIONALES</button></a>
+            
+            <section class="adicionales-container">
+                <h2>Adicionales</h2>
+                <form th:object="${adicionalesDTO}" th:action="@{/comidas/add_adicionales}" method="post">
+                    <!--input type="hidden" th:field="*{comidaId}"-->
+                    <div class="categoria">
+                        <div th:each="adicional : ${adicionalesDTO}" class="item">
+                            
+                            <label th:text="${adicional.name}"></label>
+                            <span th:text="${adicional.price}" class="precio"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-carrito">AGREGAR AL CARRITO</button>
+                </form>
+            </section>
+
         </div>
 
         <div class="imagen-hamburguesa">

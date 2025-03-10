@@ -13,8 +13,10 @@
 
 .imagen-separadora {
     width: 100%;
+    width: 500px;
+    height: auto;
     text-align: center;
-    margin-bottom: -70px; /* Ajusta la imagen más cerca de la hamburguesa */
+    margin-bottom: -150px; /* Ajusta la imagen más cerca de la hamburguesa */
     margin-left: -25px;
     position: relative;
     z-index: 2;
@@ -36,7 +38,7 @@
     display: flex;
     width: 100%;
     height: 100vh;
-    background: #2A2420; /* Café oscuro */
+    background: black; /* Café oscuro */
 }
 
 /* Sección izquierda - Información de la hamburguesa */
