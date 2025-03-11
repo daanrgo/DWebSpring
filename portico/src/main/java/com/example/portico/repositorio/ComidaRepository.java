@@ -43,13 +43,13 @@ public class ComidaRepository {
                 "/images/burger4.png");
         
 
-        comida.getAdicionales().add(quesoExtra);
-        comida.getAdicionales().add(anillosExtra);
+        comida.addAdicional(quesoExtra);
+        comida.addAdicional(anillosExtra);
         data.put(1, comida);
 
         comida = new Comida(2, "Hamburguesa \"El Noble\"", 30000, "\"Una forma elegante de comer sabroso\"",
         "/images/hamburgesa.png");
-        comida.getAdicionales().add(quesoExtra);
+        comida.addAdicional(quesoExtra);
         data.put(2, comida);
 
         /* 

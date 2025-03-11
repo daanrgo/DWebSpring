@@ -66,12 +66,8 @@ public class Comida {
     public ArrayList<Adicional> getAdicionales() {
         return adicionales;
     }
-    /*public void setAdicionales(ArrayList<Adicional> adicionales) {
-        this.adicionales = adicionales;
-        this.adicionalesSeleccionados = new HashMap<Integer, Boolean>();
-
-        for(Adicional adicional : adicionales.values()){
-            adicionalesSeleccionados.put(adicional.getId(), false);
-        }
-    }   */ 
+    public void addAdicional(Adicional adicional){
+        this.adicionales.add(adicional);
+        this.adicionalesSeleccionados.put(adicional.getId(), false);
+    } 
 }
