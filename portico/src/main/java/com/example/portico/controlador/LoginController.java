@@ -30,7 +30,7 @@ public class LoginController {
         boolean autenticado = clienteService.login(loginForm.getUsername(), loginForm.getPassword());
 
         if (autenticado) {
-            return "redirect:/comida/hamburguesas";
+            return "redirect:/comidas/tarjetas";
         }
 
         model.addAttribute("error", "Usuario o contraseña incorrectos");

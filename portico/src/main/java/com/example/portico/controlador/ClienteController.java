@@ -55,7 +55,7 @@ public class ClienteController {
     @PostMapping("/create")
     public String crearCliente(Model model, Cliente cliente){
         clienteService.add(cliente);
-        return "redirect:/cliente";
+        return "redirect:/clientes";
     }
 
 

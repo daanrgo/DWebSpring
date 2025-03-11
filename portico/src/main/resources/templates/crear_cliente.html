@@ -23,7 +23,7 @@
 
     <section class="detalle-container">
         <!-- Sección izquierda: información de la hamburguesa -->
-        <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/cliente/create}" method="post">
+        <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/clientes/create}" method="post">
             <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
             
             <h3>Usuario</h3>
@@ -50,8 +50,8 @@
             <h3 hidden="true" >Información Adicional</h3>
             <input hidden="true" type="text" class="input-campo" placeholder="Barrio, conjunto, interior, apartamento, etc..">
 
-            <h3>Foto de Perfil</h3>
-            <input type="file" class="input-file">
+            <h3 hidden="true">Foto de Perfil</h3>
+            <input hidden="true" type="file" class="input-file">
 
             <hr>
 

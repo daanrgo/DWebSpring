@@ -84,7 +84,7 @@ public class ComidaController {
     @PostMapping("/create")
     public String crearComida(Model model, Comida comida) {
         comidaService.add(comida);
-        return "redirect:/comida";
+        return "redirect:/comidas";
     }
 
     @GetMapping("/delete/{id}")
