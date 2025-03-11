@@ -6,6 +6,10 @@
     font-family: 'Oswald', sans-serif;
 }
 
+.titulo_crear {
+    font-size: 24px;
+    color: wheat;
+}
 
 .imagen-separadora {
     width: 100%;
@@ -92,6 +96,10 @@ hr {
     margin: 20px 0;
 }
 
+.detalle-container h3 {
+    font-size: 1rem;
+}
+
 /* Información extra */
 .info-extra {
     font-size: 1.1rem;
@@ -103,12 +111,12 @@ hr {
     background: #A0522D; /* Marrón */
     color: white;
     border: none;
-    padding: 12px;
+    padding: 5px;
     font-size: 1rem;
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 10px;
     transition: background-c 0.3s ease;
 }
 
@@ -142,8 +150,8 @@ hr {
     background: linear-gradient(to right, #FDFCFB, #E2D1C3); /* Degradado suave */
     box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    height: 50px;
-    width: 800px;
+    height: 25px;
+    width: 500px;
 
 }
 

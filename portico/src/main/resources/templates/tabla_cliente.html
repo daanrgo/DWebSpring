@@ -61,7 +61,9 @@
                 </thead>
             
                 <tbody>
-                    <tr th:each="cliente: ${clientes}">
+                    <tr th:each="cliente : ${clientes}" 
+                    th:onclick="|location.href='/clientes/${cliente.id}'|" 
+                    style="cursor: pointer;">
                         <td th:text="${cliente.id}" data-label="id"></td>
                         <td th:text="${cliente.username}" data-label="username"></td>
                         <td th:text="${cliente.password}" data-label="password"></td>
@@ -73,8 +75,8 @@
                         <td class="editarComida">
                             <div class="acciones"> 
                                 <div class="botonesComida">
-                                    <a th:href="@{/cliente/delete/{id}(id=${cliente.id})}">><img class="basuraIcono" src="/images/basura_sin_fondo.png" alt="basura"></img></a>
-                                    <a th:href="@{/cliente/update/{id}(id=${cliente.id})}"><img class="modificarIcono" src="/images/modificar_sin_fondo.png" alt="basura"></img></a>
+                                    <a th:href="@{/clientes/delete/{id}(id=${cliente.id})}">><img class="basuraIcono" src="/images/basura_sin_fondo.png" alt="basura"></img></a>
+                                    <a th:href="@{/clientes/actualizar/{id}(id=${cliente.id})}"><img class="modificarIcono" src="/images/modificar_sin_fondo.png" alt="basura"></img></a>
                                 </div>
                                 
                             </div>
@@ -85,10 +87,9 @@
         </div>
     </div>
 
-    <a href="/cliente/add" class="agregarProducto" >
+    <a href="/clientes/crear" class="agregarProducto" >
         <button class="agregarProducto">AÑADIR CLIENTE</button>
     </a>
-    
 
 
     <footer class="footer">

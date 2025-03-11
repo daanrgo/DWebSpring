@@ -17,21 +17,21 @@ import com.example.portico.service.ComidaService;
 
 import org.springframework.ui.Model;
 
-@RequestMapping("/comida")
+@RequestMapping("/comidas")
 @Controller
 public class ComidaController {
 
     @Autowired
     ComidaService comidaService;
 
-    @GetMapping("/info")
+    @GetMapping("")
     public String mostrarInfoComida(Model model) {
 
         model.addAttribute("comidas", comidaService.SearchAll());
         return "tabla_comida";
     }
 
-    @GetMapping("/hamburguesas")
+    @GetMapping("/tarjetas")
     public String mostraHamburguesas(Model model) {
 
         model.addAttribute("comidas", comidaService.SearchAll());
@@ -42,35 +42,31 @@ public class ComidaController {
     public String mostrarFormularioAdicionales(Model model, @PathVariable("id") int id) {
         Comida comida = comidaService.SearchById(id);
 
-        //AdicionalesDTO adicionalesDTO = new AdicionalesDTO(comida.getAdicionalesSeleccionados(), comida.getAdicionales(), id);
-
-        //System.out.println("Dto");
-        //System.out.println(adicionalesDTO.toString());
-
-
         model.addAttribute("adicionalesDTO", comida.getAdicionales());
 
-        return "comidaIndividuallAdicionales";
+        return "comida_individual_adicionales";
     }
 
     @PostMapping("/add_adicionales")
     public String agregarAdicionales(
-            Model model, AdicionalesDTO adicionalesDTO
+            Model model, Comida comidaRecibida
             ) {
-        System.out.println(adicionalesDTO.getComidaId());
-        Comida comida = comidaService.SearchById(adicionalesDTO.getComidaId());
-        comida.setAdicionalesSeleccionados(adicionalesDTO.getAdicionalesSeleccionados());
+        Comida comida = comidaService.SearchById(comidaRecibida.getId());
+        comida.setAdicionalesSeleccionados(comidaRecibida.getAdicionalesSeleccionados());
         comidaService.update(comida);
-        return "redirect:/comida/hamburguesas/" + comida.getId();
+        System.out.println("AdicionalesSlec");
+        System.out.println(comidaRecibida.getAdicionalesSeleccionados().get(1));
+        return "redirect:/comidas";
     }
 
-    @GetMapping("/hamburguesas/{id}")
+    @GetMapping("/{id}")
     public String verComida(Model model, @PathVariable("id") int id) {
+        
         model.addAttribute("comida", comidaService.SearchById(id));
-        return "comidaIndividual";
+        return "comida_individual";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/crear")
     public String mostrarFormularioCrear(Model model) {
         Comida comida = new Comida(0, "", 0, "", "");
         model.addAttribute("comida", comida);
@@ -82,26 +78,28 @@ public class ComidaController {
         Comida comida = comidaService.SearchById(id);
 
         model.addAttribute("comida", comida);
-        return "modificarComida";
+        return "modificar_comida";
     }
 
     @PostMapping("/create")
     public String crearComida(Model model, Comida comida) {
         comidaService.add(comida);
-        return "redirect:/comida/info";
+        return "redirect:/comidas";
     }
 
     @GetMapping("/delete/{id}")
     public String eliminarComida(Model model, @PathVariable("id") int id) {
         comidaService.deleteById(id);
-        return "redirect:/comida/info";
+        return "redirect:/comidas";
     }
 
     @PostMapping("/update")
     public String postMethodName(Model model, Comida comida) {
         System.out.println(comida.toString());
         comidaService.update(comida);
-        return "redirect:/comida/info";
+        return "redirect:/comidas";
     }
 
+
+    
 }

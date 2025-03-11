@@ -15,21 +15,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.example.portico.entidad.Cliente;
 import com.example.portico.service.ClienteService;
 
-@RequestMapping("/cliente")
+@RequestMapping("/clientes")
 @Controller
 public class ClienteController {
     
     @Autowired
     ClienteService clienteService;
 
-    @GetMapping("/all")
+    @GetMapping("")
     public String mostrarClientes(Model model) {
 
         model.addAttribute("clientes", clienteService.SearchAll());
         return "tabla_cliente";
     }
 
-    @GetMapping("/find/{id}")
+    @GetMapping("/{id}")
     public String getMethodName(Model model, @PathVariable("id") int id) {
        
         
@@ -45,7 +45,7 @@ public class ClienteController {
         return "perfil_cliente";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/crear")
     public String mostrarFormularioCrear(Model model) {
         Cliente cliente = new Cliente(0,null,null,null,null,null,0,null);
         model.addAttribute("cliente", cliente);
@@ -55,18 +55,18 @@ public class ClienteController {
     @PostMapping("/create")
     public String crearCliente(Model model, Cliente cliente){
         clienteService.add(cliente);
-        return "redirect:/cliente/all";
+        return "redirect:/clientes";
     }
 
 
     @GetMapping("/delete/{id}")
     public String eliminarCliente(@PathVariable("id") int identification){
         clienteService.deleteById(identification);
-        return "redirect:/cliente/all";
+        return "redirect:/clientes";
     }
 
 
-    @GetMapping("/update/{id}")
+    @GetMapping("/actualizar/{id}")
     public String mostrarFormularioUpdate(@PathVariable("id") int identification, Model model){
         model.addAttribute("cliente", clienteService.SearchById(identification));
         return "modificar_cliente";
@@ -76,7 +76,7 @@ public class ClienteController {
     public String updateCliente(@PathVariable("id") int identification, @ModelAttribute("cliente") Cliente cliente){
         
         clienteService.update(cliente);
-        return "redirect:/cliente/all";
+        return "redirect:/clientes"; 
     }
 
 
@@ -101,9 +101,6 @@ public class ClienteController {
 
         model.addAttribute("error", "usuario o contraseña incorrectos");
         return "login" ;
-
-
-
     }
 
 

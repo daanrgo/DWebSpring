@@ -17,9 +17,6 @@
 
     <section class="detalle-container">
         <div class="info-hamburguesa">
-            <a href="/" class="volver">
-                <img src="/images/flechaAtras.png" alt="Volver">
-            </a>
             
             <h3 th:text="'Comida'">Comida</h3>
             <h1 th:text="${comida.name}">Nombre Comida</h1>
@@ -31,7 +28,24 @@
             <hr>
             <p class="info-extra"><strong>Precio:</strong> $<span th:text="${comida.price}"></span></p>
             <hr>
-            <a th:href="@{/comida/{id}/adicionales(id=${comida.id})}"><button class="btn-adicionales">VER ADICIONALES</button></a>
+            
+            <section class="adicionales-container">
+                <h2>Adicionales</h2>
+                <form th:object="${comida}" th:action="@{/comidas/add_adicionales}" method="post">
+                    <!-- Inputs hidden para enviar los datos base de la comida -->
+                    <input type="hidden" th:field="*{id}" />
+                    <div class="categoria">
+                        <div th:each="adicional : ${comida.adicionales}" class="item">
+                            <input type="checkbox" th:field="*{adicionalesSeleccionados[__${adicional.id}__]}" value="true">
+
+                            <label th:text="${adicional.name}"></label>
+                            <span th:text="${adicional.price}" class="precio"></span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-carrito">AGREGAR AL CARRITO</button>
+                </form>
+            </section>
+
         </div>
 
         <div class="imagen-hamburguesa">
