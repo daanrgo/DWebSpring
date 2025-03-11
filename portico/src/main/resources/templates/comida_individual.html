@@ -31,11 +31,13 @@
             
             <section class="adicionales-container">
                 <h2>Adicionales</h2>
-                <form th:object="${adicionalesDTO}" th:action="@{/comidas/add_adicionales}" method="post">
-                    <!--input type="hidden" th:field="*{comidaId}"-->
+                <form th:object="${comida}" th:action="@{/comidas/add_adicionales}" method="post">
+                    <!-- Inputs hidden para enviar los datos base de la comida -->
+                    <input type="hidden" th:field="*{id}" />
                     <div class="categoria">
-                        <div th:each="adicional : ${adicionalesDTO}" class="item">
-                            
+                        <div th:each="adicional : ${comida.adicionales}" class="item">
+                            <input type="checkbox" th:field="*{adicionalesSeleccionados[__${adicional.id}__]}" value="true">
+
                             <label th:text="${adicional.name}"></label>
                             <span th:text="${adicional.price}" class="precio"></span>
                         </div>
