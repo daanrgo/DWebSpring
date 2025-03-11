@@ -14,14 +14,14 @@ body{
 .imagen-separadora {
     width: 100%;
     text-align: center;
-    margin-bottom: -70px; /* Ajusta la imagen más cerca de la hamburguesa */
+    margin-bottom: -180px; /* Ajusta la imagen más cerca de la hamburguesa */
     margin-left: -25px;
     position: relative;
     z-index: 2;
 }
 
 .imagen-separadora img {
-    width: 70px; /* Ajusta el tamaño según sea necesario */
+    width: 120px; /* Ajusta el tamaño según sea necesario */
     height: auto;
     display: inline-block;
 }
@@ -43,6 +43,7 @@ body{
 .info-hamburguesa {
     width: 600px;
     padding: 40px;
+    padding-left: 120px; /* Aumenta el espacio a la izquierda del texto */
     background: black;
     color: white;
     display: flex;
@@ -127,7 +128,9 @@ hr {
     background: black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end; /* Esto mueve la imagen hacia la derecha */
+    padding-right: 50px; /* Añade espacio en el lado derecho */
+    
 }
 
 /* Estilizar las casillas del formulario */
@@ -175,13 +178,14 @@ hr {
 
 /* Ajustar la imagen de la hamburguesa */
 .imagen-hamburguesa img {
-    width: 500px;
+    width: 600px;
     height: auto;
     max-height: 100vh;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out;
-    margin-left: -400px;
+    margin-left: 0; /* Esto elimina el margen izquierdo anterior */
+    margin-right: 0; /* Asegura que no haya margen innecesario a la derecha */
 }
 
 .imagen-hamburguesa img:hover {
