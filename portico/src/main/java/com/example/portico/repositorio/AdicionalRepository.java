@@ -7,5 +7,5 @@ import com.example.portico.entidad.Adicional;
 @Repository
 public interface AdicionalRepository extends JpaRepository<Adicional, Integer>{
 
-
+    
 }

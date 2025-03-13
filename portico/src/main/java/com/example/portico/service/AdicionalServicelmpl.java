@@ -1,6 +1,7 @@
 package com.example.portico.service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -25,7 +26,17 @@ public class AdicionalServicelmpl implements AdicionalService {
     @Override
     public Adicional SearchById(int id) {
 
-        return repo.findById(id);
+        Optional <Adicional> optionalAdicional = repo.findById(id);
+        if(optionalAdicional.isPresent()) {
+            
+            return optionalAdicional.get();
+        }
+
+        else {
+
+            return null;
+        }
+        
     }
 
     @Override
@@ -41,11 +52,16 @@ public class AdicionalServicelmpl implements AdicionalService {
 
     @Override
     public void update(Adicional adicional){
-        repo.update(adicional);
+        
+        repo.findById(adicional.getId()).ifPresent(elAdicional -> {
+
+            repo.save(adicional);
+        });
     }
 
     @Override    
     public void add(Adicional adicional){
-        repo.add(adicional);
+        
+        repo.save(adicional);
     }
 }

@@ -1,6 +1,7 @@
 package com.example.portico.service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,16 @@ public class ClienteServiceImpl implements ClienteService {
     @Override
     public Cliente SearchById(int id) {
 
-        return repo.findById(id);
+        Optional <Cliente> optionalCliente = repo.findById(id);
+        if(optionalCliente.isPresent()) {
+
+            return optionalCliente.get();
+        }
+
+        else {
+
+            return null;
+        }
     }
 
     @Override
@@ -34,12 +44,15 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public void update(Cliente cliente){
-        repo.update(cliente);
+        repo.findById(cliente.getId()).ifPresent(elCliente -> {
+
+            repo.save(cliente);
+        });
     }
 
     @Override    
     public void add(Cliente cliente){
-        repo.add(cliente);
+        repo.save(cliente);
     }
 
     @Override

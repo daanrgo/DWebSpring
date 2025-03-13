@@ -6,6 +6,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Controller;
 
 import com.example.portico.repositorio.AdicionalRepository;
+import com.example.portico.repositorio.ClienteRepository;
 import com.example.portico.repositorio.ComidaRepository;
 
 import jakarta.transaction.Transactional;
@@ -19,6 +20,10 @@ public class DatabaseInit implements ApplicationRunner {
 
     @Autowired
     AdicionalRepository adicionalRepository;
+
+    @Autowired
+    ClienteRepository clienteRepository;
+    
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -86,6 +91,15 @@ public class DatabaseInit implements ApplicationRunner {
         comidaRepository.save(new Comida("Hamburguesa de Lentejas y Quinoa", 920, "Lentejas y quinoa, aguacate y salsa tahini.", defaultImage));
         comidaRepository.save(new Comida("Hamburguesa con Queso Azul", 980, "Queso azul, nueces y peras a la parrilla.", defaultImage));
         comidaRepository.save(new Comida("Hamburguesa de Pescado Blanco", 1150, "Pescado blanco a la parrilla, salsa tártara y ensalada de col.", defaultImage));
+
+
+
+
+
+        clienteRepository.save(new Cliente("Pepe123", "1234", "Pepe", "Gonzalez", "pepegonzalez@gmail.com", 31531977, "calle 34 av 25"));
+        clienteRepository.save(new Cliente("Pepe1234", "12345", "Pepe", "Gonzalez2", "pepegonzalez2@gmail.com", 31531977, "calle 34 av 25"));
+        clienteRepository.save(new Cliente("Pepe1235", "12345", "Pepe", "Gonzalez3", "pepegonzalez3@gmail.com", 31531977, "calle 34 av 25"));
+        clienteRepository.save(new Cliente("Pepe1236", "12345", "Pepe", "Gonzalez4", "pepegonzalez4@gmail.com", 31531977, "calle 34 av 25"));
     
     }
 }

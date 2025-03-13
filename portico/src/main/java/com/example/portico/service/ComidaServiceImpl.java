@@ -1,6 +1,7 @@
 package com.example.portico.service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,19 @@ public class ComidaServiceImpl implements ComidaService {
     ComidaRepository repo;
 
     @Override
-    public Comida SearchById(int id) {
+    public Comida SearchById(Integer id) {
 
-        return repo.findById(id);
+        Optional <Comida> optionalComida = repo.findById(id);
+        if(optionalComida.isPresent()) {
+            
+            return optionalComida.get();
+        }
+
+        else {
+
+            return null;
+        }
+        
     }
 
     @Override
@@ -28,17 +39,23 @@ public class ComidaServiceImpl implements ComidaService {
 
     @Override
     public void deleteById(int id){
+
         repo.deleteById(id);
     }
 
     @Override
     public void update(Comida comida){
-        repo.update(comida);
+
+        repo.findById(comida.getId()).ifPresent(laComida -> {
+
+            repo.save(comida);
+        });
     }
 
     @Override    
     public void add(Comida comida){
-        repo.add(comida);
+
+        repo.save(comida);
     }
 
     

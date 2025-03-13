@@ -1,7 +1,15 @@
 package com.example.portico.entidad;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Cliente {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String username;
     private String password;
@@ -24,6 +32,22 @@ public class Cliente {
         this.phone = phone; 
         this.address = address;
     }
+
+
+    
+    public Cliente(String username, String password, String name, String lastName, String email, Integer phone,
+            String address) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+    }
+
+
+
     public void setId(Integer id) {
         this.id = id;
     }

@@ -10,7 +10,7 @@ import com.example.portico.entidad.Comida;
 @Service
 public interface ComidaService {
     
-    public Comida SearchById(int id);
+    public Comida SearchById(Integer id);
 
     public Collection<Comida> SearchAll();
 
