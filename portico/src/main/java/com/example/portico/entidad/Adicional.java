@@ -1,7 +1,23 @@
 package com.example.portico.entidad;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Adicional {
     
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String name;
+    private Integer price;
+    
+   // @ManyToOne
+  //  private Comida comida;
+
     public Integer getId() {
         return id;
     }
@@ -26,9 +42,20 @@ public class Adicional {
         this.name = name;
         this.price = price;
     }
- 
-    private Integer id;
-    private String name;
-    private Integer price;
+
+    public Adicional( String name, Integer price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public Adicional() {
+        
+    }
+/*     public Comida getComida() {
+        return comida;
+    }
+    public void setComida(Comida comida) {
+        this.comida = comida;
+    }*/
 }
 

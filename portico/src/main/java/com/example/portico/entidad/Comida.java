@@ -3,14 +3,54 @@ package com.example.portico.entidad;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Transient;
+
+@Entity
 public class Comida {
+
+    @Id
+    @GeneratedValue
     private Integer id;
+
     private String name;
     private Integer price;
     private String description;
     private String imagen; // Se guarda el url de la imagen
+
+/*
+    @OneToMany
+    private ArrayList<Adicional> adicionales; */
+
+    @Transient
     private HashMap<Integer, Boolean> adicionalesSeleccionados;
-    private ArrayList<Adicional> adicionales;
+
+    public Comida(Integer id, String name, Integer price, String description, String imagen) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.imagen = imagen;
+        this.adicionalesSeleccionados = new HashMap<Integer, Boolean>();
+
+    }
+
+    public Comida( String name, Integer price, String description, String imagen) {
+        
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.imagen = imagen;
+        this.adicionalesSeleccionados = new HashMap<Integer, Boolean>();
+
+    }
+
+    public Comida() {
+        
+    }
 
     public Integer getId() {
         return id;
@@ -44,15 +84,6 @@ public class Comida {
     public String getImagen() {
         return imagen;
     }
-    public Comida(Integer id, String name, Integer price, String description, String imagen) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.imagen = imagen;
-        this.adicionalesSeleccionados = new HashMap<Integer, Boolean>();
-        this.adicionales = new ArrayList<>();
-    }
     public void setImagen(String imagen) {
         this.imagen = imagen;
     }
@@ -63,11 +94,13 @@ public class Comida {
     public void setAdicionalesSeleccionados(HashMap<Integer, Boolean> adicionalesSeleccionados) {
         this.adicionalesSeleccionados = adicionalesSeleccionados;
     }
+
+    /* 
     public ArrayList<Adicional> getAdicionales() {
         return adicionales;
     }
     public void addAdicional(Adicional adicional){
         this.adicionales.add(adicional);
         this.adicionalesSeleccionados.put(adicional.getId(), false);
-    } 
+    } */
 }
