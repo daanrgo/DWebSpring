@@ -101,9 +101,9 @@ nav {
 .nuestra-historia {
     position: relative;
     width: 100%;
-    height: 110vh; /* Ajuste dinámico de altura */
+    height: 140vh; /* Ajuste dinámico de altura */
     /*background: url('/images/fondoSomos.jpg') no-repeat center center/cover; /* Cambia la ruta de la imagen */
-    background-color: beige;
+    background: url('../images/fondo_somos.jpg') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,7 +114,9 @@ nav {
 .historia-overlay {
     width: 100%;
     background: #E27D4D; /* Color de fondo del título */
-    padding: 20px;
+    padding-top: 30px;
+    padding-right: 100px;
+    padding-left: 100px ;
     text-align: center;
 }
 
@@ -132,7 +134,7 @@ nav {
     width: 60%;
     background: rgba(0, 0, 0, 0.7); /* Fondo negro semitransparente */
     color: white;
-    padding: 20px;
+    padding: 100px;
     border-radius: 10px;
     text-align: justify;
     font-size: 1.2rem;

@@ -11,6 +11,11 @@
     color: wheat;
 }
 
+.crear_titulo{
+    font-size: 3rem;
+    color: #A0522D;
+}
+
 .imagen-separadora {
     width: 100%;
     text-align: center;
@@ -35,20 +40,19 @@
 .detalle-container {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 135vh;
     background: #2A2420; /* Café oscuro */
 }
 
 /* Sección izquierda - Información de la hamburguesa */
 .info-hamburguesa {
-    width: 50%;
+    width: 55%; /* Ajustar el ancho de la sección para dar más espacio al formulario */
     padding: 30px;
-    margin-bottom: -50px;
-    background: black;
+    background: #efe9ce;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px; /* Espacio entre los elementos */
     position: relative;
 }
 
@@ -92,12 +96,12 @@
 /* Línea divisoria */
 hr {
     border: none;
-    border-top: 1px solid rgba(194, 185, 6, 0.2);
-    margin: 20px 0;
+    border-top: 1px solid rgba(158, 134, 90, 0.2);
+    margin: 10px;
 }
 
 .detalle-container h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 /* Información extra */
@@ -108,16 +112,15 @@ hr {
 
 /* Botón de adicionales */
 .btn-adicionales {
-    background: #A0522D; /* Marrón */
+    background: #A0522D;
     color: white;
     border: none;
-    padding: 5px;
+    padding: 12px;
     font-size: 1rem;
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px;
-    margin-top: 10px;
-    transition: background-c 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .btn-adicionales:hover {
@@ -126,43 +129,56 @@ hr {
 
 /* Sección derecha - Imagen */
 .imagen-hamburguesa {
-    width: 60%;
-    background: black;
+    width: 45%; /* Reducir el tamaño de la imagen para que ocupe menos espacio */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .imagen-hamburguesa img {
-    width: 100%;
-    max-height: 100vh;
-    max-width: 100vh;
+    width: 150px; /* Asegura que la imagen ocupe el ancho máximo disponible */
+    max-width: 500px; /* Limitar el tamaño máximo de la imagen */
+    height: 2000px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 
 }
 
 /* Estilizar las casillas del formulario */
 .input-campo {
-    width: 100%;
-    padding: 7px;
+    width: 100%; /* Ancho completo del input */
+    padding: 12px;
     border-radius: 8px;
     border: 2px solid #A0522D;
-    font-size: 0.5rem;
-    background: linear-gradient(to right, #FDFCFB, #E2D1C3); /* Degradado suave */
+    font-size: 1rem;
+    background: linear-gradient(to right, #FDFCFB, #E2D1C3);
     box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    height: 25px;
-    width: 500px;
-
+    height: 40px; /* Aumentar la altura de los campos */
+    margin-bottom: 15px; /* Espacio entre campos */
 }
+
 
 /* Cuando se selecciona el input */
 .input-campo:focus {
     outline: none;
     border: 2px solid #8B4513;
     background: white;
-    box-shadow: 0px 0px 8px rgba(160, 82, 45, 0.7); /* Sombra al seleccionar */
+    box-shadow: 0px 0px 8px rgba(160, 82, 45, 0.7);
 }
 
+.input-group {
+    display: flex;
+    gap: 20px; /* Espacio entre las columnas */
+    flex-wrap: wrap;
+}
+
+.input-item {
+    width: 48%; /* Cada campo del formulario ocupa la mitad del espacio disponible */
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* Botón de creación con efecto elegante */
@@ -200,6 +216,57 @@ hr {
     transform: scale(1.05);
 }
 
+.social-login {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-top: 250px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+/* Botones de redes sociales */
+.google-btn, .phone-btn, .facebook-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Estilos individuales de los botones */
+.google-btn {
+    background: #4285F4;
+}
+.google-btn:hover {
+    background: #357AE8;
+}
+
+.phone-btn {
+    background: #34A853;
+}
+.phone-btn:hover {
+    background: #2C8C47;
+}
+
+.facebook-btn {
+    background: #3B5998;
+}
+.facebook-btn:hover {
+    background: #2E437A;
+}
 
 /* Footer */
 .footer {

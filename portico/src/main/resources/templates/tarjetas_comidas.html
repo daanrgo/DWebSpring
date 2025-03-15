@@ -22,9 +22,13 @@
         <nav>
             <!-- Contenedor para las imágenes a la izquierda -->
             <div class="header-left-icons">
-                <img src="/images/perfilCaballo.png" alt="Caballo">
+                <div class="perfil-icon">
+                    <img src="/images/perfilCaballo.png" alt="Caballo">
+                    <span class="icon-text">Perfil</span> <!-- Texto debajo de la imagen "Caballo" -->
+                </div>
                 <div class="cart-icon">
                     <img src="/images/carrito.png" alt="Carrito">
+                    <span class="icon-text">Carrito</span> <!-- Texto debajo de la imagen "Carrito" -->
                 </div>
             </div>
     
@@ -77,7 +81,7 @@
                     
                     <a class="producto" th:href="@{/comidas/{id}(id=${comida.id})}">
                         <div class="card">
-                            <img th:src="@{{img}(img=${comida.imagen})}" th:alt="${comida.name}">
+                            <img th:src="@{/images/{img}(img=${comida.imagen})}" th:alt="${comida.name}">
                             <h3 th:text="${comida.name}"></h3>
                             <p th:text="${comida.description}"></p>
                             <img class="decoracion" th:src="@{/images/decoracionTarjeta.png}" alt="decoracion dorada">

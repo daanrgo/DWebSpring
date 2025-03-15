@@ -42,7 +42,7 @@ public class ComidaController {
     public String mostrarFormularioAdicionales(Model model, @PathVariable("id") int id) {
         Comida comida = comidaService.SearchById(id);
 
-        model.addAttribute("adicionalesDTO", comida.getAdicionales());
+        model.addAttribute("adicionalesDTO", comida.getAdicionalesSeleccionados());
 
         return "comida_individual_adicionales";
     }

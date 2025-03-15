@@ -58,12 +58,16 @@
                             <input type="password"th:field="*{password}" placeholder="Contraseña" required>
                             <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                             <div class="login-buttons">
-                                <a href="/clientes/crear" >
-                                    <button type="button" class="register-btn">SOY NUEVO</button>
-                                </a>
                                 <a>
                                     <button type="submit" class="login-btn">INICIAR SESIÓN</button>
                                 </a>
+                                <hr>
+                                <div class="soy_nuevo">
+                                    <p>No tienes una cuenta aún?</p>
+                                    <a href="/clientes/crear" >
+                                        <button type="button" class="register-btn">Soy nuevo</button>
+                                    </a>
+                                </div>
                                 
                             </div>
                         </form>

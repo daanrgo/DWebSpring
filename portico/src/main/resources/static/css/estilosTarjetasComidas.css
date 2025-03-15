@@ -14,7 +14,7 @@ body{
 header {
     background: rgba(70, 67, 62, 0.8); /* Color con opacidad */
     backdrop-filter: blur(10px); /* Efecto de desenfoque */
-    padding: 30px;
+    padding: 20px;
     display: flex;
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center;
@@ -28,26 +28,41 @@ header {
 /* Contenedor para los íconos en el header */
 .header-left-icons {
     display: flex;
-    gap: 10px; /* Espacio entre los íconos */
-    margin-left: -90px;
-    
+    gap: 40px; /* Espacio entre los íconos */
+    margin-left: -100px;
+
 }
 
 /* Estilo de los íconos */
 .header-left-icons img {
-    height: 65px;
-    width: auto;
+    display: block;
+    width: 60px;  /* Ajusta el tamaño según sea necesario */
+    height: auto;
     cursor: pointer;
-    margin-right: 40px;
+    
 }
 
-/* Contenedor del carrito */
-.cart-icon {
-    position: relative;
+/* Estilos para los textos debajo de las imágenes */
+.icon-text {
+    font-size: 1rem;  /* Tamaño pequeño para el texto */
+    text-align: center;
+  /* Separación entre la imagen y el texto */
+    color: #efe9ce;  /* Color del texto (puedes cambiarlo según el diseño) */
+}
+
+/* Ajuste para el contenedor de la imagen y el texto */
+.perfil-icon, .cart-icon {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 1px;
+    margin-top: 30px; /* Ajusta la cantidad para bajar los íconos y el texto */
 }
 
+.perfil-icon img,.cart-icon img{
+    width: 60px;  /* Ajusta el tamaño según sea necesario */
+    height: auto;
+}
 
 
 
@@ -129,7 +144,7 @@ nav {
 
 /* Contenedor principal */
 .menu-container {
-    margin-top: 100px;
+    margin-top: 130px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;

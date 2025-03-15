@@ -9,7 +9,10 @@ body{
     background-color: black;
 }
 
-
+.crear_titulo{
+    font-size: 3rem;
+    color: #A0522D;
+}
 
 .imagen-separadora {
     width: 100%;
@@ -42,6 +45,7 @@ body{
 /* Sección izquierda - Información de la hamburguesa */
 .info-hamburguesa {
     width: 600px;
+    height: 1000px;
     padding: 40px;
     padding-left: 120px; /* Aumenta el espacio a la izquierda del texto */
     background: black;
@@ -60,9 +64,11 @@ body{
 
 /* Botón de volver */
 .volver {
-    position: absolute;
-    text-decoration: none;
+    display: block;  /* Asegura que la imagen se comporte como un bloque */
+    margin-top: 0px;  /* Mueve la imagen hacia abajo */
+    margin-left: 10px;  /* Opcional, para ajustar la alineación horizontal */
     color: #A0522D; /* Marrón */
+    margin-bottom: 50px;
 }
 
 
@@ -124,12 +130,12 @@ hr {
 
 /* Sección derecha - Imagen */
 .imagen-hamburguesa {
-    width: 100%;
-    background: black;
+    width: 50%; /* Reducir el tamaño de la imagen de la hamburguesa */
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end; /* Esto mueve la imagen hacia la derecha */
-    padding-right: 50px; /* Añade espacio en el lado derecho */
+    padding: 20px;
+    margin-top: 200px;
     
 }
 
@@ -139,10 +145,12 @@ hr {
     padding: 12px;
     border-radius: 8px;
     border: 2px solid #A0522D;
-    font-size: 0.5rem;
+    font-size: 1rem;
     background: linear-gradient(to right, #FDFCFB, #E2D1C3); /* Degradado suave */
     box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
+    height: 40px; /* Aumentar la altura de los inputs */
+    margin-bottom: 20px; /* Aumentar espacio entre los campos de entrada */
 
 }
 
@@ -178,14 +186,12 @@ hr {
 
 /* Ajustar la imagen de la hamburguesa */
 .imagen-hamburguesa img {
-    width: 600px;
-    height: auto;
+    width: 100%;
     max-height: 100vh;
+    max-width: 400px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
-    margin-left: 0; /* Esto elimina el margen izquierdo anterior */
-    margin-right: 0; /* Asegura que no haya margen innecesario a la derecha */
 }
 
 .imagen-hamburguesa img:hover {

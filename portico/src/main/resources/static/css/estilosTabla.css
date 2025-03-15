@@ -8,7 +8,7 @@
 
 /* Fondo de la página */
 body {
-    background-image: url('/images/fondo_borroso.jpg');
+    background-color: #efe9ce;
     background-size: cover;
     background-position: center;
 }
@@ -83,35 +83,49 @@ nav {
     transform: translateY(-2px);
 }
 
-/* Estilos de la tabla */
+/* Estilos para la tabla */
 .table-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 80px; /* Ajuste para evitar que el header la tape */
+    margin-top: 20px; /* Ajuste para evitar que el header la tape */
     padding: 30px;
-    
+    margin-left: 120px;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre la tabla y el botón */
 }
 
 .table-container {
     width: 100%;
-    max-width: 2500px;
+    max-width: 1200px; /* Ajustamos el máximo de la tabla */
     border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: none; /* Eliminamos la sombra para un diseño más limpio */
     overflow-x: auto;
+    margin: 0 auto; /* Asegura que la tabla esté centrada horizontalmente */
 }
 
-/* Tabla */
-.table {
+.historia-overlay {
     width: 100%;
-    border-collapse: collapse;
-    border-radius: 10px;
-    overflow: hidden;
+    background: #634836; /* Color de fondo del título */
+    padding-top: 130px;
+    padding-right: 100px;
+    padding-left: 100px ;
+    text-align: center;
+
+}
+
+/* Estilo del título */
+.historia-overlay h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
 }
 
 /* Cabecera de la tabla */
 .table thead {
-    background: #A0522D;
+    background: #bb5f3c;
     color: white;
 }
 
@@ -123,81 +137,58 @@ nav {
 
 /* Filas de la tabla */
 .table tbody tr {
-    transition: background 0.3s ease, transform 0.2s ease;
+    background-color: #ffffff; /* Fondo blanco para las filas */
+    transition: background-color 0.3s ease; /* Transición más simple */
 }
 
-/* Hover en fila: cambia a negro y el texto a blanco */
-.table tbody tr:hover td {
-    background: #b2a094;
-    color: white;
-    transform: scale(1.02);
+/* Filas alternas más oscuras */
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Fila impar más clara */
 }
 
+.table tbody tr:nth-child(even) {
+    background-color: #e0e0e0; /* Fila par más oscura */
+}
 
-/* Asegurar que el texto de las filas sea blanco cuando se haga hover */
-.table tbody tr:hover td {
-    color: white;
+/* Efecto hover: cambia todo el color de fondo de la fila */
+.table tbody tr:hover {
+    background-color: #b2a094; /* Color más oscuro cuando se pasa el mouse */
 }
 
 /* Celdas de la tabla */
 .table tbody td {
-    padding: 15px;
+    padding: 12px;
     font-size: 1rem;
-    color: #4A3222;
+    color: #333333; /* Texto de color gris oscuro */
     text-align: center;
-}
-
-.table tbody tr {
- background-color: #2a2420;
- color: antiquewhite;
 }
 
 /* Ajuste para imágenes dentro de la tabla */
 .table tbody td img {
-    width: 70px;
+    width: 50px;
     height: auto;
     object-fit: cover;
     border-radius: 8px;
 }
 
-/* Botones de acciones */
-.acciones {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-/* Ocultar los iconos de acciones por defecto */
-.acciones img {
-    display: none;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Mostrar los iconos solo cuando el usuario pase el cursor sobre la fila */
-.table tbody tr:hover .acciones img {
-    display: inline-block;
-}
-
-/* Botón de añadir producto */
+/* Botón de añadir cliente */
 .agregarProducto button {
     background: #A0522D;
     color: white;
     border: none;
-    padding: 15px 25px;
-    font-size: 1.5rem;
+    padding: 12px 20px;
+    font-size: 1.2rem;
     cursor: pointer;
     border-radius: 8px;
     display: block;
     margin: 30px auto;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease;
+    width: 100%; /* Hacer el botón más ancho */
+    max-width: 300px; /* Limitar el tamaño máximo */
 }
 
 .agregarProducto:hover {
     background: #8B4513;
-    transform: scale(1.05);
 }
 
 /* Footer */
@@ -289,14 +280,18 @@ footer .columna_footer {
     color: #A0522D;
 }
 
-/* Responsividad */
+/* Responsividad para la tabla */
 @media (max-width: 768px) {
+    .table-wrapper {
+        margin-top: 60px;
+    }
+
     .table-container {
         width: 95%;
     }
 
     .table thead {
-        display: none;
+        display: none; /* Ocultar los encabezados en pantallas pequeñas */
     }
 
     .table tbody tr {
@@ -324,14 +319,7 @@ footer .columna_footer {
         text-transform: uppercase;
     }
 
-    .footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .columna_footer {
-        width: 100%;
-        margin-bottom: 20px;
+    .agregarProducto button {
+        width: 100%; /* Asegurar que el botón ocupe todo el ancho */
     }
 }
-
