@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Hamburguesa</title>
-    <link rel="stylesheet" href="/css/estiloComidaIndividual.css">
+    <link rel="stylesheet" href="/css/estilo_comida_individual.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,15 +15,18 @@
 </head>
 <body>
 
-    <!-- Nueva Imagen Separadora -->
-    <div class="imagen-separadora">
-        <img src="/images/NuevoLogo.png" alt="Decoración" />
-    </div>
 
     <section class="detalle-container">
         <!-- Sección izquierda: información de la hamburguesa -->
         <div class="info-hamburguesa" >
-            <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
+
+            
+            <a href="/comidas" >
+                <img src="/images/flechaAtras.png" alt="flecha atras" class="volver">
+            </a>
+
+                <p class="crear_titulo">Crear Producto</p>
+                <hr>
 
             <form th:object="${comida}" th:action="@{/comidas/create}" method="post">
                 <h3>Nombre de la Hamburguesa</h3>
@@ -46,7 +49,7 @@
 
         <!-- Sección derecha: Imagen de la hamburguesa -->
         <div class="imagen-hamburguesa">
-            <img src="/images/restauranteee.png" alt="Vista previa de hamburguesa">
+            <img src="/images/burgerfire.png" alt="Vista previa de hamburguesa">
         </div>
     </section>
 

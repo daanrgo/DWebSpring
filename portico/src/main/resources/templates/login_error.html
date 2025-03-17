@@ -10,27 +10,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css " th:href="@{/css/estilosLogin.css}">
-    <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estilosLogin.css">
+    <link rel="stylesheet" type="text/css " th:href="@{/css/estilos_login.css}">
 </head>
 <body>
         <header>
             <nav>
                 <div class="nav-left">
                     <ul class="indices">
-                        <li><a href="somos.html"><button>¿Quiénes Somos?</button></a></li>
-                        <li><a href="lading.html#mapaPortico"><button>Sede</button></a></li>
+                        <li><a href="/somos"><button>¿Quiénes Somos?</button></a></li>
+                        <li><a href="/#mapaPortico"><button>Sede</button></a></li>
                     </ul>
                 </div>
-                <div class="logo">
+              
+                <a class="logo" href="/">
                     <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
-                </div>
+                </a>
+
                 <div class="nav-right">
                     <ul class="indices">
                         <li><a href="#carta"><button>Carta</button></a></li>
-                        <li><a href="lading.html#contactos"><button>Contáctanos</button></a></li>
+                        <li><a href="/#contactos"><button>Contáctanos</button></a></li>
                     </ul>
-                    <a href="login.html" class="btn-pedido"><button>Haz tu pedido</button></a>
+                    <a href="/login" class="btn-pedido"><button>Haz tu pedido</button></a>
                 </div>
             </nav>
         </header>
@@ -59,12 +60,15 @@
                             <p class="textoError">El correo y/o la contraseña esta incorrectos, rectificar e intentar de nuevo</p>
                             <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                             <div class="login-buttons">
-                                <a href="/clientes/crear" >
-                                    <button type="button" class="register-btn">SOY NUEVO</button>
-                                </a>
                                 <a>
                                     <button type="submit" class="login-btn">INICIAR SESIÓN</button>
                                 </a>
+                                <div class="soy_nuevo">
+                                    <p>No tienes una cuenta aún?</p>
+                                    <a href="/clientes/crear" >
+                                        <button type="button" class="register-btn">Soy nuevo</button>
+                                    </a>
+                                </div>
                             </div>
                         </form>
                     </div>

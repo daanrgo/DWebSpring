@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Pórtico - Gourmet</title>
-    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilos_landing.css">
 
     <script src="/js/funcionalidad.js"> </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
     <header>
         <nav>
             <div class="nav-left">
@@ -26,9 +27,9 @@
                     <li><a href="#mapaPortico"><button>Sede</button></a></li>
                 </ul>
             </div>
-            <div class="logo">
-                <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
-            </div>
+            <a href="/" class="logo">
+                    <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
+            </a>
             <div class="nav-right">
                 <ul class="indices">
                     <li><a href="#carta"><button>Carta</button></a></li>
@@ -42,6 +43,7 @@
     </header>
 
 
+
     <section class="parte1">
 
         <section class="eslogan">
@@ -49,19 +51,10 @@
                 <p> "Tu comida de siempre con un toque especial" </p>
             </div>
         </section>
-        <div>
-            <script src="https://fast.wistia.com/player.js" async></script>
-    <script src="https://fast.wistia.com/embed/b0s1cfh8dd.js" async type="module"></script>
-    <style>
-        wistia-player[media-id='b0s1cfh8dd']:not(:defined) { 
-            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/b0s1cfh8dd/swatch'); 
-            display: block; 
-            filter: blur(5px); 
-            padding-top:56.25%; 
-        }
-    </style>
-    <wistia-player media-id="b0s1cfh8dd" aspect="1.7777777777777777"></wistia-player>
-        </div>
+        
+        <video src="/images/video_landing.mp4" alt="video cocina" muted autoplay loop></video>
+
+    
 
     </section>
 
@@ -97,7 +90,6 @@
 
 
     <section class="parte2">
-
         <section class="carousel-container">
             <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
             <div class="carousel" id="carousel">
@@ -128,7 +120,7 @@
                 <div class="carousel-item">
                     <img src="/images/burger5.png" alt="Hamburguesa 1">
                     <div class="overlay">
-                        <p>El principe</p>
+                        <p>El Principe</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -143,13 +135,11 @@
                         <p>El Noble</p>
                     </div>
                 </div>
-                <!-- Agrega más imágenes siguiendo este mismo formato -->
             </div>
             <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
         </section>
-
-
     </section>
+    
 
 
     <section class="parte5">
@@ -157,7 +147,7 @@
             <p>Registrate y disfruta de todos los servicios/experiencias gastronomicas que te ofrecemos !!</p>
         </div>
         <div class="btn-eslogan">
-            <a href="/cliente/add">
+            <a href="/clientes/crear">
                 <button class="btn">Crear Cuenta</button>
             </a>
 

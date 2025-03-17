@@ -116,6 +116,7 @@ nav {
     width: 90%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    margin-top: 100px;
 }
 
 /* Sección de botones sociales */
@@ -127,6 +128,7 @@ nav {
     gap: 15px;
     padding-right: 20px;
     border-right: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 100px;
 
 }
 
@@ -225,7 +227,7 @@ nav {
     padding: 5px;
 }
 
-.register-btn, .login-btn {
+.login-btn {
     flex: 1;
     padding: 12px;
     font-size: 1rem;
@@ -237,17 +239,44 @@ nav {
     transition: background 0.3s ease;
 }
 
+.register-btn{
+    background-color: #A0522D;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.soy_nuevo{
+    display: flex;
+    align-items: center; /* Alinea verticalmente el texto y el botón */
+    gap: 10px; /* Espacio entre el texto y el botón */
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.soy_nuevo p {
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 1rem;
+    color: white; /* Asegúrate de que el texto sea visible */
+}
+
+
+
 .register-btn {
-    background: #A0522D;
+    background: #572D0D;
 }
 .register-btn:hover {
-    background: #8B4513;
+    background: #3E1F07;
 }
 
 .login-btn {
-    background: #572D0D;
+    background: #A0522D;
 }
 .login-btn:hover {
+    background: #8B4513;
     background: #3E1F07;
 }
 

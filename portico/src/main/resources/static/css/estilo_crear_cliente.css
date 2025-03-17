@@ -5,23 +5,28 @@
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
 }
-body{
-    background-color: black;
+
+.titulo_crear {
+    font-size: 24px;
+    color: wheat;
 }
 
-
+.crear_titulo{
+    font-size: 3rem;
+    color: #A0522D;
+}
 
 .imagen-separadora {
     width: 100%;
     text-align: center;
-    margin-bottom: -180px; /* Ajusta la imagen más cerca de la hamburguesa */
+    margin-bottom: -70px; /* Ajusta la imagen más cerca de la hamburguesa */
     margin-left: -25px;
     position: relative;
     z-index: 2;
 }
 
 .imagen-separadora img {
-    width: 120px; /* Ajusta el tamaño según sea necesario */
+    width: 70px; /* Ajusta el tamaño según sea necesario */
     height: auto;
     display: inline-block;
 }
@@ -35,20 +40,19 @@ body{
 .detalle-container {
     display: flex;
     width: 100%;
-    height: 150vh;
+    height: 135vh;
     background: #2A2420; /* Café oscuro */
 }
 
 /* Sección izquierda - Información de la hamburguesa */
 .info-hamburguesa {
-    width: 600px;
-    padding: 40px;
-    padding-left: 120px; /* Aumenta el espacio a la izquierda del texto */
-    background: black;
+    width: 55%; /* Ajustar el ancho de la sección para dar más espacio al formulario */
+    padding: 30px;
+    background: #efe9ce;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 20px; /* Espacio entre los elementos */
     position: relative;
 }
 
@@ -73,12 +77,12 @@ body{
 
 /* Títulos */
 .info-hamburguesa h3 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #A0522D;
 }
 
 .info-hamburguesa h1 {
-    font-size: 2.5rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
@@ -92,8 +96,12 @@ body{
 /* Línea divisoria */
 hr {
     border: none;
-    border-top: 1px solid rgba(194, 185, 6, 0.2);
-    margin: 20px 0;
+    border-top: 1px solid rgba(158, 134, 90, 0.2);
+    margin: 10px;
+}
+
+.detalle-container h3 {
+    font-size: 1.5rem;
 }
 
 /* Información extra */
@@ -104,9 +112,7 @@ hr {
 
 /* Botón de adicionales */
 .btn-adicionales {
-    height: 60px;
-    width: 200px;
-    background: #A0522D; /* Marrón */
+    background: #A0522D;
     color: white;
     border: none;
     padding: 12px;
@@ -114,8 +120,7 @@ hr {
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px;
-    margin-top: 20px;
-    transition: background-c 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .btn-adicionales:hover {
@@ -124,42 +129,64 @@ hr {
 
 /* Sección derecha - Imagen */
 .imagen-hamburguesa {
-    width: 100%;
-    background: black;
+    width: 45%; /* Reducir el tamaño de la imagen para que ocupe menos espacio */
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-end; /* Esto mueve la imagen hacia la derecha */
-    padding-right: 50px; /* Añade espacio en el lado derecho */
-    
+    padding: 20px;
+}
+
+.imagen-hamburguesa img {
+    width: 150px; /* Asegura que la imagen ocupe el ancho máximo disponible */
+    max-width: 500px; /* Limitar el tamaño máximo de la imagen */
+    height: 2000px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 /* Estilizar las casillas del formulario */
 .input-campo {
-    width: 100%;
+    width: 100%; /* Ancho completo del input */
     padding: 12px;
     border-radius: 8px;
     border: 2px solid #A0522D;
-    font-size: 0.5rem;
-    background: linear-gradient(to right, #FDFCFB, #E2D1C3); /* Degradado suave */
+    font-size: 1rem;
+    background: linear-gradient(to right, #FDFCFB, #E2D1C3);
     box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-
+    height: 40px; /* Aumentar la altura de los campos */
+    margin-bottom: 15px; /* Espacio entre campos */
 }
+
 
 /* Cuando se selecciona el input */
 .input-campo:focus {
     outline: none;
     border: 2px solid #8B4513;
     background: white;
-    box-shadow: 0px 0px 8px rgba(160, 82, 45, 0.7); /* Sombra al seleccionar */
+    box-shadow: 0px 0px 8px rgba(160, 82, 45, 0.7);
 }
 
+.input-group {
+    display: flex;
+    gap: 20px; /* Espacio entre las columnas */
+    flex-wrap: wrap;
+}
+
+.input-item {
+    width: 48%; /* Cada campo del formulario ocupa la mitad del espacio disponible */
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* Botón de creación con efecto elegante */
 .btn-crear {
+    background: linear-gradient(to right, #A0522D, #8B4513);
     color: white;
     border: none;
+    padding: 12px;
     font-size: 1rem;
     cursor: pointer;
     text-transform: uppercase;
@@ -178,98 +205,68 @@ hr {
 
 /* Ajustar la imagen de la hamburguesa */
 .imagen-hamburguesa img {
-    width: 600px;
-    height: auto;
-    max-height: 100vh;
+    width: 80%;
+    max-height: 90vh;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out;
-    margin-left: 0; /* Esto elimina el margen izquierdo anterior */
-    margin-right: 0; /* Asegura que no haya margen innecesario a la derecha */
 }
 
 .imagen-hamburguesa img:hover {
     transform: scale(1.05);
 }
 
-
-/* Contenedor principal */
-.adicionales-container {
-    background: black;
-    color: white;
-    padding: 20px;
-    width: 350px;
-    text-align: left;
-    border-radius: 10px;
-    margin-bottom: -150px;
-}
-
-/* Título principal */
-.adicionales-container h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-align: left;
-    border-bottom: 2px solid #A0522D;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-}
-
-/* Secciones de Acompañantes, Salsas y Bebidas */
-.categoria {
-    margin-bottom: 15px;
-    margin-left: 50px;
-}
-
-.categoria h3 {
-    color: #A0522D; /* Marrón */
-    font-size: 1.3rem;
-    font-weight: bold;
-}
-
-/* Elementos de cada categoría */
-.item {
+.social-login {
+    flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 5px 0;
+    gap: 15px;
+    padding-right: 50px;
+    padding-left: 50px;
+    margin-top: 250px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+
 }
 
-/* Estilos de los checkboxes */
-.checkbox {
-    appearance: none;
-    width: 14px;
-    height: 14px;
-    border-radius: 3px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-/* Precio de cada producto */
-.precio {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: white;
-}
-
-/* Botón de agregar al carrito */
-.btn-carrito {
+/* Botones de redes sociales */
+.google-btn, .phone-btn, .facebook-btn {
     width: 100%;
-    background: #A0522D;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
     color: white;
     border: none;
-    padding: 20px;
-    font-size: 0.5rem;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     cursor: pointer;
-    text-transform: uppercase;
-    border-radius: 5px;
-    margin-top: -50px;
-    margin-left: 30px;
+    transition: background 0.3s ease;
 }
 
-.btn-carrito:hover {
-    background: #8B4513;
+/* Estilos individuales de los botones */
+.google-btn {
+    background: #4285F4;
+}
+.google-btn:hover {
+    background: #357AE8;
 }
 
+.phone-btn {
+    background: #34A853;
+}
+.phone-btn:hover {
+    background: #2C8C47;
+}
+
+.facebook-btn {
+    background: #3B5998;
+}
+.facebook-btn:hover {
+    background: #2E437A;
+}
 
 /* Footer */
 .footer {

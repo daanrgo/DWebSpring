@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Cliente</title>
 
-    <link rel="stylesheet" type="text/css " th:href="@{/css/estiloCrearCliente.css}">
+    <link rel="stylesheet" type="text/css " th:href="@{/css/estilo_crear_cliente.css}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,52 +17,76 @@
 <body>
 
     <!-- Nueva Imagen Separadora -->
-    <div class="imagen-separadora">
-        <img src="/images/NuevoLogo.png" alt="Decoración" />
-    </div>
 
     <section class="detalle-container">
-        <!-- Sección izquierda: información de la hamburguesa -->
+        <!-- Sección izquierda: información del cliente -->
         <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/clientes/create}" method="post">
-            <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
             
-            <h3>Usuario</h3>
-            <input th:field="*{username}" type="text" class="input-campo" placeholder="Nombre de Usuario">
-
-            <h3>Contraseña</h3>
-            <input th:field="*{password}" type="text" class="input-campo" placeholder="Contraseña">
-
-            <h3>Nombre</h3>
-            <input th:field="*{name}" type="text" class="input-campo" placeholder="Nombre">
-
-            <h3>Apellido</h3>
-            <input th:field="*{lastName}" type="text" class="input-campo" placeholder="Apellido">
-
-            <h3>Correo</h3>
-            <input th:field="*{email}" type="text" class="input-campo" placeholder="Ej: portico@gmail.com">
-
-            <h3>Telefono</h3>
-            <input th:field="*{phone}" type="text" class="input-campo" placeholder="Número de contacto">
-            
-            <h3>Dirección</h3>
-            <input th:field="*{address}" type="text" class="input-campo" placeholder="Lugar donde haremos llegar los domicilios">
-
-            <h3 hidden="true" >Información Adicional</h3>
-            <input hidden="true" type="text" class="input-campo" placeholder="Barrio, conjunto, interior, apartamento, etc..">
-
-            <h3 hidden="true">Foto de Perfil</h3>
-            <input hidden="true" type="file" class="input-file">
-
+            <a href="/login">
+                <img src="/images/flechaAtras.png" alt="flecha atras">
+            </a>
+                
+                <p class="crear_titulo">Crea tu cuenta</p>
+    
+            <div class="input-group">
+                <div class="input-item">
+                    <h3>Usuario</h3>
+                    <input th:field="*{username}" type="text" class="input-campo" placeholder="Nombre de Usuario">
+                </div>
+                <div class="input-item">
+                    <h3>Contraseña</h3>
+                    <input th:field="*{password}" type="password" class="input-campo" placeholder="Contraseña">
+                </div>
+            </div>
+    
+            <div class="input-group">
+                <div class="input-item">
+                    <h3>Nombre</h3>
+                    <input th:field="*{name}" type="text" class="input-campo" placeholder="Nombre">
+                </div>
+                <div class="input-item">
+                    <h3>Apellido</h3>
+                    <input th:field="*{lastName}" type="text" class="input-campo" placeholder="Apellido">
+                </div>
+            </div>
+    
+            <div class="input-group">
+                <div class="input-item">
+                    <h3>Correo</h3>
+                    <input th:field="*{email}" type="text" class="input-campo" placeholder="Ej: portico@gmail.com">
+                </div>
+                <div class="input-item">
+                    <h3>Telefono</h3>
+                    <input th:field="*{phone}" type="text" class="input-campo" placeholder="Número de contacto">
+                </div>
+            </div>
+    
+            <div class="input-group">
+                <div class="input-item">
+                    <h3>Dirección</h3>
+                    <input th:field="*{address}" type="text" class="input-campo" placeholder="Lugar donde haremos llegar los domicilios">
+                </div>
+            </div>
+    
+            <h3 hidden>Información Adicional</h3>
+            <input hidden type="text" class="input-campo" placeholder="Barrio, conjunto, interior, apartamento, etc..">
+    
+            <h3 hidden>Foto de Perfil</h3>
+            <input hidden type="file" class="input-file">
+    
             <hr>
 
             <button class="btn-adicionales">CREAR USUARIO</button>
         </form>
-
+    
         <!-- Sección derecha: Imagen de la hamburguesa -->
-        <div class="imagen-hamburguesa">
-            <img src="/images/entradaRestaurante.jpg" alt="Vista previa de hamburguesa">
+        <div class="social-login">
+            <button class="google-btn"><i class="bx bxl-google"></i> Continuar con Google</button>
+            <button class="phone-btn"><i class="bx bxs-phone"></i> Continuar con tu celular</button>
+            <button class="facebook-btn"><i class="bx bxl-facebook"></i> Continuar con Facebook</button>
         </div>
     </section>
+    
 
     <footer class="footer">
         <div class="sobre_nosotros columna_footer">

@@ -34,6 +34,6 @@ public class LoginController {
         }
 
         model.addAttribute("error", "Usuario o contraseña incorrectos");
-        return "loginError"; 
+        return "login_error"; 
     }
 }

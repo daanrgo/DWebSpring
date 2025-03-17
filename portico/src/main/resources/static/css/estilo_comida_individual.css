@@ -5,23 +5,26 @@
     box-sizing: border-box;
     font-family: 'Oswald', sans-serif;
 }
+body{
+    background-color: black;
+}
 
-.titulo_crear {
-    font-size: 24px;
-    color: wheat;
+.crear_titulo{
+    font-size: 3rem;
+    color: #A0522D;
 }
 
 .imagen-separadora {
     width: 100%;
     text-align: center;
-    margin-bottom: -70px; /* Ajusta la imagen más cerca de la hamburguesa */
+    margin-bottom: -180px; /* Ajusta la imagen más cerca de la hamburguesa */
     margin-left: -25px;
     position: relative;
     z-index: 2;
 }
 
 .imagen-separadora img {
-    width: 70px; /* Ajusta el tamaño según sea necesario */
+    width: 120px; /* Ajusta el tamaño según sea necesario */
     height: auto;
     display: inline-block;
 }
@@ -35,15 +38,16 @@
 .detalle-container {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     background: #2A2420; /* Café oscuro */
 }
 
 /* Sección izquierda - Información de la hamburguesa */
 .info-hamburguesa {
-    width: 50%;
-    padding: 30px;
-    margin-bottom: -50px;
+    width: 600px;
+    height: 1000px;
+    padding: 40px;
+    padding-left: 120px; /* Aumenta el espacio a la izquierda del texto */
     background: black;
     color: white;
     display: flex;
@@ -60,9 +64,11 @@
 
 /* Botón de volver */
 .volver {
-    position: absolute;
-    text-decoration: none;
+    display: block;  /* Asegura que la imagen se comporte como un bloque */
+    margin-top: 0px;  /* Mueve la imagen hacia abajo */
+    margin-left: 10px;  /* Opcional, para ajustar la alineación horizontal */
     color: #A0522D; /* Marrón */
+    margin-bottom: 50px;
 }
 
 
@@ -73,12 +79,12 @@
 
 /* Títulos */
 .info-hamburguesa h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #A0522D;
 }
 
 .info-hamburguesa h1 {
-    font-size: 1rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -96,10 +102,6 @@ hr {
     margin: 20px 0;
 }
 
-.detalle-container h3 {
-    font-size: 1rem;
-}
-
 /* Información extra */
 .info-extra {
     font-size: 1.1rem;
@@ -108,15 +110,17 @@ hr {
 
 /* Botón de adicionales */
 .btn-adicionales {
+    height: 60px;
+    width: 200px;
     background: #A0522D; /* Marrón */
     color: white;
     border: none;
-    padding: 5px;
+    padding: 12px;
     font-size: 1rem;
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px;
-    margin-top: 10px;
+    margin-top: 20px;
     transition: background-c 0.3s ease;
 }
 
@@ -126,32 +130,27 @@ hr {
 
 /* Sección derecha - Imagen */
 .imagen-hamburguesa {
-    width: 60%;
-    background: black;
+    width: 50%; /* Reducir el tamaño de la imagen de la hamburguesa */
     display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.imagen-hamburguesa img {
-    width: 100%;
-    max-height: 100vh;
-    max-width: 100vh;
-
+    align-items: center;
+    padding: 20px;
+    margin-top: 200px;
+    
 }
 
 /* Estilizar las casillas del formulario */
 .input-campo {
     width: 100%;
-    padding: 7px;
+    padding: 12px;
     border-radius: 8px;
     border: 2px solid #A0522D;
-    font-size: 0.5rem;
+    font-size: 1rem;
     background: linear-gradient(to right, #FDFCFB, #E2D1C3); /* Degradado suave */
     box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
-    height: 25px;
-    width: 500px;
+    height: 40px; /* Aumentar la altura de los inputs */
+    margin-bottom: 20px; /* Aumentar espacio entre los campos de entrada */
 
 }
 
@@ -167,10 +166,8 @@ hr {
 
 /* Botón de creación con efecto elegante */
 .btn-crear {
-    background: linear-gradient(to right, #A0522D, #8B4513);
     color: white;
     border: none;
-    padding: 12px;
     font-size: 1rem;
     cursor: pointer;
     text-transform: uppercase;
@@ -189,15 +186,94 @@ hr {
 
 /* Ajustar la imagen de la hamburguesa */
 .imagen-hamburguesa img {
-    width: 80%;
-    max-height: 90vh;
+    width: 100%;
+    max-height: 100vh;
+    max-width: 400px;
+    height: auto;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
 }
 
 .imagen-hamburguesa img:hover {
     transform: scale(1.05);
+}
+
+
+/* Contenedor principal */
+.adicionales-container {
+    background: black;
+    color: white;
+    padding: 20px;
+    width: 350px;
+    text-align: left;
+    border-radius: 10px;
+    margin-bottom: -150px;
+}
+
+/* Título principal */
+.adicionales-container h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: left;
+    border-bottom: 2px solid #A0522D;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Secciones de Acompañantes, Salsas y Bebidas */
+.categoria {
+    margin-bottom: 15px;
+    margin-left: 50px;
+}
+
+.categoria h3 {
+    color: #A0522D; /* Marrón */
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Elementos de cada categoría */
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+/* Estilos de los checkboxes */
+.checkbox {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Precio de cada producto */
+.precio {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Botón de agregar al carrito */
+.btn-carrito {
+    width: 100%;
+    background: #A0522D;
+    color: white;
+    border: none;
+    padding: 20px;
+    font-size: 0.5rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    margin-top: -50px;
+    margin-left: 30px;
+}
+
+.btn-carrito:hover {
+    background: #8B4513;
 }
 
 

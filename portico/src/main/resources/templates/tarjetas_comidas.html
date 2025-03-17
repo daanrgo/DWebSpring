@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú de Hamburguesas</title>
-    <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estilosTarjetasComidas.css"> <!-- Un solo archivo CSS para toda la pantalla -->
     
 
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap"
         rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css " th:href="@{/css/estilosTarjetasComidas.css}">
+        <link rel="stylesheet" type="text/css " th:href="@{/css/estilos_tarjetas_comidas.css}">
 
 
 </head>
@@ -22,9 +21,13 @@
         <nav>
             <!-- Contenedor para las imágenes a la izquierda -->
             <div class="header-left-icons">
-                <img src="/images/perfilCaballo.png" alt="Caballo">
+                <div class="perfil-icon">
+                    <img src="/images/perfilCaballo.png" alt="Caballo">
+                    <span class="icon-text">Perfil</span> <!-- Texto debajo de la imagen "Caballo" -->
+                </div>
                 <div class="cart-icon">
                     <img src="/images/carrito.png" alt="Carrito">
+                    <span class="icon-text">Carrito</span> <!-- Texto debajo de la imagen "Carrito" -->
                 </div>
             </div>
     
@@ -54,30 +57,33 @@
         
         <!-- Barra lateral de pedidos activos -->
         <div class="sidebar">
+            <h2>HAZ TU PEDIDO AQUI</h2>
             <button class="btn-activos">PEDIDOS ACTIVOS</button>
-            <div class="pedido-activo">
-                <img src="/images/burgerfire.png" alt="Hamburguesa Activa">
-            </div>
+            
         </div>
+
+        <div class="pedido-activo">
+            <img src="/images/burger_fuego.jpg" alt="Hamburguesa Activa">
+        </div>
+
+
+         <!-- Buscador y filtro -->
+         <div class="menu-header">
+            <input type="text" placeholder="Buscar Producto" class="search-bar">
+        </div>
+
 
         <!-- Sección de tarjetas de hamburguesas -->
         <div class="menu-content">
             
-            <!-- Buscador y filtro -->
-            <div class="menu-header">
-                <input type="text" placeholder="Buscar Producto" class="search-bar">
-                <button class="btn-filtrar">Filtrar</button>
-            </div>
-
             <!-- Grid de hamburguesas -->
         
             <div th:each="comida : ${comidas}">
 
-                <div class="grid-hamburguesas"> 
                     
                     <a class="producto" th:href="@{/comidas/{id}(id=${comida.id})}">
                         <div class="card">
-                            <img th:src="@{{img}(img=${comida.imagen})}" th:alt="${comida.name}">
+                            <img th:src="@{/images/{img}(img=${comida.imagen})}" th:alt="${comida.name}">
                             <h3 th:text="${comida.name}"></h3>
                             <p th:text="${comida.description}"></p>
                             <img class="decoracion" th:src="@{/images/decoracionTarjeta.png}" alt="decoracion dorada">
@@ -85,8 +91,6 @@
                     </a>  
                     
                     <!-- Agregar más tarjetas con hamburguesas --> 
-
-                </div>
 
             </div>
                 
