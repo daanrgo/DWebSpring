@@ -70,7 +70,7 @@ public class ComidaController {
     public String mostrarFormularioCrear(Model model) {
         Comida comida = new Comida(0, "", 0, "", "");
         model.addAttribute("comida", comida);
-        return "crearComida";
+        return "crear_comida";
     }
 
     @GetMapping("/actualizar/{id}")

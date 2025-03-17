@@ -25,24 +25,10 @@ header {
 }
 
 
-/* Contenedor de la tabla */
-.table-container {
-    width: 80%;
-    margin: 50px auto;
-    background: #2A2A2A; /* Fondo oscuro */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Sombra elegante */
-    overflow-x: auto;
-}
-
-
-
 .parte1{
     position: relative;
     width: 100%;
     height: 100vh; /* Ocupa toda la pantalla */
-    background: url('/images/restauranteelegante.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,8 +36,8 @@ header {
     
 }
 
-.parte1 img {
-    width: 130%;
+.parte1 video {
+    width: 100%;
     height: auto;
     padding: 0;
     padding-top: 0;
@@ -190,14 +176,6 @@ nav {
     padding: 3rem 0;
 }
 
-.eslogan h2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
-    color: #2F4F4F;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-}
-
-
 
 .parte3 {
     text-align: center;
@@ -267,7 +245,6 @@ nav {
     color: white;
     text-decoration: none;
     border-radius: 25px;
-    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     transition: all 0.3s ease;
 }
@@ -283,9 +260,8 @@ nav {
     position: relative;
     max-width: 1200px;
     margin: 3rem auto;
-    margin-top: 0;
     overflow: hidden;
-    background-color: black ;
+    background-color: black; /* Fondo negro para el carrusel */
 }
 
 .carousel {
@@ -296,19 +272,22 @@ nav {
 
 .carousel-item {
     position: relative;
+    width: 100%; /* Cada item debe ocupar el mismo espacio */
+    height: 100%;
 }
 
 .carousel img {
-    width: 300px;
+    width: 250px;
     height: 300px;
-    object-fit: cover;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.carousel img:hover{
+/* Efecto hover en la imagen */
+.carousel img:hover {
     transform: translateY(-5px);
-    transform: scale(1.1);
+    transform: scale(1.1); /* Agranda la imagen ligeramente */
 }
 
 .overlay {
@@ -327,7 +306,7 @@ nav {
     border-radius: 15px;
 }
 
-/* Mostrar overlay cuando se pase el cursor */
+/* Mostrar overlay cuando se pasa el cursor */
 .carousel-item:hover .overlay {
     opacity: 1;
 }
@@ -355,7 +334,7 @@ nav {
 }
 
 .carousel-btn:hover {
-    background-color: rgba(47, 79, 79, 1);
+    background-color: #A0522D;
 }
 
 .prev {
@@ -368,7 +347,7 @@ nav {
 
 /* Sección de reserva */
 .parte4 {
-    background: url('/images/fondo_borroso.jpg') no-repeat center center/cover;
+    background: url('../images/fondo_borroso.jpg') no-repeat center center/cover;
     padding: 100px 20px;
     display: flex;
     justify-content: center;
@@ -432,6 +411,7 @@ nav {
 .parte4-form textarea {
     resize: none;
 }
+
 
 /* Sección del mapa */
 .mapa {
@@ -504,6 +484,7 @@ nav {
     height: 100%;
     object-fit: cover;
 }
+
 
 
 .parte5 {

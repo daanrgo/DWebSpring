@@ -126,7 +126,7 @@ nav {
 /* Cabecera de la tabla */
 .table thead {
     background: #bb5f3c;
-    color: white;
+    color: black;
 }
 
 .table thead th {
@@ -137,29 +137,29 @@ nav {
 
 /* Filas de la tabla */
 .table tbody tr {
-    background-color: #ffffff; /* Fondo blanco para las filas */
+    background-color: black; /* Fondo blanco para las filas */
     transition: background-color 0.3s ease; /* Transición más simple */
 }
 
 /* Filas alternas más oscuras */
 .table tbody tr:nth-child(odd) {
-    background-color: #f9f9f9; /* Fila impar más clara */
+    background-color: black; /* Fila impar más clara */
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #e0e0e0; /* Fila par más oscura */
+    background-color: rgb(38, 36, 36); /* Fila par más oscura */
 }
 
 /* Efecto hover: cambia todo el color de fondo de la fila */
 .table tbody tr:hover {
-    background-color: #b2a094; /* Color más oscuro cuando se pasa el mouse */
+    background-color: #6d6a67; /* Color más oscuro cuando se pasa el mouse */
 }
 
 /* Celdas de la tabla */
 .table tbody td {
     padding: 12px;
     font-size: 1rem;
-    color: #333333; /* Texto de color gris oscuro */
+    color: #ffffff; /* Texto de color gris oscuro */
     text-align: center;
 }
 
