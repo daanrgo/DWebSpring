@@ -35,6 +35,9 @@
         </nav>
     </header>
 
+    <div class="historia-overlay">
+        <h2>Lista Clientes</h2>
+    </div>
    
 
     <div class="table-wrapper">
@@ -69,8 +72,8 @@
                         <td class="editarComida">
                             <div class="acciones"> 
                                 <div class="botonesComida">
-                                    <a th:href="@{/clientes/delete/{id}(id=${cliente.id})}">><img class="basuraIcono" src="/images/basura_sin_fondo.png" alt="basura"></img></a>
-                                    <a th:href="@{/clientes/actualizar/{id}(id=${cliente.id})}"><img class="modificarIcono" src="/images/modificar_sin_fondo.png" alt="basura"></img></a>
+                                    <a th:href="@{/clientes/delete/{id}(id=${cliente.id})}">><img class="basuraIcono" src="/images/equis.png" alt="basura"></img></a>
+                                    <a th:href="@{/clientes/actualizar/{id}(id=${cliente.id})}"><img class="modificarIcono" src="/images/lapizM.png" alt="basura"></img></a>
                                 </div>
                                 
                             </div>

@@ -6,7 +6,7 @@
     font-family: 'Oswald', sans-serif;
 }
 
-body{
+body {
     background-color: #2a2420;
 }
 
@@ -137,31 +137,18 @@ nav {
 }
 
 
-/*kjk*/
-
-
-
-
-/* Contenedor principal */
-.menu-container {
-    margin-top: 130px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    background: #2a2420;
-    padding: 20px;
-    min-height: calc(100vh - 200px); /* Ajuste dinámico */
-
-}
-
-/* Barra lateral */
+/* Barra lateral: Ahora en la parte superior */
 .sidebar {
-    width: 500px;
-    height: 1450px;
+    width: 100%;
+    height: auto; /* Elimino el alto fijo */
     background: #1d1b18;
     padding: 20px;
-    border-radius: 10px;
     text-align: center;
+}
+
+.sidebar h2{
+    color: #efe9ce;
+    font-size: 3rem;
 }
 
 .btn-activos {
@@ -174,37 +161,32 @@ nav {
     text-transform: uppercase;
     border-radius: 5px;
     width: 100%;
-    margin-bottom: 20px;
-}
-
-.pedido-activo img {
-    width: 100%;
-    width: 450px;
-    height: 1300px;
-    border-radius: 10px; 
-
-}
-
-/* Contenedor del menú */
-.menu-content {
-    flex: 1;
-    padding: 20px;
-}
-
-/* Buscador y filtro */
-.menu-header {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 50px;
 }
 
+.pedido-activo img {
+    width: 1300px;
+    height: 500px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+/* Sección de búsqueda y filtro */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
 .search-bar {
-    width: 70%;
+    width: 95%;
     padding: 10px;
     border-radius: 5px;
     border: none;
     font-size: 1rem;
-    margin-left: 70px;
+    margin-left: 30px;
+
 }
 
 .btn-filtrar {
@@ -215,27 +197,30 @@ nav {
     font-size: 1.4rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 80px;
-    
 }
 
-/* Grid de hamburguesas */
-.grid-hamburguesas {
+/* Contenedor del menú de tarjetas */
+.menu-container {
     display: flex;
-    justify-content: flex-start; /* Alinea las tarjetas desde el inicio */
-    justify-content: center;
-    overflow-x: auto; /* Permite desplazamiento horizontal si hay muchas tarjetas */
-    gap: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px; /* Espacio extra para evitar que choque con el footer */
-    margin: 0px;
+    flex-direction: column;
+    align-items: center;
+    background: #2a2420;
+    padding: 20px;
+    margin-top: 150px; /* Asegura que no quede debajo del header */
+}
 
+/* Contenedor de las tarjetas dentro de menu-content */
+.menu-content {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se acomoden en varias filas si es necesario */
+    justify-content: space-between; /* Alinea las tarjetas y las distribuye con espacio entre ellas */
+    gap: 50px; /* Espacio entre las tarjetas */
+    padding: 20px;
 }
 
 /* Tarjeta de hamburguesa */
- .producto .card {
-    width: 100%; /* Permite que se ajuste dentro del grid */
-    width: 280px; /* Tamaño máximo */
+.producto .card {
+    width: 280px; /* Tamaño de la tarjeta */
     height: 390px; /* Mantiene el tamaño de la tarjeta */
     background: #efe9ce;
     border-radius: 10px;
@@ -243,13 +228,12 @@ nav {
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
     border: 5px solid transparent;
+    margin: 40px; /* Agrega un margen alrededor de cada tarjeta */
 }
-
 
 /* Imagen de hamburguesa */
 .card img {
     width: 100%;
-    height: 100%;
     height: 200px; /* Tamaño controlado para que todas sean iguales */
     object-fit: cover; /* Ajusta la imagen dentro del espacio */
     opacity: 0.6;
@@ -279,13 +263,42 @@ nav {
     font-weight: bold;
 }
 
-.card .decoracion{
+.card .decoracion {
     margin-top: 35px;
     width: 100%;
-    height: 40px; /* Tamaño controlado para que todas sean iguales */
-    object-fit: cover; /* Ajusta la imagen dentro del espacio */
-    
+    height: 40px;
+    object-fit: cover;
+}
 
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-content {
+        justify-content: center; /* Centra las tarjetas en pantallas pequeñas */
+    }
+    
+    .producto .card {
+        width: 90%; /* Reduce el tamaño de las tarjetas en pantallas pequeñas */
+        height: 350px; /* Ajusta la altura de las tarjetas */
+    }
+}
+
+
+.card .decoracion {
+    margin-top: 35px;
+    width: 100%;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .grid-hamburguesas {
+        grid-template-columns: 1fr; /* Una tarjeta por fila en pantallas pequeñas */
+    }
+
+    .card {
+        height: 350px; /* Ajusta la altura de las tarjetas en pantallas pequeñas */
+    }
 }
 
 /* Footer */
@@ -296,9 +309,10 @@ nav {
     color: white;
     text-align: center;
     align-items: center;
+    padding: 20px;
 }
 
-footer *{
+footer * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -309,140 +323,28 @@ footer .columna_footer {
     margin: 10px;
 }
 
-.columna_footer:hover{
+footer .columna_footer:hover {
     background-color: rgba(0, 0, 0, 0.048);
     transform: scale(1.05);
     transition: 0.3s ease-in-out;
 }
 
-.columna_footer ul li:hover {
+footer .columna_footer ul li:hover {
     transform: scale(1.1);
     transition: 0.3s ease-in-out;
 }
 
-.columna_footer ul{
-    width: 100%
-}
-
-.columna_footer ul li h3{
-    font-size: 15px;
-}
-
-.logo_footer{
-    height: 150px;
+footer .columna_footer ul {
     width: 100%;
 }
 
-.sobre_nosotros img{
-    height: 100%;
-}
-
-.social {
-    margin-bottom: 2rem;
-}
-
-.social a {
-    color: white;
-    font-size: 2rem;
-    margin: 0 1rem;
-    transition: color 0.3s ease;
-}
-
-.social a:hover {
-    color: #A0522D;
-}
-
-.list {
-    margin-top: 30px;
-    list-style: none;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.list li {width: 100%;
-    list-style: none;
-    margin-bottom: 20px;
-
-}
-
-.list a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.list a:hover {
-    color: #A0522D;
-}
-
-.copyright {
-    font-size: 0.9rem;
-    color: rgba(255,255,255,0.8);
-}
-
-/* Menú hamburguesa */
-.barras {
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
+footer .columna_footer ul li h3 {
+    font-size: 15px;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .barras {
-        display: block;
+    .grid-hamburguesas {
+        grid-template-columns: 1fr; /* Una tarjeta por fila en pantallas pequeñas */
     }
-
-    .nav-left .indices, 
-    .nav-right .indices {
-        display: none;
-    }
-
-    .nav-right {
-        justify-content: flex-end;
-    }
-
-    .eslogan h2 {
-        font-size: 2rem;
-        padding: 0 1rem;
-    }
-
-    .btn-eslogan {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .carousel img {
-        width: 250px;
-        height: 250px;
-    }
-
-    .list {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.eslogan, .btn-eslogan {
-    animation: fadeIn 1s ease-out;
-}
-
-.division_vertical{
-    border-left: 2px solid #A0522D;
-    height: 300px;
 }

@@ -8,7 +8,7 @@
 
 /* Fondo de la página */
 body {
-    background-color: #efe9ce;
+    background-color: #634836;
     background-size: cover;
     background-position: center;
 }
@@ -88,7 +88,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* Ajuste para evitar que el header la tape */
+    margin-top: 100px; /* Ajuste para evitar que el header la tape */
     padding: 30px;
     margin-left: 120px;
     flex-direction: column;
@@ -106,7 +106,7 @@ nav {
 
 .historia-overlay {
     width: 100%;
-    background: #634836; /* Color de fondo del título */
+    background: #A0522D; /* Color de fondo del título */
     padding-top: 130px;
     padding-right: 100px;
     padding-left: 100px ;
@@ -125,7 +125,7 @@ nav {
 
 /* Cabecera de la tabla */
 .table thead {
-    background: #bb5f3c;
+    background: #A0522D;
     color: black;
 }
 

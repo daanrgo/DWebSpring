@@ -57,26 +57,29 @@
         
         <!-- Barra lateral de pedidos activos -->
         <div class="sidebar">
+            <h2>HAZ TU PEDIDO AQUI</h2>
             <button class="btn-activos">PEDIDOS ACTIVOS</button>
-            <div class="pedido-activo">
-                <img src="/images/burgerfire.png" alt="Hamburguesa Activa">
-            </div>
+            
         </div>
+
+        <div class="pedido-activo">
+            <img src="/images/burger_fuego.jpg" alt="Hamburguesa Activa">
+        </div>
+
+
+         <!-- Buscador y filtro -->
+         <div class="menu-header">
+            <input type="text" placeholder="Buscar Producto" class="search-bar">
+        </div>
+
 
         <!-- Sección de tarjetas de hamburguesas -->
         <div class="menu-content">
             
-            <!-- Buscador y filtro -->
-            <div class="menu-header">
-                <input type="text" placeholder="Buscar Producto" class="search-bar">
-                <button class="btn-filtrar">Filtrar</button>
-            </div>
-
             <!-- Grid de hamburguesas -->
         
             <div th:each="comida : ${comidas}">
 
-                <div class="grid-hamburguesas"> 
                     
                     <a class="producto" th:href="@{/comidas/{id}(id=${comida.id})}">
                         <div class="card">
@@ -88,8 +91,6 @@
                     </a>  
                     
                     <!-- Agregar más tarjetas con hamburguesas --> 
-
-                </div>
 
             </div>
                 
