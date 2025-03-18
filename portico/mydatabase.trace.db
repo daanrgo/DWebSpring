@@ -1,0 +1,8 @@
+2025-03-18 00:28:40.365500-05:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "HTE_COMIDA" ya existe
+Table "HTE_COMIDA" already exists; SQL statement:
+create global temporary table HTE_comida(id integer, price integer, rn_ integer not null, description varchar(255), imagen varchar(255), name varchar(255), primary key (rn_)) TRANSACTIONAL [42101-232]
+2025-03-18 00:28:40.379262-05:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "HTE_ORDER_ENTITY" ya existe
+Table "HTE_ORDER_ENTITY" already exists; SQL statement:
+create global temporary table HTE_order_entity(bill_id integer, comida_id integer, id integer, quantity integer, rn_ integer not null, primary key (rn_)) TRANSACTIONAL [42101-232]

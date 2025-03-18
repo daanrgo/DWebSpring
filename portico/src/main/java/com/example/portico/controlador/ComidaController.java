@@ -3,11 +3,13 @@ package com.example.portico.controlador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import com.example.portico.entidad.Comida;
 import com.example.portico.service.ComidaService;
+import com.example.portico.dto.ComidaIndividualDTO;
 import com.example.portico.dto.TarjetasComidaDTO;
 
 import org.springframework.ui.Model;
@@ -51,20 +53,18 @@ public class ComidaController {
 
     @PostMapping("/add_adicionales")
     public String agregarAdicionales(
-            Model model, Comida comidaRecibida
+            Model model, @ModelAttribute("comida") Comida comidaRecibida, @PathVariable("user_id") int user_id
             ) {
         Comida comida = comidaService.SearchById(comidaRecibida.getId());
         comida.setAdicionalesSeleccionados(comidaRecibida.getAdicionalesSeleccionados());
         comidaService.update(comida);
-        System.out.println("AdicionalesSlec");
-        System.out.println(comidaRecibida.getAdicionalesSeleccionados().get(1));
-        return "redirect:/comidas";
+        return "redirect:/comidas/" + user_id + "/tarjetas";
     }
 
     @GetMapping("/{id}")
-    public String verComida(Model model, @PathVariable("id") int id) {
-        
-        model.addAttribute("comida", comidaService.SearchById(id));
+    public String verComida(Model model, @PathVariable("id") int id, @PathVariable("user_id") int user_id) {
+        ComidaIndividualDTO dto = new ComidaIndividualDTO(user_id, comidaService.SearchById(id));
+        model.addAttribute("dto", dto);
         return "comida_individual";
     }
 

@@ -20,23 +20,23 @@
         <div class="info-hamburguesa">
             
             <h3 th:text="'Comida'">Comida</h3>
-            <h1 th:text="${comida.name}">Nombre Comida</h1>
+            <h1 th:text="${dto.comida.name}">Nombre Comida</h1>
             
             <p class="ingredientes">
-                <strong>Descripción:</strong> <span th:text="${comida.description}"></span>
+                <strong>Descripción:</strong> <span th:text="${dto.comida.description}"></span>
             </p>
             
             <hr>
-            <p class="info-extra"><strong>Precio:</strong> $<span th:text="${comida.price}"></span></p>
+            <p class="info-extra"><strong>Precio:</strong> $<span th:text="${dto.comida.price}"></span></p>
             <hr>
             
             <section class="adicionales-container">
                 <h2>Adicionales</h2>
-                <form th:object="${comida}" th:action="@{/comidas/add_adicionales}" method="post">
+                <form th:action="@{/comidas/{user_id}/add_adicionales(user_id=${dto.user_id})}" method="post" th:object="${dto.comida}">
                     <!-- Inputs hidden para enviar los datos base de la comida -->
-                    <input type="hidden" th:field="*{id}" />
+                    <input type="hidden" name="id" th:value="${dto.comida.id}" />
                     <div class="categoria">
-                        <div th:each="adicional : ${comida.adicionales}" class="item">
+                        <div th:each="adicional : ${dto.comida.adicionales}" class="item">
                             <input type="checkbox" th:field="*{adicionalesSeleccionados[__${adicional.id}__]}" value="true">
 
                             <label th:text="${adicional.name}"></label>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="imagen-hamburguesa">
-            <img th:src="${comida.imagen}" alt="Imagen de la comida">
+            <img th:src="${dto.comida.imagen}" alt="Imagen de la comida">
         </div>
     </section>
 
