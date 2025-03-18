@@ -1,5 +1,6 @@
 package com.example.portico.entidad;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,7 +28,7 @@ public class Comida {
     private List<Adicional> adicionales = new ArrayList<>();
 
     @OneToMany(mappedBy = "comida")
-    private List<OrderEntity> orders;
+    private List<OrderEntity> orders = new ArrayList<>();
 
 
 
@@ -103,9 +104,10 @@ public class Comida {
     }
 
     
-    public ArrayList<Adicional> getAdicionales() {
-        return (ArrayList<Adicional>) adicionales;
+    public List<Adicional> getAdicionales() {
+        return adicionales;
     }
+
     public void addAdicional(Adicional adicional){
         this.adicionales.add(adicional);
         this.adicionalesSeleccionados.put(adicional.getId(), false);
