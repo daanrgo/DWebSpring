@@ -1,10 +1,12 @@
 package com.example.portico.entidad;
 
+import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.util.Date;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Bill {
@@ -13,21 +15,30 @@ public class Bill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String payType;
+    private Integer status;
     private Date creationDate;
-    private String email;
-    private Integer phone;
     private String address;
+
+
+    @ManyToOne
+    private Operator operator;
+
+    @ManyToOne
+    private Cliente client;    
+
+    @ManyToOne
+    private Courier courier;
+
+    @ManyToOne
+    private PaymentType payment_type;
 
 
     public Bill() {
     }
 
-    public Bill(String payType, Date creationDate, String email, Integer phone, String address) {
-        this.payType = payType;
+    public Bill(Integer status, Date creationDate, String email, Integer phone, String address) {
+        this.status = status;
         this.creationDate = creationDate;
-        this.email = email;
-        this.phone = phone;
         this.address = address;
     }
 
@@ -39,12 +50,13 @@ public class Bill {
         this.id = id;
     }
 
-    public String getPayType() {
-        return payType;
+
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setPayType(String payType) {
-        this.payType = payType;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Date getCreationDate() {
@@ -53,22 +65,6 @@ public class Bill {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Integer getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Integer phone) {
-        this.phone = phone;
     }
 
     public String getAddress() {
