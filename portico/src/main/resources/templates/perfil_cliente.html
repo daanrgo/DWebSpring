@@ -68,7 +68,10 @@
                 <input type="text" id="info-adicional" placeholder="Barrio, conjunto, interior, apartamento, etc..">
             </div>
             <div class="perfil-botones">
-                <button class="btn-modificar">MODIFICAR DATOS</button>
+                <a th:href="@{/clientes/actualizar/{id}(id=${cliente.id})}" class="btn-modificar">
+                    <button class="btn-modificar">MODIFICAR DATOS</button>
+                </a>
+
                 <button class="btn-cambiar">CAMBIAR CONTRASEÑA</button>
             </div>
         </div>
