@@ -23,7 +23,10 @@
     <section class="detalle-container">
         <!-- Sección izquierda: información de la hamburguesa -->
         <div class="info-hamburguesa" >
-            <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
+
+            <a class="volver" href="/adicionales">
+                <img src="/images/flechaAtras.png"  ></img> 
+            </a>
 
             <form th:object="${adicional}" th:action="@{/adicionales/update}" method="post">
                 <h3>Id</h3>
@@ -35,9 +38,12 @@
                 <h3>Precio</h3>
                 <input th:field="*{price}" type="number" class="input-campo" placeholder="Ej: $29.900">
 
+                <h3>Id de la Hamburguesa con este adicional</h3>
+                <input type="number" class="input-campo" placeholder="Ej: 2">
+
                 <hr>
 
-                <button type="submit" class="btn-adicionales">CREAR ADICIONAL</button>
+                <button type="submit" class="btn-adicionales">ACTUALIZAR CAMBIO</button>
             </form>
         </div>
 

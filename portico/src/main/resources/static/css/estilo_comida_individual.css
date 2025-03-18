@@ -18,7 +18,7 @@ body{
     width: 100%;
     text-align: center;
     margin-bottom: -180px; /* Ajusta la imagen más cerca de la hamburguesa */
-    margin-left: -25px;
+    margin-left: -2px;
     position: relative;
     z-index: 2;
 }
@@ -44,7 +44,7 @@ body{
 
 /* Sección izquierda - Información de la hamburguesa */
 .info-hamburguesa {
-    width: 600px;
+    width: 800px;
     height: 1000px;
     padding: 40px;
     padding-left: 120px; /* Aumenta el espacio a la izquierda del texto */
@@ -54,6 +54,7 @@ body{
     flex-direction: column;
     justify-content: center;
     position: relative;
+    margin-top: -30px;
 }
 
 .info-hamburguesa img{
@@ -71,11 +72,6 @@ body{
     margin-bottom: 50px;
 }
 
-
-.volver:hover{
-    color: #FFC080; /* Naranja */
-    transform: scale(1.1);
-}
 
 /* Títulos */
 .info-hamburguesa h3 {
@@ -186,16 +182,10 @@ hr {
 
 /* Ajustar la imagen de la hamburguesa */
 .imagen-hamburguesa img {
-    width: 100%;
-    max-height: 100vh;
-    max-width: 400px;
-    height: auto;
+    width:700px ;
+    height: 900px;
     border-radius: 15px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.imagen-hamburguesa img:hover {
-    transform: scale(1.05);
 }
 
 

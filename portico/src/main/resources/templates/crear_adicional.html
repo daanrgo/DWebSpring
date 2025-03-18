@@ -26,11 +26,13 @@
             <img src="/images/flechaAtras.png" href="index.html" class="volver"></img> 
 
             <form th:object="${adicional}" th:action="@{/adicionales/create}" method="post">
+
                 <h3>Nombre de la Adicional</h3>
                 <input th:field="*{name}" type="text" class="input-campo" placeholder="Ej: El Portico">
 
                 <h3>Precio</h3>
                 <input th:field="*{price}" type="number" class="input-campo" placeholder="Ej: $29.900">
+
 
                 <hr>
 

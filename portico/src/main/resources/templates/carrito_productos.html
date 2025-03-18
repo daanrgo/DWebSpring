@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Hamburguesas</title>
+    
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@600&family=Grechen+Fuemen&family=Lilita+One&family=Oswald:wght@200..700&family=Pacifico&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Shadows+Into+Light&display=swap"
+        rel="stylesheet">
+
+        <link rel="stylesheet" href="/portico_spring/portico/src/main/resources/static/css/estilo_carrito.css">
+
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <!-- Contenedor para las imágenes a la izquierda -->
+            <div class="header-left-icons">
+                <div class="perfil-icon">
+                    <img src="/images/perfilCaballo.png" alt="Caballo">
+                    <span class="icon-text">Perfil</span> <!-- Texto debajo de la imagen "Caballo" -->
+                </div>
+                <div class="cart-icon">
+                    <img src="/images/carrito.png" alt="Carrito">
+                    <span class="icon-text">Carrito</span> <!-- Texto debajo de la imagen "Carrito" -->
+                </div>
+            </div>
+    
+            <div class="nav-left">
+                <ul class="indices">
+                    <li><a href="#quienes"><button>¿Quiénes Somos?</button></a></li>
+                    <li><a href="#sede"><button>Sede</button></a></li>
+                </ul>
+            </div>
+    
+            <div class="logo">
+                <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
+            </div>
+    
+            <div class="nav-right">
+                <ul class="indices">
+                    <li><a href="#carta"><button>Carta</button></a></li>
+                    <li><a href="#contacto"><button>Contáctanos</button></a></li>
+                </ul>
+                <a href="#pedido" class="btn-pedido"><button>Haz tu pedido</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="pedido-container">
+        <!-- Detalles del pedido -->
+        <div class="pedido-info">
+            <h1>Pedido</h1>
+            <p><strong>Cliente:</strong> Daniel León</p>
+            <p><strong>Dirección:</strong> Carrera 14a #143-27</p>
+            <p><strong>Código pedido:</strong> #YT67REK234</p>
+            <div class="productos">
+                <h3>Productos</h3>
+                <table>
+                    <tr>
+                        <td>Producto #1</td>
+                        <td>Cantidad: 2</td>
+                        <td>$ 96.800</td>
+                    </tr>
+                    <tr>
+                        <td>Producto #2</td>
+                        <td>Cantidad: 1</td>
+                        <td>$ 40.400</td>
+                    </tr>
+                    <tr>
+                        <td>Producto #3</td>
+                        <td>Cantidad: 1</td>
+                        <td>$ 29.000</td>
+                    </tr>
+                </table>
+            </div>
+
+            <hr>
+            <p><strong>Total:</strong> $ 166.200</p>
+
+            <a class="agregarProducto" >
+                <button class="agregarProducto">HACER PEDIDO</button>
+            </a>
+        </div>
+
+        <!-- Tarjetas de productos -->
+        <div class="productos-tarjetas">
+            <h2>Productos</h2>
+
+            <!-- Tarjeta de Producto 1 -->
+            <div class="tarjeta-producto">
+                <img src="/images/burger1.png" alt="Hamburguesa">
+                <div class="tarjeta-detalle">
+                    <h3>Producto #1</h3>
+                    <p>H. El Portico</p>
+                    <p><strong>Adicionales:</strong> Papas a la Francesa, Guacamole, Salsa BBQ, Limonada</p>
+                    <p><strong>Total:</strong> $ 48.400</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Producto 2 -->
+            <div class="tarjeta-producto">
+                <img src="/images/burger2.png" alt="Hamburguesa">
+                <div class="tarjeta-detalle">
+                    <h3>Producto #2</h3>
+                    <p>H. El Principe</p>
+                    <p><strong>Adicionales:</strong> Salsa Portica, Limonada</p>
+                    <p><strong>Total:</strong> $ 40.400</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Producto 3 -->
+            <div class="tarjeta-producto">
+                <img src="/images/burger3.png" alt="Hamburguesa">
+                <div class="tarjeta-detalle">
+                    <h3>Producto #3</h3>
+                    <p>H. El Noble</p>
+                    <p><strong>Adicionales:</strong> Limonada</p>
+                    <p><strong>Total:</strong> $ 29.000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="sobre_nosotros columna_footer">
+            <ul class="list">
+                <li>
+                    <div class="logo_footer">
+                        <img src="/images/NuevoLogo.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <h3>Telefono: 512-345-678</h3>
+                </li>
+                <li>
+                    <h3>Direccion: Paseo de la castellana</h3>
+                </li>
+                <li>
+                    <h3>Bogotá - Colombia</h3>
+                </li>
+            </ul>
+        </div>
+
+        <span class="division_vertical"></span>
+
+        <div class="columna_footer">
+            <!--Esta es la otra secciona de footer, no hace nada, es solo decoración-->
+            <ul class="list">
+
+                <li>
+                    <h2>Productos</h2>
+                </li>
+
+                <li>
+                    <a href="#">El Portico</a>
+                </li>
+                <li>
+                    <a href="#">Fungi Premium</a>
+                </li>
+                <li>
+                    <a href="#">Marinera</a>
+                </li>
+                <li>
+                    <a href="#">La Exquisita</a>
+                </li>
+                <li>
+                    <a href="#">El Principe</a>
+                </li>
+                <li>
+                    <a href="#">La King</a>
+                </li>
+                <li>
+                    <a href="#">El Noble</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <span class="division_vertical"></span>
+
+        <div class="columna_footer">
+            <!--Esta es la otra secciona de footer, no hace nada, es solo decoración-->
+            <ul class="list">
+
+                <li>
+                    <h2>Contacto</h2>
+                </li>
+
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">Servicio al Cliente</a>
+                </li>
+                <li>
+                    <a href="#">Sobre Nosotros</a>
+                </li>
+                <li>
+                    <a href="#">Politicas de Privacidad</a>
+                </li>
+                <li class="social">
+                    <a href="about.html"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                </li>
+
+            </ul>
+        </div>
+
+    </footer>
+
+</body>
+</html>

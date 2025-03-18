@@ -1,0 +1,272 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: #2a2420;
+}
+
+/* Header y Navegación */
+header {
+    background: rgba(70, 67, 62, 0.8); /* Color con opacidad */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Contenedor para los íconos en el header */
+.header-left-icons {
+    display: flex;
+    gap: 40px; /* Espacio entre los íconos */
+    margin-left: -100px;
+
+}
+
+/* Estilo de los íconos */
+.header-left-icons img {
+    display: block;
+    width: 60px;  /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    cursor: pointer;
+    
+}
+
+/* Estilos para los textos debajo de las imágenes */
+.icon-text {
+    font-size: 1rem;  /* Tamaño pequeño para el texto */
+    text-align: center;
+  /* Separación entre la imagen y el texto */
+    color: #efe9ce;  /* Color del texto (puedes cambiarlo según el diseño) */
+}
+
+/* Ajuste para el contenedor de la imagen y el texto */
+.perfil-icon, .cart-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    margin-top: 30px; /* Ajusta la cantidad para bajar los íconos y el texto */
+}
+
+.perfil-icon img,.cart-icon img{
+    width: 60px;  /* Ajusta el tamaño según sea necesario */
+    height: auto;
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; /* Ajusta el ancho para centrar todo */
+    max-width: 1000px;
+}
+
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap:2rem; /* Aumenta el espacio entre los elementos */
+}
+.nav-left{
+    margin-left: -250px;
+}
+
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.logo img {
+    height: 100px;
+    display: block;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.indices {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.indices button, .btn-pedido button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.indices button:hover {
+    color: #A0522D;
+    transform: translateY(-2px);
+}
+
+.btn-pedido button {
+    background-color: #A0522D;
+    border-radius: 25px;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+}
+
+.btn-pedido button:hover {
+    background-color: #8B4513;
+    transform: scale(1.05);
+}
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Fondo de la página */
+body {
+    background-color: #2a2420;
+    color: white;
+}
+
+/* Contenedor principal */
+.operador-container {
+    margin-top: 100px;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Título principal */
+.operador-container h1 {
+    font-size: 2rem;
+    color: #efe9ce;
+    margin-bottom: 40px;
+}
+
+/* Contenedor de imágenes */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Estilo de cada imagen */
+.image-item {
+    position: relative;
+    width: 45%;
+    max-width: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* Desvanecido sobre las imágenes */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Mostrar overlay cuando se pasa el cursor sobre la imagen */
+.image-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .image-item {
+        width: 90%; /* Ocupa el 90% del ancho en pantallas pequeñas */
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2a2420;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+
+footer * {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer .columna_footer {
+    display: flex;
+    width: 24%;
+    height: 350px;
+    margin: 10px;
+}
+
+footer .columna_footer:hover {
+    background-color: rgba(0, 0, 0, 0.048);
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+footer .columna_footer ul li:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+footer .columna_footer ul {
+    width: 100%;
+}
+
+footer .columna_footer ul li h3 {
+    font-size: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .grid-hamburguesas {
+        grid-template-columns: 1fr; /* Una tarjeta por fila en pantallas pequeñas */
+    }
+}
