@@ -14,3 +14,6 @@ asdfasdfasdf
 Las funcionalidad principales del sitio web se pueden ver a través de estos videos
 - **Log in, Log out.**
   ![logInLogOut](/portico/src/main/resources/static/images/gif_landing.gif)
+
+- **Elegir hamburguesa**
+  ![SignUp](/portico/src/main/resources/static/images/hamburguesa.gif)
