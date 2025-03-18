@@ -22,7 +22,7 @@
         <!-- Sección izquierda: información de la hamburguesa -->
         <form class="info-hamburguesa" th:object="${cliente}" th:action="@{/clientes/update/{id}(id=${cliente.id})}" method="post">
 
-            <a href="/login">
+            <a href="/login" hidden="true">
                 <img src="/images/flechaAtras.png" alt="flecha atras">
             </a>
 
