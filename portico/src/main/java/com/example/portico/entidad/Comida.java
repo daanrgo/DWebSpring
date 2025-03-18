@@ -24,7 +24,7 @@ public class Comida {
     private String imagen; // Se guarda el url de la imagen
 
     @OneToMany(mappedBy = "comida", cascade = CascadeType.ALL)
-    private List<Adicional> adicionales;
+    private List<Adicional> adicionales = new ArrayList<>();
 
     @OneToMany(mappedBy = "comida")
     private List<OrderEntity> orders;
@@ -102,12 +102,12 @@ public class Comida {
         this.adicionalesSeleccionados = adicionalesSeleccionados;
     }
 
-    /* 
+    
     public ArrayList<Adicional> getAdicionales() {
-        return adicionales;
+        return (ArrayList<Adicional>) adicionales;
     }
     public void addAdicional(Adicional adicional){
         this.adicionales.add(adicional);
         this.adicionalesSeleccionados.put(adicional.getId(), false);
-    } */
+    } 
 }
