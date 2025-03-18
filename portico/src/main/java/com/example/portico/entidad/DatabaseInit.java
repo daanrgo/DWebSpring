@@ -50,8 +50,8 @@ public class DatabaseInit implements ApplicationRunner {
         adicionalRepository.save(new Adicional("Salsa BBQ", 120));
         adicionalRepository.save(new Adicional("Aderezo Ranch", 100));
 
-        String defaultImage = "https://www.elespectador.com/resizer/v2/ZQUGSWWM2BBZXHEPBPMRIWX46U.jpg?auth=fba19f13a18b1a314f32e083e9d0727fbbe153571721015b63a21613680c519e&width=920&height=613&smart=true&quality=60";
-        comidaRepository.save(new Comida("Hamburguesa con queso", 800, "Hamburguesa clásica con carne y queso fundido.", defaultImage));
+        String defaultImage = "/images/burger2.png";
+        comidaRepository.save(new Comida("Hamburguesa con queso", 800, "Hamburguesa clásica con carne y queso fundido.", "/images/burger2.png"));
         comidaRepository.save(new Comida("Hamburguesa BBQ", 950, "Hamburguesa BBQ ahumada con tocino crujiente y queso cheddar.", defaultImage));
         comidaRepository.save(new Comida("Wrap de pollo", 750, "Wrap de pollo a la parrilla con lechuga, tomate y aderezo ranch.", defaultImage));
         comidaRepository.save(new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", defaultImage));

@@ -88,7 +88,7 @@
                     
                     <a class="producto" th:href="@{/comidas/{user_id}/{id}(user_id=${dto.user_id}, id=${comida.id})}">
                         <div class="card">
-                            <img th:src="@{/images/{img}(img=${comida.imagen})}" th:alt="${comida.name}">
+                            <img th:src="@{{img}(img=${comida.imagen})}" th:alt="${comida.name}">
                             <h3 th:text="${comida.name}"></h3>
                             <p th:text="${comida.description}"></p>
                             <img class="decoracion" th:src="@{/images/decoracionTarjeta.png}" alt="decoracion dorada">
