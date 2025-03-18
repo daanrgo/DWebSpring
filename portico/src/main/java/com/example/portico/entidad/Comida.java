@@ -2,7 +2,9 @@ package com.example.portico.entidad;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -21,10 +23,15 @@ public class Comida {
     private String description;
     private String imagen; // Se guarda el url de la imagen
 
-/*
-    @OneToMany
-    private ArrayList<Adicional> adicionales; */
+    @OneToMany(mappedBy = "comida", cascade = CascadeType.ALL)
+    private List<Adicional> adicionales;
 
+    @OneToMany(mappedBy = "comida")
+    private List<OrderEntity> orders;
+
+
+
+    
     @Transient
     private HashMap<Integer, Boolean> adicionalesSeleccionados;
 
