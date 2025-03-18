@@ -45,6 +45,30 @@ public class OrderEntity {
         this.quantity = quantity;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Comida getComida() {
+        return comida;
+    }
+
+    public void setComida(Comida comida) {
+        this.comida = comida;
+    }
+
+    public Bill getBill() {
+        return bill;
+    }
+
+    public void setBill(Bill bill) {
+        this.bill = bill;
+    }
+
 
 
 }

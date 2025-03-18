@@ -1,7 +1,6 @@
 package com.example.portico.service;
 
 import java.util.Collection;
-import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -18,5 +17,5 @@ public interface BillService {
 
     public void update(Bill comida);
 
-    public void add(Bill comida);
+    public void add(Bill bill, int client_id);
 }

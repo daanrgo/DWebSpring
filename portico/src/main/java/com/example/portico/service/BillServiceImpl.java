@@ -53,9 +53,9 @@ public class BillServiceImpl implements BillService {
     }
 
     @Override    
-    public void add(Bill comida){
+    public void add(Bill bill, int client_id){
 
-        repo.save(comida);
+        repo.save(bill);
     }
 
     

@@ -80,4 +80,46 @@ public class Bill {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public Operator getOperator() {
+        return operator;
+    }
+
+    public void setOperator(Operator operator) {
+        this.operator = operator;
+    }
+
+    public Cliente getClient() {
+        return client;
+    }
+
+    public void setClient(Cliente client) {
+        this.client = client;
+    }
+
+    public Courier getCourier() {
+        return courier;
+    }
+
+    public void setCourier(Courier courier) {
+        this.courier = courier;
+    }
+
+    public PaymentType getPayment_type() {
+        return payment_type;
+    }
+
+    public void setPayment_type(PaymentType payment_type) {
+        this.payment_type = payment_type;
+    }
+
+    public List<OrderEntity> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<OrderEntity> orders) {
+        this.orders = orders;
+    }
+
+    
 }
