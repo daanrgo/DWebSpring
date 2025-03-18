@@ -304,10 +304,9 @@ nav {
     color: white;
     text-align: center;
     align-items: center;
-    padding: 20px;
 }
 
-footer * {
+footer *{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -318,23 +317,84 @@ footer .columna_footer {
     margin: 10px;
 }
 
-footer .columna_footer:hover {
+.columna_footer:hover{
     background-color: rgba(0, 0, 0, 0.048);
     transform: scale(1.05);
     transition: 0.3s ease-in-out;
 }
 
-footer .columna_footer ul li:hover {
+.columna_footer ul li:hover {
     transform: scale(1.1);
     transition: 0.3s ease-in-out;
 }
 
-footer .columna_footer ul {
+.columna_footer ul{
+    width: 100%
+}
+
+.columna_footer ul li h3{
+    font-size: 15px;
+}
+
+.logo_footer{
+    height: 150px;
     width: 100%;
 }
 
-footer .columna_footer ul li h3 {
-    font-size: 15px;
+.sobre_nosotros img{
+    height: 100%;
+}
+
+.social {
+    margin-bottom: 2rem;
+}
+
+.social a {
+    color: white;
+    font-size: 2rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social a:hover {
+    color: #A0522D;
+}
+
+.list {
+    margin-top: 30px;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.list li {width: 100%;
+    list-style: none;
+    margin-bottom: 20px;
+
+}
+
+.list a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.list a:hover {
+    color: #A0522D;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Menú hamburguesa */
+.barras {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
 }
 
 /* Media Queries */
