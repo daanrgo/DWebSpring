@@ -28,8 +28,21 @@ public class DatabaseInit implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        Adicional adicional;
+        Comida comida;
+        comida = new Comida("Hamburguesa con queso", 800, "Hamburguesa clásica con carne y queso fundido.", "/images/burger2.png");
+        
+        adicional = new Adicional("Queso", 200);
+        comida.addAdicional(adicional);
 
-        adicionalRepository.save(new Adicional("Queso", 200));
+        adicional = new Adicional("Tocino", 300);
+        comida.addAdicional(adicional);
+
+        adicionalRepository.save(adicional);
+        comidaRepository.save(comida);
+
+/*
+  adicionalRepository.save(new Adicional("Queso", 200));
         adicionalRepository.save(new Adicional("Tocino", 300));
         adicionalRepository.save(new Adicional("Aguacate", 250));
         adicionalRepository.save(new Adicional("Huevo", 150));
@@ -92,6 +105,9 @@ public class DatabaseInit implements ApplicationRunner {
         comidaRepository.save(new Comida("Hamburguesa con Queso Azul", 980, "Queso azul, nueces y peras a la parrilla.", defaultImage));
         comidaRepository.save(new Comida("Hamburguesa de Pescado Blanco", 1150, "Pescado blanco a la parrilla, salsa tártara y ensalada de col.", defaultImage));
 
+ */
+
+       
 
 
         Comida asociar = comidaRepository.findById(1).get();
