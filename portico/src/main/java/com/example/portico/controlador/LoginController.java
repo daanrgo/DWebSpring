@@ -27,10 +27,10 @@ public class LoginController {
 
     @PostMapping("")
     public String login(@ModelAttribute LoginForm loginForm, Model model) {
-        boolean autenticado = clienteService.login(loginForm.getUsername(), loginForm.getPassword());
+        Integer id_autenticado = clienteService.login(loginForm.getUsername(), loginForm.getPassword());
 
-        if (autenticado) {
-            return "redirect:/comidas/tarjetas";
+        if (id_autenticado != -1) {
+            return "redirect:/comidas/" + id_autenticado.toString() + "/tarjetas";
         }
 
         model.addAttribute("error", "Usuario o contraseña incorrectos");

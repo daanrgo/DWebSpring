@@ -19,5 +19,5 @@ public interface  ClienteService {
 
     public void add(Cliente cliente);
     
-    public Boolean login(String username, String password);
+    public Integer login(String username, String password);
 }

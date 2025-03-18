@@ -1,23 +1,18 @@
 package com.example.portico.controlador;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import com.example.portico.entidad.AdicionalesDTO;
 import com.example.portico.entidad.Comida;
 import com.example.portico.service.ComidaService;
+import com.example.portico.dto.TarjetasComidaDTO;
 
 import org.springframework.ui.Model;
 
-@RequestMapping("/comidas")
+@RequestMapping("/comidas/{user_id}")
 @Controller
 public class ComidaController {
 
@@ -31,10 +26,17 @@ public class ComidaController {
         return "tabla_comida";
     }
 
-    @GetMapping("/tarjetas")
-    public String mostraHamburguesas(Model model) {
+    @GetMapping("/carrito")
+    public String mostrarCarrito(Model model){
+        return "carrito";
+    }
 
-        model.addAttribute("comidas", comidaService.SearchAll());
+    @GetMapping("/tarjetas")
+    public String mostraHamburguesas(Model model, @PathVariable("user_id") int user_id) {
+
+        TarjetasComidaDTO dto = new TarjetasComidaDTO(user_id, comidaService.SearchAll());
+
+        model.addAttribute("dto", dto);
         return "tarjetas_comidas";
     }
 
