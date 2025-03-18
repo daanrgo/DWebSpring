@@ -41,6 +41,33 @@ public class DatabaseInit implements ApplicationRunner {
         adicionalRepository.save(adicional);
         comidaRepository.save(comida);
 
+
+        Adicional adicional2;
+        Comida comida2;
+        comida2 = new Comida("Hamburguesa BBQ", 950, "Hamburguesa BBQ ahumada con tocino crujiente y queso cheddar.", "/images/burger3.png");
+        
+        adicional2 = new Adicional("Queso", 200);
+        comida2.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida2.addAdicional(adicional);
+
+        adicionalRepository.save(adicional2);
+        comidaRepository.save(comida2);
+
+        Adicional adicional3;
+        Comida comida3;
+        comida3 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
+        
+        adicional3 = new Adicional("Queso", 200);
+        comida3.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida3.addAdicional(adicional);
+
+        adicionalRepository.save(adicional3);
+        comidaRepository.save(comida3);
+
 /*
   adicionalRepository.save(new Adicional("Queso", 200));
         adicionalRepository.save(new Adicional("Tocino", 300));
