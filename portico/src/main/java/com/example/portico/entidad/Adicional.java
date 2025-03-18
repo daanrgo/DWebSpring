@@ -55,11 +55,11 @@ public class Adicional {
     public Adicional() {
         
     }
-/*     public Comida getComida() {
+     public Comida getComida() {
         return comida;
     }
     public void setComida(Comida comida) {
         this.comida = comida;
-    }*/
+    }
 }
 

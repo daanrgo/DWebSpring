@@ -94,7 +94,13 @@ public class DatabaseInit implements ApplicationRunner {
 
 
 
+        Comida asociar = comidaRepository.findById(1).get();
 
+        for(Adicional hw: adicionalRepository.findAll()) {
+
+            hw.setComida(asociar);
+            adicionalRepository.save(hw);
+        }
 
         clienteRepository.save(new Cliente("Pepe123", "1234", "Pepe", "Gonzalez", "pepegonzalez@gmail.com", 31531977, "calle 34 av 25"));
         clienteRepository.save(new Cliente("Pepe1234", "12345", "Pepe", "Gonzalez2", "pepegonzalez2@gmail.com", 31531977, "calle 34 av 25"));
