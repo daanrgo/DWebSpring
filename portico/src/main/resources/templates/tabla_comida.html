@@ -55,8 +55,8 @@
                 </thead>
             
                 <tbody>
-                    <tr th:each="comida: ${comidas}"
-                    th:onclick="|location.href='/comidas/${comida.id}'|" 
+                    <tr th:each="comida: ${dto.comidas}"
+                    th:onclick="|location.href='/comidas/${dto.user_id}/${comida.id}'|" 
                     style="cursor: pointer;">
                         <td th:text="${comida.name}" data-label="Nombre"></td>
                         <td th:text="${comida.price}" data-label="Precio"></td>
@@ -65,8 +65,8 @@
                             <div class="acciones"> 
                                 <img class="fotoHamburguesa" th:src="${comida.imagen}" alt="Imagen comida">
                                 <div class="botonesComida">
-                                    <a th:href="@{/comidas/delete/{id}(id=${comida.id})}">><img class="basuraIcono" src="/images/equis.png" alt="basura"></img></a>
-                                    <a th:href="@{/comidas/actualizar/{id}(id=${comida.id})}"><img class="modificarIcono" src="/images/lapizM.png" alt="basura"></img></a>
+                                    <a th:href="@{/comidas/{user_id}/delete/{id}(id=${comida.id}, user_id=${dto.user_id})}">><img class="basuraIcono" src="/images/equis.png" alt="basura"></img></a>
+                                    <a th:href="@{/comidas/{user_id}/actualizar/{id}(id=${comida.id}, user_id=${dto.user_id})}"><img class="modificarIcono" src="/images/lapizM.png" alt="basura"></img></a>
                                 </div>
                                 
                             </div>
@@ -77,7 +77,7 @@
         </div>
     </div>
 
-    <a href="/comidas/crear" class="agregarProducto">
+    <a th:href="@{/comidas/{id}/crear(id=${dto.user_id})}" class="agregarProducto">
         <button type="button">AÑADIR PRODUCTO</button>
     </a>
 

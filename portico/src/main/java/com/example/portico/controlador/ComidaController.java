@@ -23,9 +23,11 @@ public class ComidaController {
     ComidaService comidaService;
 
     @GetMapping("")
-    public String mostrarInfoComida(Model model) {
+    public String mostrarInfoComida(Model model, @PathVariable("user_id") int user_id) {
 
-        model.addAttribute("comidas", comidaService.SearchAll());
+        TarjetasComidaDTO dto = new TarjetasComidaDTO(user_id, comidaService.SearchAll());
+
+        model.addAttribute("dto", dto);
         return "tabla_comida";
     }
 
@@ -77,7 +79,7 @@ public class ComidaController {
     }
 
     @GetMapping("/actualizar/{id}")
-    public String mostrarFormularioModificar(Model model, @PathVariable("id") int id) {
+    public String mostrarFormularioModificar(Model model, @PathVariable("id") int id, @PathVariable("user_id") int user_id) {
         Comida comida = comidaService.SearchById(id);
 
         model.addAttribute("comida", comida);
@@ -85,22 +87,22 @@ public class ComidaController {
     }
 
     @PostMapping("/create")
-    public String crearComida(Model model, Comida comida) {
+    public String crearComida(Model model, Comida comida, @PathVariable("user_id") int user_id) {
         comidaService.add(comida);
-        return "redirect:/comidas";
+        return "redirect:/comidas/" + user_id;
     }
 
     @GetMapping("/delete/{id}")
-    public String eliminarComida(Model model, @PathVariable("id") int id) {
+    public String eliminarComida(Model model, @PathVariable("id") int id, @PathVariable("user_id") int user_id) {
         comidaService.deleteById(id);
-        return "redirect:/comidas";
+        return "redirect:/comidas/" + user_id;
     }
 
     @PostMapping("/update")
-    public String postMethodName(Model model, Comida comida) {
+    public String postMethodName(Model model, Comida comida, @PathVariable("user_id") int user_id) {
         System.out.println(comida.toString());
         comidaService.update(comida);
-        return "redirect:/comidas";
+        return "redirect:/comidas/" + user_id;
     }
 
 
