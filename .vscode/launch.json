@@ -5,6 +5,13 @@
             "name": "PorticoApplication",
             "request": "launch",
             "mainClass": "com.example.portico.PorticoApplication",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "PorticoApplication",
+            "request": "launch",
+            "mainClass": "com.example.portico.PorticoApplication",
             "projectName": "portico"
         },
         {

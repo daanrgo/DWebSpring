@@ -1,0 +1,345 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: #2a2420;
+}
+
+/* Header y Navegación */
+header {
+    background: rgba(70, 67, 62, 0.8); /* Color con opacidad */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Contenedor para los íconos en el header */
+.header-left-icons {
+    display: flex;
+    gap: 40px; /* Espacio entre los íconos */
+    margin-left: -100px;
+
+}
+
+/* Estilo de los íconos */
+.header-left-icons img {
+    display: block;
+    width: 60px;  /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    cursor: pointer;
+    
+}
+
+/* Estilos para los textos debajo de las imágenes */
+.icon-text {
+    font-size: 1rem;  /* Tamaño pequeño para el texto */
+    text-align: center;
+  /* Separación entre la imagen y el texto */
+    color: #efe9ce;  /* Color del texto (puedes cambiarlo según el diseño) */
+}
+
+/* Ajuste para el contenedor de la imagen y el texto */
+.perfil-icon, .cart-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1px;
+    margin-top: 30px; /* Ajusta la cantidad para bajar los íconos y el texto */
+}
+
+.perfil-icon img,.cart-icon img{
+    width: 60px;  /* Ajusta el tamaño según sea necesario */
+    height: auto;
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%; /* Ajusta el ancho para centrar todo */
+    max-width: 1000px;
+}
+
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap:2rem; /* Aumenta el espacio entre los elementos */
+}
+.nav-left{
+    margin-left: -250px;
+}
+
+
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.logo img {
+    height: 100px;
+    display: block;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.indices {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.indices button, .btn-pedido button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+.indices button:hover {
+    color: #A0522D;
+    transform: translateY(-2px);
+}
+
+.btn-pedido button {
+    background-color: #A0522D;
+    border-radius: 25px;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+}
+
+.btn-pedido button:hover {
+    background-color: #8B4513;
+    transform: scale(1.05);
+}
+
+
+
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Contenedor principal del pedido */
+.pedido-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #2a2420;
+    color: white;
+    margin-top: 100px;
+}
+
+/* Detalles del pedido */
+.pedido-info {
+    width: 40%;
+    padding: 20px;
+    background-color: #1d1b18;
+    border-radius: 10px;
+}
+
+.pedido-info h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #A0522D;
+}
+
+.pedido-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.pedido-info table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.pedido-info table td {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.pedido-info hr {
+    border: 1px solid #A0522D;
+    margin: 20px 0;
+}
+
+/* Contenedor de las tarjetas de productos */
+.productos-tarjetas {
+    width: 55%;
+    padding: 20px;
+}
+
+.productos-tarjetas h2 {
+    font-size: 2rem;
+    color: #A0522D;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Tarjeta individual de producto */
+.tarjeta-producto {
+    display: flex;
+    margin-bottom: 20px;
+    background-color: #efe9ce;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta-producto img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.tarjeta-detalle {
+    max-width: 70%;
+}
+
+.tarjeta-detalle h3 {
+    font-size: 1.5rem;
+    color: #5a4222;
+    margin-bottom: 10px;
+}
+
+.tarjeta-detalle p {
+    font-size: 1rem;
+    color: #5a4222;
+    margin-bottom: 5px;
+}
+
+.tarjeta-producto:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .pedido-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pedido-info {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .productos-tarjetas {
+        width: 100%;
+    }
+
+    .tarjeta-producto {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tarjeta-producto img {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+.agregarProducto button {
+    background: #A0522D;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    margin: 30px auto;
+    transition: background 0.3s ease;
+    width: 100%; /* Hacer el botón más ancho */
+    max-width: 300px; /* Limitar el tamaño máximo */
+}
+
+.agregarProducto:hover {
+    background: #8B4513;
+}
+
+
+
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #2a2420;
+    color: white;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+}
+
+footer * {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer .columna_footer {
+    display: flex;
+    width: 24%;
+    height: 350px;
+    margin: 10px;
+}
+
+footer .columna_footer:hover {
+    background-color: rgba(0, 0, 0, 0.048);
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+footer .columna_footer ul li:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+}
+
+footer .columna_footer ul {
+    width: 100%;
+}
+
+footer .columna_footer ul li h3 {
+    font-size: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .grid-hamburguesas {
+        grid-template-columns: 1fr; /* Una tarjeta por fila en pantallas pequeñas */
+    }
+}

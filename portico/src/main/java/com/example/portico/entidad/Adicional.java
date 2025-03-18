@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Adicional {
@@ -15,6 +16,9 @@ public class Adicional {
     private String name;
     private Integer price;
     
+
+    @ManyToOne
+    private Comida comida;
    // @ManyToOne
   //  private Comida comida;
 

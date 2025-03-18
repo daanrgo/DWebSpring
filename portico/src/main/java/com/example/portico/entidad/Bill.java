@@ -1,10 +1,14 @@
 package com.example.portico.entidad;
 
+import java.util.Date;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.util.Date;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Bill {
@@ -13,21 +17,34 @@ public class Bill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String payType;
+    private Integer status;
     private Date creationDate;
-    private String email;
-    private Integer phone;
     private String address;
+
+
+    @ManyToOne
+    private Operator operator;
+
+    @ManyToOne
+    private Cliente client;    
+
+    @ManyToOne
+    private Courier courier;
+
+    @ManyToOne
+    private PaymentType payment_type;
+
+    @OneToMany(mappedBy = "bill")
+    private List<OrderEntity> orders;
+
 
 
     public Bill() {
     }
 
-    public Bill(String payType, Date creationDate, String email, Integer phone, String address) {
-        this.payType = payType;
+    public Bill(Integer status, Date creationDate, String email, Integer phone, String address) {
+        this.status = status;
         this.creationDate = creationDate;
-        this.email = email;
-        this.phone = phone;
         this.address = address;
     }
 
@@ -39,12 +56,13 @@ public class Bill {
         this.id = id;
     }
 
-    public String getPayType() {
-        return payType;
+
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setPayType(String payType) {
-        this.payType = payType;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Date getCreationDate() {
@@ -55,22 +73,6 @@ public class Bill {
         this.creationDate = creationDate;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Integer getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Integer phone) {
-        this.phone = phone;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -78,4 +80,46 @@ public class Bill {
     public void setAddress(String address) {
         this.address = address;
     }
+
+    public Operator getOperator() {
+        return operator;
+    }
+
+    public void setOperator(Operator operator) {
+        this.operator = operator;
+    }
+
+    public Cliente getClient() {
+        return client;
+    }
+
+    public void setClient(Cliente client) {
+        this.client = client;
+    }
+
+    public Courier getCourier() {
+        return courier;
+    }
+
+    public void setCourier(Courier courier) {
+        this.courier = courier;
+    }
+
+    public PaymentType getPayment_type() {
+        return payment_type;
+    }
+
+    public void setPayment_type(PaymentType payment_type) {
+        this.payment_type = payment_type;
+    }
+
+    public List<OrderEntity> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<OrderEntity> orders) {
+        this.orders = orders;
+    }
+
+    
 }

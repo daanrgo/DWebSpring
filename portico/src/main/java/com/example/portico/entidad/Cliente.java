@@ -1,9 +1,13 @@
 package com.example.portico.entidad;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Cliente {
@@ -18,6 +22,11 @@ public class Cliente {
     private String email;
     private Integer phone;
     private String address;
+
+
+    @OneToMany(mappedBy  = "client")
+    private List<Bill> bills = new ArrayList<>();
+
 
     
 
