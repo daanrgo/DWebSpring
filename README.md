@@ -1,4 +1,3 @@
-/portico/src/main/resources/static/images/NuevoLogo.png
 ![Portico](/portico/src/main/resources/static/images/NuevoLogo.png)
 
 
@@ -14,13 +13,10 @@ asdfasdfasdf
 ## Funcionalidades
 Las funcionalidad principales del sitio web se pueden ver a través de estos videos
 - **Log in, Log out.**
-  ![logInLogOut](https://github.com/diego4lbarracin/MyPets_Application/blob/main/imagesMD/GifIniciarSesion.gif?raw=true)
-- **Sign up (the last one only as a pet owner).**
-  ![SignUp](https://github.com/diego4lbarracin/MyPets_Application/blob/main/imagesMD/SignUp.gif?raw=true)
-- **Register a pet.**
-  ![Register a pet](https://github.com/diego4lbarracin/MyPets_Application/blob/main/imagesMD/RegistrarMascota.gif?raw=true)
-- **Search a pet's information.**
+  ![logInLogOut](/portico/src/main/resources/static/images/gif_landing.gif)
 
+- **Elegir hamburguesa**
+  ![SignUp](/portico/src/main/resources/static/images/hamburguesa.gif)
 
 ## Administrator Profile
 Besides the previous features, the Administrator profile has another features, such as:
