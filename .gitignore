@@ -31,3 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# BDD
+
+mydatabase.mv.db
+
+portico/mydatabase.mv.db

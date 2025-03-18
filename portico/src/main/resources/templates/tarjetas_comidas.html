@@ -21,14 +21,19 @@
         <nav>
             <!-- Contenedor para las imágenes a la izquierda -->
             <div class="header-left-icons">
-                <div class="perfil-icon">
-                    <img src="/images/perfilCaballo.png" alt="Caballo">
-                    <span class="icon-text">Perfil</span> <!-- Texto debajo de la imagen "Caballo" -->
-                </div>
-                <div class="cart-icon">
-                    <img src="/images/carrito.png" alt="Carrito">
-                    <span class="icon-text">Carrito</span> <!-- Texto debajo de la imagen "Carrito" -->
-                </div>
+                <a th:href="@{/clientes/{user_id}(user_id=${dto.user_id})}">
+                    <div class="perfil-icon">
+                        <img src="/images/perfilCaballo.png" alt="Caballo">
+                        <span class="icon-text">Perfil</span> <!-- Texto debajo de la imagen "Caballo" -->
+                    </div>
+                </a>
+                <a th:href="@{/comidas/{user_id}/carrito(user_id=${dto.user_id})}">
+                    <div class="cart-icon">
+                        <img src="/images/carrito.png" alt="Carrito">
+                        <span class="icon-text">Carrito</span> <!-- Texto debajo de la imagen "Carrito" -->
+                    </div>
+                </a>
+                
             </div>
     
             <div class="nav-left">
@@ -78,10 +83,10 @@
             
             <!-- Grid de hamburguesas -->
         
-            <div th:each="comida : ${comidas}">
+            <div th:each="comida : ${dto.comidas}">
 
                     
-                    <a class="producto" th:href="@{/comidas/{id}(id=${comida.id})}">
+                    <a class="producto" th:href="@{/comidas/{user_id}/{id}(user_id=${dto.user_id}, id=${comida.id})}">
                         <div class="card">
                             <img th:src="@{/images/{img}(img=${comida.imagen})}" th:alt="${comida.name}">
                             <h3 th:text="${comida.name}"></h3>
