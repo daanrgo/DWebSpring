@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.example.portico.entidad.Bill;
 import com.example.portico.entidad.Cliente;
 import com.example.portico.entidad.Comida;
+import com.example.portico.entidad.Courier;
 import com.example.portico.entidad.OrderEntity;
 import com.example.portico.repositorio.BillRepository;
 import com.example.portico.repositorio.ClienteRepository;
@@ -98,6 +99,26 @@ public class BillServiceImpl implements BillService {
             
             orderEntityRepository.save(orderEntity);
         }
+    }
+
+
+     public Bill asignarRepartidor(Integer billId, Integer courierId) {
+        Bill bill = repo.findById(billId)
+                .orElseThrow(() -> new IllegalArgumentException("Pedido no encontrado"));
+        
+        Courier courier = new Courier();
+        courier.setId(courierId);
+        
+        bill.setCourier(courier);
+        return repo.save(bill);
+    }
+
+    public Bill actualizarEstadoPedido(Integer billId, Integer nuevoEstado) {
+        Bill bill = repo.findById(billId)
+                .orElseThrow(() -> new IllegalArgumentException("Pedido no encontrado"));
+        
+        bill.setStatus(nuevoEstado);
+        return repo.save(bill);
     }
 
     

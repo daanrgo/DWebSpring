@@ -20,4 +20,8 @@ public interface BillService {
     public void update(Bill comida);
 
     public void add(Bill bill, int client_id, List<OrderEntity> comida);
+
+    public Bill asignarRepartidor(Integer billId, Integer courierId);
+
+    public Bill actualizarEstadoPedido(Integer billId, Integer nuevoEstado);
 }
