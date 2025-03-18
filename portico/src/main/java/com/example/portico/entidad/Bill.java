@@ -50,11 +50,12 @@ public class Bill {
         this.id = id;
     }
 
-    public String getPayType() {
-        return payType;
+
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setPayType(Integer status) {
+    public void setStatus(Integer status) {
         this.status = status;
     }
 
