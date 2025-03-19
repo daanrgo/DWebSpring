@@ -28,6 +28,7 @@ public class DatabaseInit implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        
         Adicional adicional;
         Comida comida;
         comida = new Comida("Hamburguesa con queso", 800, "Hamburguesa clásica con carne y queso fundido.", "/images/burger2.png");
@@ -38,7 +39,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Tocino", 300);
         comida.addAdicional(adicional);
 
-        adicionalRepository.save(adicional);
+        //adicionalRepository.save(adicional);
         comidaRepository.save(comida);
 
 
@@ -52,7 +53,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Aguacate", 250);
         comida2.addAdicional(adicional);
 
-        adicionalRepository.save(adicional2);
+        //adicionalRepository.save(adicional2);
         comidaRepository.save(comida2);
 
 
@@ -66,7 +67,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Aguacate", 250);
         comida3.addAdicional(adicional);
 
-        adicionalRepository.save(adicional3);
+        //adicionalRepository.save(adicional3);
         comidaRepository.save(comida3);
 
 
@@ -93,7 +94,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Aguacate", 250);
         comida5.addAdicional(adicional);
 
-        adicionalRepository.save(adicional5);
+        //adicionalRepository.save(adicional5);
         comidaRepository.save(comida5);
 
 
@@ -108,7 +109,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Aguacate", 250);
         comida6.addAdicional(adicional);
 
-        adicionalRepository.save(adicional6);
+        //adicionalRepository.save(adicional6);
         comidaRepository.save(comida6);
 
         Adicional adicional7;
@@ -121,7 +122,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Aguacate", 250);
         comida7.addAdicional(adicional);
 
-        adicionalRepository.save(adicional7);
+        //adicionalRepository.save(adicional7);
         comidaRepository.save(comida7);
 
         Adicional adicional8;
@@ -134,7 +135,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Aguacate", 250);
         comida8.addAdicional(adicional);
 
-        adicionalRepository.save(adicional8);
+        //adicionalRepository.save(adicional8);
         comidaRepository.save(comida8);
 
         Adicional adicional9;
@@ -147,7 +148,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Aguacate", 250);
         comida9.addAdicional(adicional);
 
-        adicionalRepository.save(adicional9);
+        //dicionalRepository.save(adicional9);
         comidaRepository.save(comida9);
 
 
@@ -162,7 +163,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicional = new Adicional("Aguacate", 250);
         comida10.addAdicional(adicional);
 
-        adicionalRepository.save(adicional10);
+       //adicionalRepository.save(adicional10);
         comidaRepository.save(comida10);
 
         Adicional adicional11;
@@ -260,14 +261,14 @@ public class DatabaseInit implements ApplicationRunner {
 
        
 
-
+        /*
         Comida asociar = comidaRepository.findById(1).get();
 
         for(Adicional hw: adicionalRepository.findAll()) {
 
             hw.setComida(asociar);
             adicionalRepository.save(hw);
-        }
+        }*/
 
         clienteRepository.save(new Cliente("Pepe123", "1234", "Pepe", "Gonzalez", "pepegonzalez@gmail.com", 31531977, "calle 34 av 25"));
         clienteRepository.save(new Cliente("Pepe1234", "12345", "Pepe", "Gonzalez2", "pepegonzalez2@gmail.com", 31531977, "calle 34 av 25"));

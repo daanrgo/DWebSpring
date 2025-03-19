@@ -9,6 +9,9 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Transient;
 
@@ -24,7 +27,11 @@ public class Comida {
     private String description;
     private String imagen; // Se guarda el url de la imagen
 
-    @OneToMany(mappedBy = "comida")
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(
+        name="product_extra", 
+        joinColumns = @JoinColumn(name = "comida_id"), 
+        inverseJoinColumns = @JoinColumn(name = "extra_id"))
     private List<Adicional> adicionales = new ArrayList<>();
 
     @OneToMany(mappedBy = "comida")
