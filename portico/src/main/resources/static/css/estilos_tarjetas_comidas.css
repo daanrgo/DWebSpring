@@ -28,8 +28,8 @@ header {
 /* Contenedor para los íconos en el header */
 .header-left-icons {
     display: flex;
-    gap: 40px; /* Espacio entre los íconos */
-    margin-left: -100px;
+    gap: 60px; /* Espacio entre los íconos */
+    margin-left: -40px;
 
 }
 
@@ -81,7 +81,7 @@ nav {
     gap:2rem; /* Aumenta el espacio entre los elementos */
 }
 .nav-left{
-    margin-left: -250px;
+    margin-left: -150px;
 }
 
 
@@ -139,8 +139,8 @@ nav {
 
 /* Barra lateral: Ahora en la parte superior */
 .sidebar {
-    width: 100%;
-    height: auto; /* Elimino el alto fijo */
+    width: 2000px;
+    height: 650px; /* Elimino el alto fijo */
     background: #1d1b18;
     padding: 20px;
     text-align: center;
@@ -167,17 +167,16 @@ nav {
 
 
 .imagenes_promo{
-    margin-top: -100px;
+    margin-top: 100pxpx;
     display: flex;
     justify-content: center; /* Centra las imágenes horizontalmente */
     align-items: center; /* Centra las imágenes verticalmente */
-    gap: 20px; /* Espacio entre las imágenes */
+    gap: 10px; /* Espacio entre las imágenes */
     margin-bottom: -80px;
-
 }
 
 .pedido-activo img {
-    width: 300px; /* Tamaño máximo para cada imagen */
+    width: 450px; /* Tamaño máximo para cada imagen */
     height: 400px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -185,7 +184,7 @@ nav {
 
 .pedido-activo video {
     width: 300px;
-    height: 700px; /* Tamaño máximo para cada imagen */
+    height: 400px; /* Tamaño máximo para cada imagen */
     border-radius: 10px;
     margin-bottom: 10px;
 }
