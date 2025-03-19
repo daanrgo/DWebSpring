@@ -17,17 +17,14 @@
         <nav>
             <div class="header-left-icons">
                 <img src="/images/perfilCaballo.png" alt="Caballo">
-                <div class="cart-icon">
-                    <img src="/images/carrito.png" alt="Carrito">
-                </div>
             </div>
 
             <div class="nav-left">
                 <ul class="indices">
-                    <li><a href="#quienes"><button>¿Quiénes Somos?</button></a></li>
-                    <li><a href="#sede"><button>Sede</button></a></li>
+                    <li><a href="/pedidos"><button>Pedidos activos</button></a></li>
                 </ul>
             </div>
+
 
             <div class="logo">
                 <img src="/images/NuevoLogo.png" alt="El Pórtico Gourmet">
@@ -36,9 +33,9 @@
             <div class="nav-right">
                 <ul class="indices">
                     <li><a href="#carta"><button>Carta</button></a></li>
-                    <li><a href="#contacto"><button>Contáctanos</button></a></li>
+                    <li><a th:href="@{/comidas/{id}/tarjetas#contactos(id=${cliente.id})}"><button>Contáctanos</button></a></li>
                 </ul>
-                <a href="#pedido" class="btn-pedido"><button>Haz tu pedido</button></a>
+                <a th:href="@{/comidas/{id}/tarjetas(id=${cliente.id})}" class="btn-pedido"><button>Haz tu pedido</button></a>
             </div>
         </nav>
     </header>
@@ -51,7 +48,10 @@
         <div class="perfil-imagen">
             <img src="/images/contornoPerfil.png" alt="Imagen de perfil" class="imagen-fondo">
             <img src="/images/personaPerfil.jpeg" alt="Foto de perfil" class="imagen-superior">
-            <button class="btn-perfil">PONER FOTO DE PERFIL</button>
+            <a href="/login" class="btn-perfil">
+                <button class="btn-perfil" >Cerrar Sesión</button>
+            </a>
+            
         </div>
 
         <!-- Sección de información del usuario -->
@@ -77,7 +77,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contactos">
         <div class="sobre_nosotros columna_footer">
             <ul class="list">
                 <li>

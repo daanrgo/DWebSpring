@@ -29,7 +29,7 @@ header {
 .header-left-icons {
     display: flex;
     gap: 40px; /* Espacio entre los íconos */
-    margin-left: -100px;
+    margin-left: 20px;
 
 }
 
@@ -82,6 +82,9 @@ nav {
 }
 .nav-left{
     margin-left: -250px;
+}
+.nav-right{
+    margin-right: 100px;
 }
 
 
@@ -154,7 +157,7 @@ nav {
     padding: 20px;
     background-color: #2a2420;
     color: white;
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 /* Detalles del pedido */
