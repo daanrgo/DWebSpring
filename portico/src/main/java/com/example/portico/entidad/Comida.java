@@ -24,7 +24,7 @@ public class Comida {
     private String description;
     private String imagen; // Se guarda el url de la imagen
 
-    @OneToMany(mappedBy = "comida", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "comida")
     private List<Adicional> adicionales = new ArrayList<>();
 
     @OneToMany(mappedBy = "comida")

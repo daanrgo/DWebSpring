@@ -55,6 +55,7 @@ public class DatabaseInit implements ApplicationRunner {
         adicionalRepository.save(adicional2);
         comidaRepository.save(comida2);
 
+
         Adicional adicional3;
         Comida comida3;
         comida3 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
@@ -67,6 +68,129 @@ public class DatabaseInit implements ApplicationRunner {
 
         adicionalRepository.save(adicional3);
         comidaRepository.save(comida3);
+
+
+        Adicional adicional4;
+        Comida comida4;
+        comida4 = new Comida("Hamburguesa hawaiana", 1300, "Deliciosa combinación de jamón y piña.", "/images/burger5.png");
+
+        adicional4 = new Adicional("Jamón", 280);
+        comida4.addAdicional(adicional);
+
+        adicional = new Adicional("Piña", 160);
+        comida4.addAdicional(adicional);
+
+        adicionalRepository.save(adicional4);
+        comidaRepository.save(comida4);
+
+        Adicional adicional5;
+        Comida comida5;
+        comida5 = new Comida("Hamburguesa Teriyaki", 1050, "Bañada en salsa teriyaki, con piña a la parrilla.",  "/images/burger6.png");
+
+        adicional5 = new Adicional("Jalapeños", 120);
+        comida5.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida5.addAdicional(adicional);
+
+        adicionalRepository.save(adicional5);
+        comidaRepository.save(comida5);
+
+
+
+        Adicional adicional6;
+        Comida comida6;
+        comida6 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
+
+        adicional6 = new Adicional("Queso", 200);
+        comida6.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida6.addAdicional(adicional);
+
+        adicionalRepository.save(adicional6);
+        comidaRepository.save(comida6);
+
+        Adicional adicional7;
+        Comida comida7;
+        comida7 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
+
+        adicional7 = new Adicional("Queso", 200);
+        comida7.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida7.addAdicional(adicional);
+
+        adicionalRepository.save(adicional7);
+        comidaRepository.save(comida7);
+
+        Adicional adicional8;
+        Comida comida8;
+        comida8 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
+
+        adicional8 = new Adicional("Queso", 200);
+        comida8.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida8.addAdicional(adicional);
+
+        adicionalRepository.save(adicional8);
+        comidaRepository.save(comida8);
+
+        Adicional adicional9;
+        Comida comida9;
+        comida9 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
+
+        adicional9 = new Adicional("Queso", 200);
+        comida9.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida9.addAdicional(adicional);
+
+        adicionalRepository.save(adicional9);
+        comidaRepository.save(comida9);
+
+
+
+        Adicional adicional10;
+        Comida comida10;
+        comida10 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
+
+        adicional10 = new Adicional("Queso", 200);
+        comida10.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida10.addAdicional(adicional);
+
+        adicionalRepository.save(adicional10);
+        comidaRepository.save(comida10);
+
+        Adicional adicional11;
+        Comida comida11;
+        comida11 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
+
+        adicional11 = new Adicional("Queso", 200);
+        comida11.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida11.addAdicional(adicional);
+
+        adicionalRepository.save(adicional11);
+        comidaRepository.save(comida11);
+
+        Adicional adicional12;
+        Comida comida12;
+        comida12 = new Comida("Hamburguesa de pepperoni", 1200, "Pizza clásica cubierta con pepperoni y mozzarella.", "/images/burger4.png");
+
+        adicional12 = new Adicional("Queso", 200);
+        comida12.addAdicional(adicional);
+
+        adicional = new Adicional("Aguacate", 250);
+        comida12.addAdicional(adicional);
+
+        adicionalRepository.save(adicional12);
+        comidaRepository.save(comida12);
+
 
 /*
   adicionalRepository.save(new Adicional("Queso", 200));
