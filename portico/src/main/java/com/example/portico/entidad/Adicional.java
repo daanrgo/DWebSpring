@@ -1,10 +1,14 @@
 package com.example.portico.entidad;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Adicional {
@@ -17,11 +21,20 @@ public class Adicional {
     private Integer price;
     
 
-    @ManyToOne
-    private Comida comida;
-   // @ManyToOne
-  //  private Comida comida;
+    @ManyToMany(mappedBy= "adicionales")
+    private List<Comida> comidas = new ArrayList<>();
 
+
+    @OneToMany(mappedBy = "extra")
+    private List<OrderExtra> orderExtras;
+
+
+
+    
+    public List<Comida> getComidas() {
+        return comidas;
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -55,11 +68,12 @@ public class Adicional {
     public Adicional() {
         
     }
-     public Comida getComida() {
-        return comida;
+     public List <Comida> getComida() {
+        return comidas;
     }
-    public void setComida(Comida comida) {
-        this.comida = comida;
+    public void setComidas(List<Comida> comidas) {
+        this.comidas = comidas;
     }
+    
 }
 
