@@ -47,6 +47,10 @@ public class Adicional {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Adicional [id=" + id + ", name=" + name + ", price=" + price + "]";
+    }
     public Adicional( String name, Integer price) {
         this.name = name;
         this.price = price;

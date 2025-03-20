@@ -57,7 +57,7 @@ public class Comida {
     }
 
     public Comida() {
-        
+        this.adicionalesSeleccionados = new HashMap<>();
     }
 
     public Integer getId() {
@@ -81,7 +81,8 @@ public class Comida {
     @Override
     public String toString() {
         return "Comida [id=" + id + ", name=" + name + ", price=" + price + ", description=" + description + ", imagen="
-                + imagen + "]";
+                + imagen + ", adicionales=" + adicionales + ", orders=" + orders + ", adicionalesSeleccionados="
+                + adicionalesSeleccionados + "]";
     }
     public String getDescription() {
         return description;
@@ -94,6 +95,10 @@ public class Comida {
     }
     public void setImagen(String imagen) {
         this.imagen = imagen;
+    }
+
+    public void setAdicionales(List<Adicional> adicionales) {
+        this.adicionales = adicionales;
     }
 
     public HashMap<Integer, Boolean> getAdicionalesSeleccionados() {
