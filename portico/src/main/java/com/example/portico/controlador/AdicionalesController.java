@@ -38,12 +38,12 @@ public class AdicionalesController {
         return "redirect:/adicionales";
     }
 
-   @PostMapping("/update")
-   public String postMethodName(Model model, Adicional adicional) {
-        adicionalService.update(adicional);
-       
-       return "redirect:/adicionales";
-   }
+    @PostMapping("/update")
+    public String postMethodName(Model model, Adicional adicional) {
+            adicionalService.update(adicional);
+        
+        return "redirect:/adicionales";
+    }
     
 
     @GetMapping("/delete/{id}")

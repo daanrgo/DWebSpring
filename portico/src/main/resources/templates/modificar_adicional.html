@@ -28,30 +28,20 @@
                 <img src="/images/flechaAtras.png"  ></img> 
             </a>
 
-            <form th:object="${comida}" th:action="@{/comidas/{id}/update(id=${comida.id})}" method="post">
+            <form th:object="${adicional}" th:action="@{/adicionales/update}" method="post">
                 <h3>Id Hamburguesa</h3>
                 <input readonly th:field="*{id}" type="number">
-
+            
                 <h3>Nombre</h3>
                 <input th:field="*{name}" type="text">
-
-                <h3>Descripcion</h3>
-                <textarea th:field="*{description}"></textarea>
-
+            
                 <h3>Precio</h3>
                 <input th:field="*{price}" type="number">
-
-                <h3>Enlace Imagen</h3>
-                <input th:field="*{imagen}" type="text">
-
-                <h3>Adicionales</h3>
-                <table id="tabla_adicionales_asociados"></table>
-                <button id="btnAgregar">Agregar Adicional</button>
-                <button id="btnEliminar">Eliminar Adicional</button>
-
+            
                 <hr>
                 <button type="submit">MODIFICAR</button>
             </form>
+            
 
         </div>
 

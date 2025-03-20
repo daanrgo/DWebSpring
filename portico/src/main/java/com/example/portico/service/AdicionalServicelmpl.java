@@ -4,18 +4,14 @@ import java.util.Collection;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.example.portico.entidad.Comida;
 import com.example.portico.repositorio.AdicionalRepository;
-import com.example.portico.repositorio.ComidaRepository;
 
-import java.util.Collection;
+import jakarta.persistence.EntityNotFoundException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.portico.entidad.Adicional;
-import com.example.portico.repositorio.AdicionalRepository;
+import com.example.portico.entidad.Comida;
 
 @Service
 public class AdicionalServicelmpl implements AdicionalService {
@@ -47,6 +43,19 @@ public class AdicionalServicelmpl implements AdicionalService {
 
     @Override
     public void deleteById(int id){
+        Adicional adicional = repo.findById(id)
+            .orElseThrow(() -> new EntityNotFoundException("Not found"));
+
+        for (Comida comida : adicional.getComidas()) {
+            comida.getAdicionales().remove(adicional); // removes join table entry
+        }
+
+        adicional.getComidas().clear(); // just in case
+
+        repo.save(adicional); // persist removal of associations
+
+        repo.delete(adicional); // now delete adicional safely
+
         repo.deleteById(id);
     }
 
