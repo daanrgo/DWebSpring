@@ -28,7 +28,7 @@
                 <p class="crear_titulo">Crear Producto</p>
                 <hr>
 
-            <form th:object="${comida}" th:action="@{/comidas/create}" method="post">
+            <form th:object="${dto.comida}" th:action="@{/comidas/{user_id}/create(user_id=${dto.user_id})}" method="post">
                 <h3>Nombre de la Hamburguesa</h3>
                 <input th:field="*{name}" type="text" class="input-campo" placeholder="Ej: El Portico">
 
