@@ -139,7 +139,7 @@ nav {
 
 /* Barra lateral: Ahora en la parte superior */
 .sidebar {
-    width: 2000px;
+    width: 1250px;
     height: 650px; /* Elimino el alto fijo */
     background: #1d1b18;
     padding: 20px;
@@ -161,7 +161,7 @@ nav {
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px;
-    width: 100%;
+    width: 1100px;
     margin-bottom: 50px;
 }
 
