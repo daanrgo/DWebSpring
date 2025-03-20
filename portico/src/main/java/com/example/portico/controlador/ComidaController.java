@@ -78,11 +78,12 @@ public class ComidaController {
         return "comida_individual";
     }
 
+
     @GetMapping("/crear")
     public String mostrarFormularioCrear(Model model, @PathVariable("user_id") int user_id) {
         Comida comida = new Comida(0, "", 0, "", "");
         DTOIdUsuarioComida dto = new DTOIdUsuarioComida(user_id, comida);
-        model.addAttribute("dto", dto);
+        model.addAttribute("comida", comida);
         return "crear_comida";
     }
 
@@ -96,6 +97,7 @@ public class ComidaController {
 
     @PostMapping("/create")
     public String crearComida(Model model, Comida comida, @PathVariable("user_id") int user_id) {
+        System.out.println("Comida Recibida" + comida.toString());
         comidaService.add(comida);
         return "redirect:/comidas/" + user_id;
     }

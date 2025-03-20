@@ -28,23 +28,19 @@
                 <p class="crear_titulo">Crear Producto</p>
                 <hr>
 
-            <form th:object="${dto.comida}" th:action="@{/comidas/{user_id}/create(user_id=${dto.user_id})}" method="post">
-                <h3>Nombre de la Hamburguesa</h3>
-                <input th:field="*{name}" type="text" class="input-campo" placeholder="Ej: El Portico">
+                <form th:object="${comida}" th:action="@{/comidas/1/create}" method="post">
+                    <h3>Nombre de la Hamburguesa</h3>
+                    <input th:field="*{name}" type="text"  class="input-campo" placeholder="Ej: El Portico">
+    
+                    <h3>Descripcion</h3>
+                    <textarea th:field="*{description}" class="input-campo" placeholder="Descripcion del producto"></textarea>
+    
+                    <h3>Precio</h3>
+                    <input th:field="*{price}" type="number" class="input-campo" placeholder="Ej: $29.900">
 
-                <h3>Descripcion</h3>
-                <textarea th:field="*{description}" class="input-campo" placeholder="Descripcion del producto"></textarea>
-
-                <h3>Precio</h3>
-                <input th:field="*{price}" type="number" class="input-campo" placeholder="Ej: $29.900">
-
-                <h3 hidden="true">Enlace Imagen</h3>
-                <input hidden="true" type="text" class="input-campo" placeholder="Ej: https://www.google.com">
-
-                <hr>
-
-                <button type="submit" class="btn-adicionales">CREAR PRODUCTO</button>
-            </form>
+    
+                    <button type="submit" class="btn-adicionales">CREAR</button>
+                </form>
         </div>
 
         <!-- Sección derecha: Imagen de la hamburguesa -->
