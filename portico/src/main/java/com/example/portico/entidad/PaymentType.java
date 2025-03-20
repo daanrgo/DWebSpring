@@ -3,6 +3,7 @@ package com.example.portico.entidad;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +17,9 @@ public class PaymentType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String description; 
+    
+    @Column(nullable = false)
+    private String description;
 
     @OneToMany(mappedBy  = "payment_type")
     private List<Bill> bills = new ArrayList<>();

@@ -1,5 +1,6 @@
 package com.example.portico.entidad;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -19,6 +20,7 @@ public class OrderExtra {
     @ManyToOne
     private Adicional extra;
 
+    @Column(nullable = false)
     private Integer quantity;
 
     public OrderEntity getOrder() {
