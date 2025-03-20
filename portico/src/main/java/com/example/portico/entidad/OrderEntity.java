@@ -2,6 +2,7 @@ package com.example.portico.entidad;
 
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -15,6 +16,7 @@ public class OrderEntity {
     @GeneratedValue
     private Integer id;
 
+    @Column(nullable = false)
     private Integer quantity;
 
 
