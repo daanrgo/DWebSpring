@@ -10,6 +10,7 @@ El portico es una implementación desarrollada en Java Spring, HTML, CSS y Docke
 
 Cada uno de estos usuarios cuenta con sus propias pantallas para poder poder crearlos, actualizarlos, verlos y eliminarlos.
 asdfasdfasdf
+
 ## Funcionalidades
 Las funcionalidad principales del sitio web se pueden ver a través de estos videos
 - **Log in, Log out.**
@@ -17,3 +18,12 @@ Las funcionalidad principales del sitio web se pueden ver a través de estos vid
 
 - **Elegir hamburguesa**
   ![SignUp](/portico/src/main/resources/static/images/hamburguesa.gif)
+
+
+
+
+
+## Diseño
+
+  - **Diagrama Entidad Relación**
+  ![SignUp](/portico/src/main/resources/static/images/MER.jpeg)
