@@ -28,23 +28,31 @@
                 <img src="/images/flechaAtras.png"  ></img> 
             </a>
 
-            <form th:object="${adicional}" th:action="@{/adicionales/update}" method="post">
-                <h3>Id</h3>
-                <input th:field="*{id}" type="number" class="input-campo" placeholder="123">
-                
-                <h3>Nombre de la Adicional</h3>
-                <input th:field="*{name}" type="text" class="input-campo" placeholder="Ej: El Portico">
+            <form th:object="${comida}" th:action="@{/comidas/{id}/update(id=${comida.id})}" method="post">
+                <h3>Id Hamburguesa</h3>
+                <input readonly th:field="*{id}" type="number">
+
+                <h3>Nombre</h3>
+                <input th:field="*{name}" type="text">
+
+                <h3>Descripcion</h3>
+                <textarea th:field="*{description}"></textarea>
 
                 <h3>Precio</h3>
-                <input th:field="*{price}" type="number" class="input-campo" placeholder="Ej: $29.900">
+                <input th:field="*{price}" type="number">
 
-                <h3>Id de la Hamburguesa con este adicional</h3>
-                <input type="number" class="input-campo" placeholder="Ej: 2">
+                <h3>Enlace Imagen</h3>
+                <input th:field="*{imagen}" type="text">
+
+                <h3>Adicionales</h3>
+                <table id="tabla_adicionales_asociados"></table>
+                <button id="btnAgregar">Agregar Adicional</button>
+                <button id="btnEliminar">Eliminar Adicional</button>
 
                 <hr>
-
-                <button type="submit" class="btn-adicionales">ACTUALIZAR CAMBIO</button>
+                <button type="submit">MODIFICAR</button>
             </form>
+
         </div>
 
         <!-- Sección derecha: Imagen de la hamburguesa -->

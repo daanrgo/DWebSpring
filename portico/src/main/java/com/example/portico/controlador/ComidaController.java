@@ -1,5 +1,8 @@
 package com.example.portico.controlador;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.portico.dto.CarritoDTO;
-import com.example.portico.dto.ComidaIndividualDTO;
-import com.example.portico.dto.TarjetasComidaDTO;
+import com.example.portico.dto.DTOIdUsuarioComida;
+import com.example.portico.dto.DTOIdUsuarioComidas;
+import com.example.portico.entidad.Adicional;
 import com.example.portico.entidad.Comida;
+import com.example.portico.service.AdicionalService;
 import com.example.portico.service.ComidaService;
 
 @RequestMapping("/comidas/{user_id}")
@@ -21,11 +26,13 @@ public class ComidaController {
 
     @Autowired
     ComidaService comidaService;
+    @Autowired 
+    AdicionalService adicionalService;
 
     @GetMapping("")
     public String mostrarInfoComida(Model model, @PathVariable("user_id") int user_id) {
 
-        TarjetasComidaDTO dto = new TarjetasComidaDTO(user_id, comidaService.SearchAll());
+        DTOIdUsuarioComidas dto = new DTOIdUsuarioComidas(user_id, comidaService.SearchAll());
 
         model.addAttribute("dto", dto);
         return "tabla_comida";
@@ -39,7 +46,7 @@ public class ComidaController {
     @GetMapping("/tarjetas")
     public String mostraHamburguesas(Model model, @PathVariable("user_id") int user_id) {
 
-        TarjetasComidaDTO dto = new TarjetasComidaDTO(user_id, comidaService.SearchAll());
+        DTOIdUsuarioComidas dto = new DTOIdUsuarioComidas(user_id, comidaService.SearchAll());
 
         model.addAttribute("dto", dto);
         return "tarjetas_comidas";
@@ -66,15 +73,16 @@ public class ComidaController {
 
     @GetMapping("/{id}")
     public String verComida(Model model, @PathVariable("id") int id, @PathVariable("user_id") int user_id) {
-        ComidaIndividualDTO dto = new ComidaIndividualDTO(user_id, comidaService.SearchById(id));
+        DTOIdUsuarioComida dto = new DTOIdUsuarioComida(user_id, comidaService.SearchById(id));
         model.addAttribute("dto", dto);
         return "comida_individual";
     }
 
     @GetMapping("/crear")
-    public String mostrarFormularioCrear(Model model) {
+    public String mostrarFormularioCrear(Model model, @PathVariable("user_id") int user_id) {
         Comida comida = new Comida(0, "", 0, "", "");
-        model.addAttribute("comida", comida);
+        DTOIdUsuarioComida dto = new DTOIdUsuarioComida(user_id, comida);
+        model.addAttribute("dto", dto);
         return "crear_comida";
     }
 
@@ -100,11 +108,13 @@ public class ComidaController {
 
     @PostMapping("/update")
     public String postMethodName(Model model, Comida comida, @PathVariable("user_id") int user_id) {
-        System.out.println(comida.toString());
+        List<Adicional> aux = comida.getAdicionales();
+        comida.setAdicionales(new ArrayList<Adicional>());
+        for(int i = 0; i < aux.size(); i++){
+            comida.addAdicional(adicionalService.SearchById(aux.get(i).getId()));
+        }
+        System.out.println("Comida Completa" + comida.toString());
         comidaService.update(comida);
         return "redirect:/comidas/" + user_id;
     }
-
-
-    
 }

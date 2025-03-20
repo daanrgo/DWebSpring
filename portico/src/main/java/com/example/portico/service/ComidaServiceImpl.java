@@ -1,6 +1,7 @@
 package com.example.portico.service;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,9 @@ public class ComidaServiceImpl implements ComidaService {
 
         Optional <Comida> optionalComida = repo.findById(id);
         if(optionalComida.isPresent()) {
-            
-            return optionalComida.get();
+            Comida comida = optionalComida.get();
+            comida.setAdicionalesSeleccionados(new HashMap<>());
+            return comida;
         }
 
         else {
@@ -47,7 +49,6 @@ public class ComidaServiceImpl implements ComidaService {
     public void update(Comida comida){
 
         repo.findById(comida.getId()).ifPresent(laComida -> {
-
             repo.save(comida);
         });
     }

@@ -5,7 +5,7 @@ import java.util.Collection;
 import com.example.portico.entidad.Comida;
 
 
-public class TarjetasComidaDTO {
+public class DTOIdUsuarioComidas {
     public Collection<Comida> getComidas() {
         return comidas;
     }
@@ -17,7 +17,7 @@ public class TarjetasComidaDTO {
     private Collection<Comida> comidas;
     private int user_id;
     
-    public TarjetasComidaDTO(int user_id, Collection<Comida> comidas) {
+    public DTOIdUsuarioComidas(int user_id, Collection<Comida> comidas) {
         this.comidas = comidas;
         this.user_id = user_id;
     }
