@@ -19,12 +19,12 @@ public class CourierRestController {
 
     @GetMapping("")
     public List<Courier> getAllCouriers() {
-        return new ArrayList<>(courierService.SearchAll());
+        return new ArrayList<>(courierService.searchAll());
     }
 
     @GetMapping("/{id}")
     public Courier getCourierById(@PathVariable("id") int id) {
-        return courierService.SearchById(id);
+        return courierService.searchById(id);
     }
 
     @PostMapping("/create")

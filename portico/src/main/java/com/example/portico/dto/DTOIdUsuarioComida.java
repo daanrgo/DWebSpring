@@ -1,26 +1,31 @@
 package com.example.portico.dto;
 
-import com.example.portico.entidad.Comida;
-
 public class DTOIdUsuarioComida {
-    private int user_id;
-    private Comida Comida;
-
+    private Integer user_id;  // Mantenemos snake_case para consistencia con DB/plantillas
+    private ComidaDTO comida;
     
-    public DTOIdUsuarioComida(int user_id, com.example.portico.entidad.Comida comida) {
+    public DTOIdUsuarioComida() {}
+    
+    public DTOIdUsuarioComida(Integer user_id, ComidaDTO comida) {
         this.user_id = user_id;
-        Comida = comida;
+        this.comida = comida;
     }
-    public int getUser_id() {
+    
+    // Getter CORREGIDO para coincidir con el nombre del campo
+    public Integer getUser_id() {
         return user_id;
     }
-    public void setUser_id(int user_id) {
+    
+    // Setter CORREGIDO
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
-    public void setComida(Comida comida) {
-        Comida = comida;
+    
+    public ComidaDTO getComida() {
+        return comida;
     }
-    public Comida getComida() {
-        return Comida;
+    
+    public void setComida(ComidaDTO comida) {
+        this.comida = comida;
     }
 }

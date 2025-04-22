@@ -1,23 +1,24 @@
 package com.example.portico.service;
 
 import java.util.Collection;
-
 import org.springframework.stereotype.Service;
-
 import com.example.portico.entidad.Courier;
 
 @Service
-public interface  CourierService {
+public interface CourierService {
 
-    public Courier SearchById(int id);
+    Courier searchById(int id);
 
-    public Collection<Courier> SearchAll();
+    Collection<Courier> searchAll();
 
-    public void deleteById(int id);
+    void deleteById(int id);
 
-    public void update(Courier cliente);
+    void update(Courier courier);
 
-    public void add(Courier cliente);
+    void add(Courier courier);
+
+    Courier login(String username, String password);
     
-    public Boolean login(String username, String password);
+    Courier findByUsername(String username);
+
 }

@@ -1,15 +1,16 @@
 // src/main/java/com/example/portico/controlador/BillRestController.java
 package com.example.portico.controlador;
 
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import com.example.portico.entidad.Bill;
 import com.example.portico.entidad.OrderEntity;
 import com.example.portico.service.BillService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/bill")
@@ -29,9 +30,22 @@ public class BillRestController {
         return billService.SearchById(id);
     }
 
+    @GetMapping("/cliente/{id}")
+    public List<Bill> getBillsByClient(@PathVariable int id) {
+        return billService.findByClientId(id);
+    }
+
+    @GetMapping("/courier/{id}")
+    public List<Bill> getBillsByCourier(@PathVariable int id) {
+        return billService.findByCourierId(id);
+    }
+
     @PostMapping("")
+    @ResponseStatus(HttpStatus.CREATED)
     public void createBill(@RequestBody BillWithOrdersDTO billDTO) {
-        billService.add(billDTO.getBill(), billDTO.getClientId(), billDTO.getOrders());
+        if (billDTO.getBill() != null && billDTO.getOrders() != null) {
+            billService.add(billDTO.getBill(), billDTO.getClientId(), billDTO.getOrders());
+        }
     }
 
     @PutMapping("/{id}")
@@ -41,6 +55,7 @@ public class BillRestController {
     }
 
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteBill(@PathVariable Integer id) {
         billService.deleteById(id);
     }
@@ -55,6 +70,10 @@ public class BillRestController {
         return billService.actualizarEstadoPedido(id, status);
     }
 
+    /**
+     * DTO que encapsula la factura (bill), el ID del cliente,
+     * y la lista de ordenes asociadas.
+     */
     public static class BillWithOrdersDTO {
         private Bill bill;
         private int clientId;

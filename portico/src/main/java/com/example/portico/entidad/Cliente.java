@@ -33,7 +33,7 @@ public class Cliente {
     private String email;
 
     @Column(nullable = false)
-    private Integer phone;
+    private String phone;
 
     @Column(nullable = false)
     private String address;
@@ -46,7 +46,7 @@ public class Cliente {
     
 
     public Cliente(Integer id, String username, String password, String name, String lastName, String email,
-            Integer phone, String address) {
+            String phone, String address) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -59,7 +59,7 @@ public class Cliente {
 
 
     
-    public Cliente(String username, String password, String name, String lastName, String email, Integer phone,
+    public Cliente(String username, String password, String name, String lastName, String email, String phone,
             String address) {
         this.username = username;
         this.password = password;
@@ -84,8 +84,6 @@ public class Cliente {
     public Cliente() {
     }
 
-
-
     public void setName(String name) {
         this.name = name;
     }
@@ -95,7 +93,7 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
     public void setAddress(String address) {
@@ -119,7 +117,7 @@ public class Cliente {
     public String getEmail() {
         return email;
     }
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
     public String getAddress() {

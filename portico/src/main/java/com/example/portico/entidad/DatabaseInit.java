@@ -270,10 +270,10 @@ public class DatabaseInit implements ApplicationRunner {
             adicionalRepository.save(hw);
         }*/
 
-        clienteRepository.save(new Cliente("Pepe123", "1234", "Pepe", "Gonzalez", "pepegonzalez@gmail.com", 31531977, "calle 34 av 25"));
-        clienteRepository.save(new Cliente("Pepe1234", "12345", "Pepe", "Gonzalez2", "pepegonzalez2@gmail.com", 31531977, "calle 34 av 25"));
-        clienteRepository.save(new Cliente("Pepe1235", "12345", "Pepe", "Gonzalez3", "pepegonzalez3@gmail.com", 31531977, "calle 34 av 25"));
-        clienteRepository.save(new Cliente("Pepe1236", "12345", "Pepe", "Gonzalez4", "pepegonzalez4@gmail.com", 31531977, "calle 34 av 25"));
+        clienteRepository.save(new Cliente("Pepe123", "1234", "Pepe", "Gonzalez", "pepegonzalez@gmail.com", "31531977", "calle 34 av 25"));
+        clienteRepository.save(new Cliente("Pepe1234", "12345", "Pepe", "Gonzalez2", "pepegonzalez2@gmail.com", "31531977", "calle 34 av 25"));
+        clienteRepository.save(new Cliente("Pepe1235", "12345", "Pepe", "Gonzalez3", "pepegonzalez3@gmail.com", "31531977", "calle 34 av 25"));
+        clienteRepository.save(new Cliente("Pepe1236", "12345", "Pepe", "Gonzalez4", "pepegonzalez4@gmail.com", "31531977", "calle 34 av 25"));
     
     }
 }

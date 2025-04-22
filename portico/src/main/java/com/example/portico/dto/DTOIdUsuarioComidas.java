@@ -1,25 +1,34 @@
 package com.example.portico.dto;
 
 import java.util.Collection;
-
-import com.example.portico.entidad.Comida;
-
+import java.util.List;
 
 public class DTOIdUsuarioComidas {
-    public Collection<Comida> getComidas() {
-        return comidas;
+    private Integer user_id;  // Mantenemos snake_case
+    private List<ComidaDTO> comidas;
+    
+    public DTOIdUsuarioComidas() {}
+    
+    public DTOIdUsuarioComidas(Integer user_id, Collection<ComidaDTO> comidas) {
+        this.user_id = user_id;
+        this.comidas = (List<ComidaDTO>) comidas;
     }
-
-    public int getUser_id() {
+    
+    // Getter CORREGIDO
+    public Integer getUser_id() {
         return user_id;
     }
-
-    private Collection<Comida> comidas;
-    private int user_id;
     
-    public DTOIdUsuarioComidas(int user_id, Collection<Comida> comidas) {
-        this.comidas = comidas;
+    // Setter CORREGIDO
+    public void setUser_id(Integer user_id) {
         this.user_id = user_id;
     }
     
+    public List<ComidaDTO> getComidas() {
+        return comidas;
+    }
+    
+    public void setComidas(List<ComidaDTO> comidas) {
+        this.comidas = comidas;
+    }
 }

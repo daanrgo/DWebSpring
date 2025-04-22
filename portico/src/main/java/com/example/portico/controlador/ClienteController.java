@@ -44,7 +44,7 @@ public class ClienteController {
 
     @GetMapping("/crear")
     public String mostrarFormularioCrear(Model model) {
-        Cliente cliente = new Cliente(0,null,null,null,null,null,0,null);
+        Cliente cliente = new Cliente(0,null,null,null,null,null,null,null);
         model.addAttribute("cliente", cliente);
         return "crear_cliente";
     }

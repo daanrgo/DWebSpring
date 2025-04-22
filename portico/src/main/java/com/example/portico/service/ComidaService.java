@@ -1,22 +1,28 @@
 package com.example.portico.service;
 
+import com.example.portico.dto.*;
+import com.example.portico.entidad.Comida;
+import com.example.portico.entidad.Adicional;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
-import org.springframework.stereotype.Service;
-
-import com.example.portico.entidad.Comida;
-
-@Service
 public interface ComidaService {
     
-    public Comida SearchById(Integer id);
-
-    public Collection<Comida> SearchAll();
-
-    public void deleteById(int id);
-
-    public void update(Comida comida);
-
-    public void add(Comida comida);
+    // Métodos básicos de CRUD
+    Comida searchById(Integer id);
+    Collection<Comida> searchAll();
+    void deleteById(int id);
+    Comida update(Comida comida);
+    Comida add(Comida comida);
+    
+    // Métodos para DTOs
+    ComidaDTO convertToComidaDTO(Comida comida);
+    AdicionalesDTO getAdicionalesDTO(Integer comidaId, Map<Integer, Boolean> selecciones);
+    DTOIdUsuarioComida getComidaDTOForUser(Integer userId, Integer comidaId);
+    DTOIdUsuarioComidas getAllComidasDTOForUser(Integer userId);
+    
+    // Métodos de conversión
+    List<ComidaDTO> convertComidasToDTOList(Collection<Comida> comidas);
+    List<AdicionalDTO> convertAdicionalesToDTO(List<Adicional> adicionales);
 }
