@@ -2,6 +2,7 @@
 
 package com.example.portico.service;
 
+import com.example.portico.dto.OrderStatusDTO;
 import com.example.portico.entidad.OrderEntity;
 import com.example.portico.repositorio.OrderEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -35,5 +37,28 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void deleteById(int id) {
         orderRepo.deleteById(id);
+    }
+
+    @Override
+    public List<OrderStatusDTO> findAllConEstado() {
+        return orderRepo.findAll().stream()
+            .map(order -> new OrderStatusDTO(
+                order.getId(),
+                order.getBill().getStatus()
+            ))
+            .collect(Collectors.toList());
+    }
+    
+    @Override
+    public void updateStatus(int orderId, int estado) {
+    OrderEntity order = orderRepo.findById(orderId)
+        .orElseThrow(() -> new IllegalArgumentException("Orden no encontrada con ID: " + orderId));
+
+    if (order.getBill() == null) {
+        throw new IllegalStateException("La orden no tiene factura asociada.");
+    }
+
+    order.getBill().setStatus(estado);
+    orderRepo.save(order);
     }
 }

@@ -6,6 +6,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -110,21 +113,40 @@ public class BillServiceImpl implements BillService {
 
     @Override
     public Bill crearFacturaDesdePedido(DTOIdUsuarioComidas dto) {
-        Bill bill = new Bill();
-
-        List<OrderEntity> ordenes = dto.getComidas().stream().map(comidaDTO -> {
-            OrderEntity o = new OrderEntity();
-            o.setQuantity(comidaDTO.getQuantity() != null ? comidaDTO.getQuantity() : 1);
-            Comida comida = new Comida();
-            comida.setId(comidaDTO.getId());
-            o.setComida(comida);
-            o.setBill(bill);
-            return o;
-        }).collect(Collectors.toList());
-
-        add(bill, dto.getUser_id(), ordenes);
-        return bill;
+    if (dto.getComidas() == null || dto.getComidas().isEmpty()) {
+        throw new IllegalArgumentException("La lista de comidas no puede ser nula o vacía.");
     }
+
+    Bill bill = new Bill();
+
+    // Buscar el cliente
+    Cliente cliente = clienteRepository.findById(dto.getUser_id())
+        .orElseThrow(() -> new IllegalArgumentException("Cliente no encontrado"));
+
+    // Setear cliente y address correctamente
+    bill.setClient(cliente);
+    bill.setAddress(cliente.getAddress()); // <- Ahora sí seteamos la dirección
+    bill.setStatus(1); // Estado inicial "Recibido", opcional pero recomendable
+    bill.setCreationDate(Date.from(LocalDateTime.now().atZone(ZoneId.systemDefault()).toInstant()));
+
+    List<OrderEntity> ordenes = dto.getComidas().stream().map(comidaDTO -> {
+        if (comidaDTO.getId() == null) {
+            throw new IllegalArgumentException("ID de comida no puede ser nulo.");
+        }
+
+        OrderEntity o = new OrderEntity();
+        o.setQuantity(comidaDTO.getQuantity() != null ? comidaDTO.getQuantity() : 1);
+        Comida comida = new Comida();
+        comida.setId(comidaDTO.getId());
+        o.setComida(comida);
+        o.setBill(bill);
+        return o;
+    }).collect(Collectors.toList());
+
+    add(bill, dto.getUser_id(), ordenes);
+
+    return bill;
+}
 
     @Override
     public List<Bill> findByClientId(int clientId) {
@@ -139,4 +161,7 @@ public class BillServiceImpl implements BillService {
                 .filter(bill -> bill.getCourier() != null && bill.getCourier().getId() == courierId)
                 .collect(Collectors.toList());
     }
+
+
+
 }

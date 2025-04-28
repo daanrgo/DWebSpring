@@ -2,6 +2,7 @@
 
 package com.example.portico.service;
 
+import com.example.portico.dto.OrderStatusDTO;
 import com.example.portico.entidad.OrderEntity;
 import java.util.List;
 
@@ -10,4 +11,7 @@ public interface OrderService {
     List<OrderEntity> findAll();
     void save(OrderEntity order);
     void deleteById(int id);
+    void updateStatus(int orderId, int estado);
+    List<OrderStatusDTO> findAllConEstado();
+
 }

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.portico.entidad.Cliente;
 import com.example.portico.entidad.LoginForm;
 import com.example.portico.service.ClienteService;
 
@@ -26,14 +27,15 @@ public class LoginController {
     }
 
     @PostMapping("")
-    public String login(@ModelAttribute LoginForm loginForm, Model model) {
-        Integer id_autenticado = clienteService.login(loginForm.getUsername(), loginForm.getPassword());
+public String login(@ModelAttribute LoginForm loginForm, Model model) {
+    Cliente clienteAutenticado = clienteService.autenticar(loginForm.getUsername(), loginForm.getPassword());
 
-        if (id_autenticado != -1) {
-            return "redirect:/comidas/" + id_autenticado.toString() + "/tarjetas";
-        }
-
-        model.addAttribute("error", "Usuario o contraseña incorrectos");
-        return "login_error"; 
+    if (clienteAutenticado != null) {
+        return "redirect:/comidas/" + clienteAutenticado.getId() + "/tarjetas";
     }
+
+    model.addAttribute("error", "Usuario o contraseña incorrectos");
+    return "login_error"; 
+}
+
 }
