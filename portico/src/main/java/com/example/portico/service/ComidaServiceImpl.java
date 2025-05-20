@@ -1,8 +1,11 @@
+// src/main/java/com/example/portico/service/ComidaServiceImpl.java
+
 package com.example.portico.service;
 
 import com.example.portico.dto.*;
 import com.example.portico.entidad.Comida;
 import com.example.portico.entidad.Adicional;
+import com.example.portico.repositorio.AdicionalRepository;
 import com.example.portico.repositorio.ComidaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,11 +15,13 @@ import java.util.stream.Collectors;
 
 @Service
 public class ComidaServiceImpl implements ComidaService {
-    
+
     @Autowired
     private ComidaRepository comidaRepository;
 
-    // Implementación de métodos CRUD
+    @Autowired
+    private AdicionalRepository adicionalRepository;
+
     @Override
     public Comida searchById(Integer id) {
         if (id == null) return null;
@@ -45,11 +50,40 @@ public class ComidaServiceImpl implements ComidaService {
         return comidaRepository.save(comida);
     }
 
-    // Implementación de métodos DTO
+    @Override
+    public Comida addFromInputDTO(ComidaInputDTO dto) {
+        Comida comida = new Comida();
+        comida.setName(dto.getName());
+        comida.setPrice(dto.getPrice() != null ? dto.getPrice().intValue() : 0);
+        comida.setDescription(dto.getDescription());
+        comida.setImagen(dto.getImagen());
+
+        List<Adicional> adicionales = adicionalRepository.findAllById(dto.getAdicionalesIds());
+        comida.setAdicionales(adicionales);
+
+        return comidaRepository.save(comida);
+    }
+
+    @Override
+    public Comida updateFromInputDTO(Integer comidaId, ComidaInputDTO dto) {
+        Comida comida = comidaRepository.findById(comidaId).orElse(null);
+        if (comida == null) return null;
+
+        comida.setName(dto.getName());
+        comida.setPrice(dto.getPrice() != null ? dto.getPrice().intValue() : 0);
+        comida.setDescription(dto.getDescription());
+        comida.setImagen(dto.getImagen());
+
+        List<Adicional> adicionales = adicionalRepository.findAllById(dto.getAdicionalesIds());
+        comida.setAdicionales(adicionales);
+
+        return comidaRepository.save(comida);
+    }
+
     @Override
     public ComidaDTO convertToComidaDTO(Comida comida) {
         if (comida == null) return null;
-        
+
         return new ComidaDTO(
             comida.getId(),
             comida.getName(),
@@ -63,10 +97,10 @@ public class ComidaServiceImpl implements ComidaService {
     @Override
     public AdicionalesDTO getAdicionalesDTO(Integer comidaId, Map<Integer, Boolean> selecciones) {
         if (comidaId == null) return null;
-        
+
         Comida comida = searchById(comidaId);
         if (comida == null) return null;
-        
+
         Map<Integer, Boolean> seleccionesFinales = new HashMap<>();
         if (comida.getAdicionalesSeleccionados() != null) {
             seleccionesFinales.putAll(comida.getAdicionalesSeleccionados());
@@ -74,7 +108,7 @@ public class ComidaServiceImpl implements ComidaService {
         if (selecciones != null) {
             seleccionesFinales.putAll(selecciones);
         }
-        
+
         return new AdicionalesDTO(
             comidaId,
             seleccionesFinales,
@@ -93,12 +127,11 @@ public class ComidaServiceImpl implements ComidaService {
     public DTOIdUsuarioComidas getAllComidasDTOForUser(Integer userId) {
         if (userId == null) return null;
         return new DTOIdUsuarioComidas(
-            userId, 
+            userId,
             convertComidasToDTOList(searchAll())
         );
     }
 
-    // Implementación de métodos de conversión
     @Override
     public List<ComidaDTO> convertComidasToDTOList(Collection<Comida> comidas) {
         if (comidas == null) return Collections.emptyList();
@@ -115,7 +148,6 @@ public class ComidaServiceImpl implements ComidaService {
             .collect(Collectors.toList());
     }
 
-    // Métodos auxiliares privados
     private Map<Integer, AdicionalDTO> convertAdicionalesToMapDTO(List<Adicional> adicionales) {
         if (adicionales == null) return Collections.emptyMap();
         return adicionales.stream()

@@ -20,4 +20,7 @@ public interface  OperatorService {
     public void add(Operator cliente);
     
     public Boolean login(String username, String password);
+
+    public Operator findByUsername(String username);
+
 }

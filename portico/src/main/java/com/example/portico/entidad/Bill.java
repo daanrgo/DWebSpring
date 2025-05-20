@@ -3,6 +3,8 @@ package com.example.portico.entidad;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,9 +42,8 @@ public class Bill {
     private PaymentType payment_type;
 
     @OneToMany(mappedBy = "bill")
+    @JsonManagedReference
     private List<OrderEntity> orders;
-
-
 
     public Bill() {
     }
@@ -60,7 +61,6 @@ public class Bill {
     public void setId(Integer id) {
         this.id = id;
     }
-
 
     public Integer getStatus() {
         return status;
@@ -125,6 +125,4 @@ public class Bill {
     public void setOrders(List<OrderEntity> orders) {
         this.orders = orders;
     }
-
-    
-}
+} 

@@ -70,4 +70,11 @@ public class OperatorServiceImpl implements OperatorService {
         }
         return autenticado;
     }
+
+    @Override
+    public Operator findByUsername(String username) {
+        return repo.findByUsername(username);
+    }
+
+
 }

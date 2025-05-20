@@ -3,6 +3,8 @@
 package com.example.portico.service;
 
 import com.example.portico.dto.OrderStatusDTO;
+import com.example.portico.entidad.Bill;
+import com.example.portico.entidad.Comida;
 import com.example.portico.entidad.OrderEntity;
 import com.example.portico.repositorio.OrderEntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,4 +63,25 @@ public class OrderServiceImpl implements OrderService {
     order.getBill().setStatus(estado);
     orderRepo.save(order);
     }
+
+    @Override
+public List<OrderEntity> obtenerTodosLosPedidos() {
+    return orderRepo.findAll();
+}
+
+    @Override
+    public OrderEntity guardarPedido(OrderEntity pedido) {
+        return orderRepo.save(pedido);
+    }
+
+    @Override
+    public List<OrderEntity> buscarPorFactura(Bill factura) {
+        return orderRepo.findByBill(factura);
+    }
+
+    @Override
+    public List<OrderEntity> buscarPorComida(Comida comida) {
+        return orderRepo.findByComida(comida);
+    }
+
 }

@@ -1,87 +1,63 @@
+// Proyecto: SPRING BOOT
+// Archivo: src/main/java/com/example/portico/controlador/ComidaRestController.java
+
 package com.example.portico.controlador;
 
-import com.example.portico.dto.*;
+import com.example.portico.dto.ComidaDTO;
+import com.example.portico.dto.ComidaInputDTO;
+import com.example.portico.dto.DTOIdUsuarioComida;
+import com.example.portico.dto.DTOIdUsuarioComidas;
 import com.example.portico.entidad.Comida;
 import com.example.portico.service.ComidaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @RestController
-@RequestMapping("/api/comidas/{user_id}")
+@RequestMapping("/api/comidas")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ComidaRestController {
 
     @Autowired
     private ComidaService comidaService;
 
-    @GetMapping("")
-    public ResponseEntity<DTOIdUsuarioComidas> getAllComidas(@PathVariable("user_id") int user_id) {
-        return ResponseEntity.ok(comidaService.getAllComidasDTOForUser(user_id));
-    }
-
-    @GetMapping("/{id}")
+    @GetMapping("/{userId}/{comidaId}")
     public ResponseEntity<DTOIdUsuarioComida> getComidaById(
-            @PathVariable("id") int id, 
-            @PathVariable("user_id") int user_id) {
-        DTOIdUsuarioComida dto = comidaService.getComidaDTOForUser(user_id, id);
-        return dto != null ? ResponseEntity.ok(dto) : ResponseEntity.notFound().build();
+        @PathVariable Integer userId,
+        @PathVariable Integer comidaId) {
+        return ResponseEntity.ok(comidaService.getComidaDTOForUser(userId, comidaId));
     }
 
-    @GetMapping("/{id}/adicionales")
-    public ResponseEntity<AdicionalesDTO> getAdicionales(
-            @PathVariable("id") int comidaId,
-            @RequestParam Map<Integer, Boolean> selecciones) {
-        AdicionalesDTO dto = comidaService.getAdicionalesDTO(comidaId, selecciones);
-        return dto != null ? ResponseEntity.ok(dto) : ResponseEntity.notFound().build();
+    @GetMapping("/{userId}")
+    public ResponseEntity<DTOIdUsuarioComidas> getAllComidasForUser(@PathVariable Integer userId) {
+        return ResponseEntity.ok(comidaService.getAllComidasDTOForUser(userId));
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<Comida> createComida(
-            @RequestBody Comida comida, 
-            @PathVariable("user_id") int user_id) {
-        if (comida.getAdicionalesSeleccionados() == null) {
-            comida.setAdicionalesSeleccionados(new HashMap<>());
-        }
-        Comida nuevaComida = comidaService.add(comida);
-        return ResponseEntity.ok(nuevaComida);
+    @PostMapping("/{userId}/create")
+    public ResponseEntity<ComidaDTO> createComida(
+        @PathVariable Integer userId,
+        @RequestBody ComidaInputDTO dto) {
+
+        Comida comida = comidaService.addFromInputDTO(dto);
+        return ResponseEntity.ok(comidaService.convertToComidaDTO(comida));
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity<Comida> updateComida(
-            @PathVariable("id") int id, 
-            @RequestBody Comida comida) {
-        comida.setId(id);
-        if (comida.getAdicionalesSeleccionados() == null) {
-            comida.setAdicionalesSeleccionados(new HashMap<>());
-        }
-        Comida comidaActualizada = comidaService.update(comida);
-        return ResponseEntity.ok(comidaActualizada);
+    @PutMapping("/{userId}/update/{id}")
+    public ResponseEntity<ComidaDTO> updateComida(
+        @PathVariable Integer userId,
+        @PathVariable Integer id,
+        @RequestBody ComidaInputDTO dto) {
+
+        Comida updated = comidaService.updateFromInputDTO(id, dto);
+        return ResponseEntity.ok(comidaService.convertToComidaDTO(updated));
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteComida(@PathVariable("id") int id) {
+    @DeleteMapping("/{userId}/delete/{id}")
+    public ResponseEntity<Void> deleteComida(
+        @PathVariable Integer userId,
+        @PathVariable Integer id) {
+
         comidaService.deleteById(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @PostMapping("/{id}/adicionales")
-    public ResponseEntity<AdicionalesDTO> addAdicionales(
-            @PathVariable("id") int comidaId,
-            @RequestBody Map<Integer, Boolean> adicionalesSeleccionados,
-            @PathVariable("user_id") int user_id) {
-        Comida comida = comidaService.searchById(comidaId);
-        if (comida == null) {
-            return ResponseEntity.notFound().build();
-        }
-        
-        comida.setAdicionalesSeleccionados(new HashMap<>(adicionalesSeleccionados));
-        comidaService.update(comida);
-        
-        AdicionalesDTO dto = comidaService.getAdicionalesDTO(comidaId, adicionalesSeleccionados);
-        return ResponseEntity.ok(dto);
     }
 }
