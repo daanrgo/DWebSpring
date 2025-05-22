@@ -38,7 +38,13 @@ public class OrderServiceIntegrationTest {
 
     @BeforeEach
     void setUp() {
-        comida = new Comida("Pizza", 18000, "Pizza Napolitana", "pizza.jpg");
+        comida = Comida.builder()
+            .name("Pizza")
+            .price(18000)
+            .description("Pizza Napolitana")
+            .imagen("pizza.jpg")
+            .build();
+
         comida = comidaRepo.save(comida);
 
         factura = new Bill();
@@ -59,7 +65,6 @@ public class OrderServiceIntegrationTest {
         List<OrderEntity> pedidos = orderService.obtenerTodosLosPedidos();
         assertThat(pedidos).isNotEmpty();
     }
-
 
     @Test
     void testGuardarNuevoPedido() {
@@ -84,7 +89,6 @@ public class OrderServiceIntegrationTest {
         assertThat(orderRepo.findById(orden.getId())).isNotPresent();
     }
 
-
     @Test
     void testBuscarPorFactura() {
         List<OrderEntity> pedidos = orderService.buscarPorFactura(factura);
@@ -98,4 +102,4 @@ public class OrderServiceIntegrationTest {
         assertThat(pedidos).isNotEmpty();
         assertThat(pedidos.get(0).getComida()).isEqualTo(comida);
     }
-}    
+}

@@ -32,10 +32,16 @@ public class OrderRestControllerTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+
         Bill bill = new Bill();
         bill.setStatus(1);
 
-        Comida comida = new Comida("Hamburguesa", 15000, "con queso", "img.jpg");
+        Comida comida = Comida.builder()
+            .name("Hamburguesa")
+            .price(15000)
+            .description("con queso")
+            .imagen("img.jpg")
+            .build();
 
         order = new OrderEntity();
         order.setId(1);

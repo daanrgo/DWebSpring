@@ -20,15 +20,13 @@ import com.example.portico.entidad.Comida;
 import com.example.portico.service.AdicionalService;
 import com.example.portico.service.ComidaService;
 
-
 @RequestMapping("/comidas/{user_id}")
-
 @Controller
 public class ComidaController {
 
     @Autowired
     ComidaService comidaService;
-    
+
     @Autowired 
     AdicionalService adicionalService;
 
@@ -81,7 +79,13 @@ public class ComidaController {
 
     @GetMapping("/crear")
     public String mostrarFormularioCrear(Model model, @PathVariable("user_id") int user_id) {
-        Comida comida = new Comida(0, "", 0, "", "");
+        Comida comida = Comida.builder()
+            .name("")
+            .price(0)
+            .description("")
+            .imagen("")
+            .build();
+
         DTOIdUsuarioComida dto = new DTOIdUsuarioComida(user_id, comidaService.convertToComidaDTO(comida));
         model.addAttribute("comida", comida);
         return "crear_comida";
@@ -115,7 +119,7 @@ public class ComidaController {
     public String actualizarComida(Model model, Comida comida, @PathVariable("user_id") int user_id) {
         List<Adicional> aux = comida.getAdicionales();
         comida.setAdicionales(new ArrayList<Adicional>());
-        for(int i = 0; i < aux.size(); i++) {
+        for (int i = 0; i < aux.size(); i++) {
             comida.addAdicional(adicionalService.SearchById(aux.get(i).getId()));
         }
         System.out.println("Comida Completa" + comida.toString());
